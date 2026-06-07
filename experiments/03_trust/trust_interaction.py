@@ -3,16 +3,20 @@
 Investor sends some of $100; it is TRIPLED on the way; trustee chooses how much
 to return.
 
-Output convention (used in every experiment from now on):
-  results/<YYYY-MM-DD_HH-MM-SS>/        one folder per run
-    <stage>/<stage>.json.gz             full Results, lossless & reloadable
-    <stage>/<stage>.csv                 every column, human-readable
-    <stage>/coop.txt                    results_uuid + Coop URL
-  results/<run>/summary.txt             the run's outcome
+Output layout (one folder per run; agents are ROWS within a stage, not folders,
+so this scales to many agents per run):
 
-Because we use Expected Parrot remote inference, the raw model response is NOT in
-the local results object — so we Results.pull(results_uuid) to fetch the full
-record (raw API envelope + the text the model generated) and save THAT.
+  results/<YYYY-MM-DD_HH-MM-SS>/
+    REASONING.md        <- the important one: every agent's answer + reasoning
+    summary.txt         <- numeric outcome
+    <stage>/
+      <stage>.json.gz   <- full Results, lossless & reloadable
+      <stage>.csv       <- every column
+      coop.txt          <- results_uuid + Coop URL
+
+Because we use Expected Parrot remote inference, the raw model response is not in
+the local results object, so we Results.pull(results_uuid) to fetch the full
+record before saving.
 """
 
 import os
@@ -51,8 +55,45 @@ def build_questions():
     return q_send, q_return
 
 
+def append_reasoning(results, run_dir, tag):
+    """Append every agent's answer + reasoning for this stage to run-level REASONING.md.
+
+    Works for any number of agents/scenarios: each result row becomes its own block.
+    """
+    cols = results.columns
+    qnames = [c.split(".", 1)[1] for c in cols if c.startswith("answer.")]
+    scen_fields = [
+        c.split(".", 1)[1]
+        for c in cols
+        if c.startswith("scenario.") and c != "scenario.scenario_index"
+    ]
+
+    sel = ["agent.agent_name"]
+    for q in qnames:
+        sel.append(f"answer.{q}")
+        if f"comment.{q}_comment" in cols:
+            sel.append(f"comment.{q}_comment")
+    sel += [f"scenario.{s}" for s in scen_fields]
+
+    rows = results.select(*sel).to_dicts()
+    lines = [f"\n## {tag}\n"]
+    for row in rows:
+        name = row.get("agent_name", "agent")
+        ctx = ", ".join(f"{s}={row.get(s)}" for s in scen_fields)
+        lines.append(f"### {name}" + (f"  ({ctx})" if ctx else ""))
+        for q in qnames:
+            lines.append(f"- **{q} = {row.get(q)}**")
+            reason = row.get(f"{q}_comment")
+            if reason:
+                lines.append(f"  - {reason}")
+        lines.append("")
+
+    with open(os.path.join(run_dir, "REASONING.md"), "a") as f:
+        f.write("\n".join(lines))
+
+
 def run_and_save(job, run_dir, tag):
-    """Run a job, pull the FULL Coop record, save it, return the full Results."""
+    """Run a job, pull the FULL Coop record, save it + reasoning, return full Results."""
     local = job.run()
     uuid = local.results_uuid
     full = Results.pull(uuid)  # full record incl. raw response + generated text
@@ -64,6 +105,8 @@ def run_and_save(job, run_dir, tag):
     with open(os.path.join(stage_dir, "coop.txt"), "w") as f:
         f.write(f"results_uuid: {uuid}\n")
         f.write(f"url: https://www.expectedparrot.com/content/{uuid}\n")
+
+    append_reasoning(full, run_dir, tag)  # <- reasoning into run-level REASONING.md
     return full
 
 
@@ -106,7 +149,7 @@ def main():
     with open(os.path.join(run_dir, "summary.txt"), "w") as f:
         f.write(summary)
     print(summary)
-    print(f"Full results saved to: {run_dir}/")
+    print(f"Saved to: {run_dir}/  (see REASONING.md)")
 
 
 if __name__ == "__main__":
