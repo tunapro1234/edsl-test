@@ -1,0 +1,9 @@
+Public goods — 4 players, $20 each, x2 — 2026-06-07_22-46-35
+
+player contrib  kept  share  final
+     0       0    20    0.0   20.0
+     1       0    20    0.0   20.0
+     2       0    20    0.0   20.0
+     3       0    20    0.0   20.0
+
+total contributed: 0 / 80   mean contribution: 0.0 ($20 max)
