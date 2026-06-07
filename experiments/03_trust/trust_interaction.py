@@ -1,34 +1,30 @@
-"""Trust game — two agents, two stages.
+"""Trust game — two agents, two stages, run N times.
 
 Investor sends some of $100; it is TRIPLED on the way; trustee chooses how much
-to return.
+to return. We run the whole game N times via run(n=N) (NOT a Python loop, which
+would just hit the cache and return identical answers).
 
-Output layout (one folder per run; agents are ROWS within a stage, not folders,
-so this scales to many agents per run):
+Stage 1: N investors each send an amount (varied, temperature 1).
+Stage 2: for each investor's tripled amount, a trustee decides what to return.
 
+Output layout (one folder per run; agents/reps are ROWS within a stage):
   results/<YYYY-MM-DD_HH-MM-SS>/
-    REASONING.md        <- the important one: every agent's answer + reasoning
-    summary.txt         <- numeric outcome
-    <stage>/
-      <stage>.json.gz   <- full Results, lossless & reloadable
-      <stage>.csv       <- every column
-      coop.txt          <- results_uuid + Coop URL
-
-Because we use Expected Parrot remote inference, the raw model response is not in
-the local results object, so we Results.pull(results_uuid) to fetch the full
-record before saving.
+    REASONING.md        <- every agent's answer + reasoning, labelled by rep/scenario
+    summary.txt         <- table of all N games + means
+    <stage>/            <- full data (.json.gz lossless, .csv, coop.txt)
 """
 
 import os
 from datetime import datetime
 
-from edsl import QuestionNumerical, Agent, Model, Scenario, Results
+from edsl import QuestionNumerical, Agent, Model, Scenario, ScenarioList
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RESULTS_ROOT = os.path.join(HERE, "results")
 
 POT = 100
 MULT = 3
+N = 10
 
 
 def make_model():
@@ -56,9 +52,10 @@ def build_questions():
 
 
 def append_reasoning(results, run_dir, tag):
-    """Append every agent's answer + reasoning for this stage to run-level REASONING.md.
+    """Append every result row's answer + reasoning to run-level REASONING.md.
 
-    Works for any number of agents/scenarios: each result row becomes its own block.
+    Scales to any number of agents/reps/scenarios: each row is one block, labelled
+    by repetition (iteration) and any scenario fields.
     """
     cols = results.columns
     qnames = [c.split(".", 1)[1] for c in cols if c.startswith("answer.")]
@@ -67,8 +64,11 @@ def append_reasoning(results, run_dir, tag):
         for c in cols
         if c.startswith("scenario.") and c != "scenario.scenario_index"
     ]
+    has_iter = "iteration.iteration" in cols
 
     sel = ["agent.agent_name"]
+    if has_iter:
+        sel.append("iteration.iteration")
     for q in qnames:
         sel.append(f"answer.{q}")
         if f"comment.{q}_comment" in cols:
@@ -78,9 +78,12 @@ def append_reasoning(results, run_dir, tag):
     rows = results.select(*sel).to_dicts()
     lines = [f"\n## {tag}\n"]
     for row in rows:
-        name = row.get("agent_name", "agent")
-        ctx = ", ".join(f"{s}={row.get(s)}" for s in scen_fields)
-        lines.append(f"### {name}" + (f"  ({ctx})" if ctx else ""))
+        bits = []
+        if has_iter:
+            bits.append(f"rep {row.get('iteration')}")
+        bits += [f"{s}={row.get(s)}" for s in scen_fields]
+        ctx = ", ".join(bits)
+        lines.append(f"### {row.get('agent_name', 'agent')}" + (f"  ({ctx})" if ctx else ""))
         for q in qnames:
             lines.append(f"- **{q} = {row.get(q)}**")
             reason = row.get(f"{q}_comment")
@@ -92,43 +95,55 @@ def append_reasoning(results, run_dir, tag):
         f.write("\n".join(lines))
 
 
-def run_and_save(job, run_dir, tag):
-    """Run a job, pull the FULL Coop record, save it + reasoning, return full Results."""
-    local = job.run()
-    uuid = local.results_uuid
-    full = Results.pull(uuid)  # full record incl. raw response + generated text
+def run_and_save(job, run_dir, tag, n=1):
+    """Run a job n times, save full local results + reasoning, push to Coop for a link.
+
+    Local results already contain the answer, comment (reasoning), and (when the
+    service returns it) the raw response with chain-of-thought, so no pull needed.
+    """
+    results = job.run(n=n)
 
     stage_dir = os.path.join(run_dir, tag)
     os.makedirs(stage_dir, exist_ok=True)
-    full.save(os.path.join(stage_dir, tag))             # lossless .json.gz
-    full.to_csv(os.path.join(stage_dir, f"{tag}.csv"))  # all columns
+    results.save(os.path.join(stage_dir, tag))             # lossless .json.gz
+    results.to_csv(os.path.join(stage_dir, f"{tag}.csv"))  # all columns
+
+    # Coop link for the shareable full record (.results_uuid is not always set)
+    try:
+        url = results.push(visibility="unlisted")["url"]
+    except Exception as e:
+        url = f"(push failed: {e})"
     with open(os.path.join(stage_dir, "coop.txt"), "w") as f:
-        f.write(f"results_uuid: {uuid}\n")
-        f.write(f"url: https://www.expectedparrot.com/content/{uuid}\n")
+        f.write(f"url: {url}\n")
 
-    append_reasoning(full, run_dir, tag)  # <- reasoning into run-level REASONING.md
-    return full
+    append_reasoning(results, run_dir, tag)
+    return results
 
 
-def play_trust(run_dir):
+def play_trust(run_dir, n=N):
     model = make_model()
     q_send, q_return = build_questions()
 
-    # Stage 1: investor sends
+    # Stage 1: N investors send
     res_send = run_and_save(
-        q_send.by(Agent(name="investor")).by(model), run_dir, "stage1_send"
+        q_send.by(Agent(name="investor")).by(model), run_dir, "stage1_send", n=n
     )
-    sent = res_send.select("sent").to_list()[0]
-    received = sent * MULT
+    sents = res_send.select("sent").to_list()
+    receiveds = [s * MULT for s in sents]
 
-    # Stage 2: trustee returns, given the REAL tripled amount
-    res_return = run_and_save(
-        q_return.by(Scenario({"received": received})).by(Agent(name="trustee")).by(model),
-        run_dir,
-        "stage2_return",
+    # Stage 2: one trustee decision per investor's tripled amount (paired by game id)
+    scenarios = ScenarioList(
+        [Scenario({"game": i, "received": r}) for i, r in enumerate(receiveds)]
     )
-    returned = res_return.select("returned").to_list()[0]
-    return sent, received, returned
+    res_return = run_and_save(
+        q_return.by(scenarios).by(Agent(name="trustee")).by(model), run_dir, "stage2_return"
+    )
+    by_game = {row["game"]: row["returned"] for row in res_return.select("game", "returned").to_dicts()}
+
+    return [
+        {"game": i, "sent": s, "received": r, "returned": by_game.get(i)}
+        for i, (s, r) in enumerate(zip(sents, receiveds))
+    ]
 
 
 def main():
@@ -136,16 +151,24 @@ def main():
     run_dir = os.path.join(RESULTS_ROOT, run_name)
     os.makedirs(run_dir, exist_ok=True)
 
-    sent, received, returned = play_trust(run_dir)
-    investor_final = POT - sent + returned
-    trustee_final = received - returned
+    games = play_trust(run_dir)
 
-    summary = (
-        f"Trust game — {run_name}\n"
-        f"Investor sent ${sent}  ->  trustee received ${received} (x{MULT})\n"
-        f"Trustee returned ${returned}\n"
-        f"Final:  investor ${investor_final}   |   trustee ${trustee_final}\n"
-    )
+    lines = [f"Trust game x{len(games)} — {run_name}", ""]
+    lines.append(f"{'game':>4} {'sent':>5} {'recv':>5} {'ret':>5} {'inv$':>6} {'tru$':>6}")
+    sents, returns = [], []
+    for g in games:
+        ret = g["returned"] or 0
+        sents.append(g["sent"])
+        if g["returned"] is not None:
+            returns.append(g["returned"])
+        lines.append(
+            f"{g['game']:>4} {g['sent']:>5} {g['received']:>5} {str(g['returned']):>5} "
+            f"{POT - g['sent'] + ret:>6} {g['received'] - ret:>6}"
+        )
+    mean = lambda xs: sum(xs) / len(xs) if xs else 0
+    lines += ["", f"mean sent: {mean(sents):.1f}   mean returned: {mean(returns):.1f}"]
+    summary = "\n".join(lines) + "\n"
+
     with open(os.path.join(run_dir, "summary.txt"), "w") as f:
         f.write(summary)
     print(summary)

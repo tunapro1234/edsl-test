@@ -1,0 +1,91 @@
+agent.agent_index,agent.agent_instruction,agent.agent_name,answer.sent,cache_keys.sent_cache_key,cache_used.sent_cache_used,comment.sent_comment,generated_tokens.sent_generated_tokens,iteration.iteration,model.frequency_penalty,model.inference_service,model.logprobs,model.max_tokens,model.model,model.model_index,model.presence_penalty,model.reasoning_effort,model.temperature,model.top_logprobs,model.top_p,prompt.sent_system_prompt,prompt.sent_user_prompt,question_options.sent_question_options,question_text.sent_question_text,question_type.sent_question_type,raw_model_response.sent_cost,raw_model_response.sent_input_price_per_million_tokens,raw_model_response.sent_input_tokens,raw_model_response.sent_one_usd_buys,raw_model_response.sent_output_price_per_million_tokens,raw_model_response.sent_output_tokens,raw_model_response.sent_raw_model_response,raw_model_response.sent_thinking_tokens,reasoning_summary.sent_reasoning_summary,scenario.scenario_index,validated.sent_validated
+0,You are answering questions as if you were a human. Do not break character.,investor,0,9bd0c3823c8f27fd91caaf3c6e542d71,True,"I send nothing, since any amount I send could be kept by the other person and I'd end up with less than my original $100. The safe optimal choice is to send $0.",,0,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?
+
+This question requires a numerical response in the form of an integer or decimal (e.g., -12, 0, 1, 2, 3.45, ...).
+Respond with just your number on a single line.
+If your response is equivalent to zero, report '0'
+
+
+After the answer, put a comment explaining your choice on the next line.
+",,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?",numerical,7.4275e-05,0.039,175,13463.480309660046,0.19,355,,,,0,True
+0,You are answering questions as if you were a human. Do not break character.,investor,0,053d5d7293a8a8a2cedcb8c7d3b7c5d0,True,"Because any positive amount you send gets tripled for the other person, who can simply keep it, leaving you with less than $100. Sending nothing guarantees you retain the full $100.",,1,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?
+
+This question requires a numerical response in the form of an integer or decimal (e.g., -12, 0, 1, 2, 3.45, ...).
+Respond with just your number on a single line.
+If your response is equivalent to zero, report '0'
+
+
+After the answer, put a comment explaining your choice on the next line.
+",,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?",numerical,9.9165e-05,0.039,175,10084.20309585035,0.19,486,,,,0,True
+0,You are answering questions as if you were a human. Do not break character.,investor,0,c47486f1e145e64a7cb6712bf3a3c7c3,True,"<!-- Sending any positive amount could be tripled for them and they might return nothing, so the safest choice is to send nothing. -->",,2,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?
+
+This question requires a numerical response in the form of an integer or decimal (e.g., -12, 0, 1, 2, 3.45, ...).
+Respond with just your number on a single line.
+If your response is equivalent to zero, report '0'
+
+
+After the answer, put a comment explaining your choice on the next line.
+",,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?",numerical,5.717500000000001e-05,0.039,175,17490.1617839965,0.19,265,,,,0,True
+0,You are answering questions as if you were a human. Do not break character.,investor,0,931e7269ffb17ead394562befc506a98,True,"Because the other person will keep the tripled amount and send nothing back, any positive amount you send only reduces your own money, so the optimal rational choice is to send nothing.",,3,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?
+
+This question requires a numerical response in the form of an integer or decimal (e.g., -12, 0, 1, 2, 3.45, ...).
+Respond with just your number on a single line.
+If your response is equivalent to zero, report '0'
+
+
+After the answer, put a comment explaining your choice on the next line.
+",,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?",numerical,6.667500000000001e-05,0.039,175,14998.125234345705,0.19,315,,,,0,True
+0,You are answering questions as if you were a human. Do not break character.,investor,0,af619191d89ec3d00ddc75bce15a4d56,True,"Because the recipient can keep the tripled amount for themselves, sending any positive amount could only reduce your final wealth. Sending nothing guarantees you keep the full $100.",,4,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?
+
+This question requires a numerical response in the form of an integer or decimal (e.g., -12, 0, 1, 2, 3.45, ...).
+Respond with just your number on a single line.
+If your response is equivalent to zero, report '0'
+
+
+After the answer, put a comment explaining your choice on the next line.
+",,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?",numerical,7.8835e-05,0.039,175,12684.72125325046,0.19,379,,,,0,True
+0,You are answering questions as if you were a human. Do not break character.,investor,0,0b2ebc0528f48609084ab8732a1908bc,True,"I’d send nothing, since any amount I send is tripled for them and they can keep it all – sending any positive amount only reduces my final total.",,5,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?
+
+This question requires a numerical response in the form of an integer or decimal (e.g., -12, 0, 1, 2, 3.45, ...).
+Respond with just your number on a single line.
+If your response is equivalent to zero, report '0'
+
+
+After the answer, put a comment explaining your choice on the next line.
+",,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?",numerical,0.000112275,0.039,175,8906.70229347584,0.19,555,,,,0,True
+0,You are answering questions as if you were a human. Do not break character.,investor,0,66ad45dd5b79d39c8c6ce9bd7c217402,True,"# Sending nothing is the subgame‑perfect equilibrium: the receiver can keep any amount they get, so they will return nothing, making any positive send lose you money. Hence the optimal send is 0.",,6,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?
+
+This question requires a numerical response in the form of an integer or decimal (e.g., -12, 0, 1, 2, 3.45, ...).
+Respond with just your number on a single line.
+If your response is equivalent to zero, report '0'
+
+
+After the answer, put a comment explaining your choice on the next line.
+",,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?",numerical,7.9405e-05,0.039,175,12593.665386310686,0.19,382,,,,0,True
+0,You are answering questions as if you were a human. Do not break character.,investor,0,fb14e91990f7b828baa9b3b7957149d6,True,"Because the recipient gets three times what you send and can keep any or all of it, the only amount that guarantees you won't lose money (no matter what they decide) is to send nothing. Hence the optimal send amount is 0.",,7,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?
+
+This question requires a numerical response in the form of an integer or decimal (e.g., -12, 0, 1, 2, 3.45, ...).
+Respond with just your number on a single line.
+If your response is equivalent to zero, report '0'
+
+
+After the answer, put a comment explaining your choice on the next line.
+",,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?",numerical,7.541500000000001e-05,0.039,175,13259.961546111515,0.19,361,,,,0,True
+0,You are answering questions as if you were a human. Do not break character.,investor,0,5d1635e0668edf517ebdc72301926a7c,True,"I send nothing because the recipient can keep the tripled amount, so any positive send would only risk losing money without guaranteed return.",,8,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?
+
+This question requires a numerical response in the form of an integer or decimal (e.g., -12, 0, 1, 2, 3.45, ...).
+Respond with just your number on a single line.
+If your response is equivalent to zero, report '0'
+
+
+After the answer, put a comment explaining your choice on the next line.
+",,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?",numerical,7.902500000000001e-05,0.039,175,12654.223347042074,0.19,380,,,,0,True
+0,You are answering questions as if you were a human. Do not break character.,investor,0,f3d443d29308b8fc8b29efba5e994577,True,"Because any amount you send can be kept by the other person (they could just not return anything), sending a positive amount has a risk of losing money while sending nothing guarantees you keep your $100. Hence the optimal safe choice is to send $0.",,9,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?
+
+This question requires a numerical response in the form of an integer or decimal (e.g., -12, 0, 1, 2, 3.45, ...).
+Respond with just your number on a single line.
+If your response is equivalent to zero, report '0'
+
+
+After the answer, put a comment explaining your choice on the next line.
+",,"You have $100. You can send any amount to another person. Whatever you send is TRIPLED before they receive it. They then decide how much, if any, to send back to you. How much do you send?",numerical,4.7865e-05,0.039,175,20892.092343048156,0.19,216,,,,0,True
