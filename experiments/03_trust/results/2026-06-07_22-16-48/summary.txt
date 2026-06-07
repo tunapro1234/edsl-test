@@ -1,0 +1,4 @@
+Trust game — 2026-06-07_22-16-48
+Investor sent $0  ->  trustee received $0 (x3)
+Trustee returned $0
+Final:  investor $100   |   trustee $0
