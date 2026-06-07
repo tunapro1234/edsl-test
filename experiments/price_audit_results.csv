@@ -1,0 +1,229 @@
+service,model,status,cost_usd,in_tok,out_tok,applied_in,applied_out,canon_in,canon_out,local_in,local_out,flags
+anthropic,claude-haiku-4-5-20251001,NO_SDK,,,,,,1.0,5.0,1.0,5.0,no SDK; 
+anthropic,claude-opus-4-1-20250805,NO_SDK,,,,,,15.0,75.0,15.0,75.0,no SDK; 
+anthropic,claude-opus-4-20250514,NO_SDK,,,,,,15.0,75.0,15.0,75.0,no SDK; 
+anthropic,claude-opus-4-5-20251101,NO_SDK,,,,,,5.0,25.0,5.0,25.0,no SDK; 
+anthropic,claude-opus-4-6,NO_SDK,,,,,,5.0,25.0,5.0,25.0,no SDK; 
+anthropic,claude-opus-4-7,NO_SDK,,,,,,5.0,25.0,5.0,25.0,no SDK; 
+anthropic,claude-opus-4-8,NO_SDK,,,,,,15.0,75.0,15.0,75.0,no SDK; 
+anthropic,claude-sonnet-4-20250514,NO_SDK,,,,,,3.0,15.0,3.0,15.0,no SDK; 
+anthropic,claude-sonnet-4-5-20250929,NO_SDK,,,,,,3.0,15.0,3.0,15.0,no SDK; 
+anthropic,claude-sonnet-4-6,NO_SDK,,,,,,3.0,15.0,3.0,15.0,no SDK; 
+azure,azure:gpt-4.1,NO_SDK,,,,,,2.0,8.0,2.0,8.0,no SDK; 
+azure,azure:gpt-4.1-2,NO_SDK,,,,,,2.0,8.0,2.0,8.0,no SDK; 
+azure,azure:gpt-4.1-mini,NO_SDK,,,,,,0.4,1.6,0.4,1.6,no SDK; 
+azure,azure:gpt-4o,NO_SDK,,,,,,2.5,10.0,2.5,10.0,no SDK; 
+azure,azure:gpt-4o-mini-test,NO_SDK,,,,,,0.16,0.66,0.165,0.66,no SDK; local_in 0.165!=canon 0.16
+azure,azure:gpt-4o-test,NO_SDK,,,,,,2.5,10.0,2.5,10.0,no SDK; 
+deep_infra,ByteDance/Seed-1.8,MISMATCH,0.00025075,59,60,0.25,2.0,0.25,2.0,0.25,2.0,cost 2.507e-04!=recomputed 1.347e-04
+deep_infra,ByteDance/Seed-2.0-code,MISMATCH,0.00030300000000000005,42,48,0.5,3.0,0.5,3.0,0.5,3.0,cost 3.030e-04!=recomputed 1.650e-04
+deep_infra,ByteDance/Seed-2.0-mini,MISMATCH,2.36e-05,60,23,0.1,0.4,0.1,0.4,0.1,0.4,cost 2.360e-05!=recomputed 1.520e-05
+deep_infra,ByteDance/Seed-2.0-pro,MISMATCH,0.000162,60,23,0.5,3.0,0.5,3.0,0.5,3.0,cost 1.620e-04!=recomputed 9.900e-05
+deep_infra,Gryphe/MythoMax-L2-13b,OK,1.32e-05,29,4,0.4,0.4,0.4,0.4,0.4,0.4,
+deep_infra,MiniMaxAI/MiniMax-M2.5,OK,0.0001685,50,140,0.15,1.15,0.15,1.15,0.15,1.15,
+deep_infra,NousResearch/Hermes-3-Llama-3.1-405B,OK,2.3e-05,21,2,1.0,1.0,1.0,1.0,1.0,1.0,
+deep_infra,NousResearch/Hermes-3-Llama-3.1-70B,OK,7.2e-06,21,3,0.3,0.3,0.3,0.3,0.3,0.3,
+deep_infra,Qwen/Qwen2.5-72B-Instruct,OK,8.4e-06,20,3,0.36,0.4,0.36,0.4,0.36,0.4,
+deep_infra,Qwen/Qwen3-235B-A22B-Instruct-2507,MISMATCH,1.8199999999999997e-06,20,4,0.071,0.1,0.07,0.1,0.071,0.1,applied_in 0.071!=canon 0.07; local_in 0.071!=canon 0.07
+deep_infra,Qwen/Qwen3-235B-A22B-Thinking-2507,OK,0.0004163,20,179,0.23,2.3,0.23,2.3,0.23,2.3,
+deep_infra,Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo,OK,9e-06,20,3,0.3,1.0,0.3,1.0,0.3,1.0,
+deep_infra,Qwen/Qwen3-Max,OK,4.2000000000000004e-05,20,3,1.2,6.0,1.2,6.0,1.2,6.0,
+deep_infra,Qwen/Qwen3-Max-Thinking,OK,4.2000000000000004e-05,20,3,1.2,6.0,1.2,6.0,1.2,6.0,
+deep_infra,Qwen/Qwen3-Next-80B-A3B-Instruct,OK,6.2e-06,20,4,0.09,1.1,0.09,1.1,0.09,1.1,
+deep_infra,Qwen/Qwen3-VL-235B-A22B-Instruct,OK,7.520000000000001e-06,20,4,0.2,0.88,0.2,0.88,0.2,0.88,
+deep_infra,Qwen/Qwen3-VL-30B-A3B-Instruct,OK,5.4e-06,20,4,0.15,0.6,0.15,0.6,0.15,0.6,
+deep_infra,Qwen/Qwen3.5-122B-A10B,OK,0.00035438,22,145,0.29,2.4,0.29,2.4,0.29,2.4,
+deep_infra,Qwen/Qwen3.5-35B-A3B,OK,0.00017507999999999998,22,172,0.14,1.0,0.14,1.0,0.14,1.0,
+deep_infra,Qwen/Qwen3.5-397B-A17B,OK,0.00056158,22,153,0.49,3.6,0.49,3.6,0.49,3.6,
+deep_infra,Qwen/Qwen3.6-27B,OK,0.0004998400000000001,22,154,0.32,3.2,0.32,3.2,0.32,3.2,
+deep_infra,Qwen/Qwen3.6-35B-A3B,OK,0.00018949999999999997,22,196,0.15,0.95,0.15,0.95,0.15,0.95,
+deep_infra,Qwen/Qwen3.7-Max,MISMATCH,0.038643000000000004,22,236,16.5,82.5,16.5,82.5,16.5,82.5,cost 3.864e-02!=recomputed 1.983e-02
+deep_infra,Sao10K/L3-8B-Lunaris-v1-Turbo,OK,9.800000000000001e-07,22,2,0.04,0.05,0.04,0.05,0.04,0.05,
+deep_infra,Sao10K/L3.1-70B-Euryale-v2.2,OK,2.125e-05,22,3,0.85,0.85,0.85,0.85,0.85,0.85,
+deep_infra,XiaomiMiMo/MiMo-V2.5,OK,4.04e-05,36,13,0.4,2.0,0.4,2.0,0.4,2.0,
+deep_infra,XiaomiMiMo/MiMo-V2.5-Pro,OK,0.005907000000000001,263,19,16.5,82.5,16.5,82.5,16.5,82.5,
+deep_infra,anthropic/claude-haiku-4-5,OK,0.0007260000000000001,19,5,16.5,82.5,16.5,82.5,16.5,82.5,
+deep_infra,anthropic/claude-opus-4-7,OK,0.0011385,29,8,16.5,82.5,16.5,82.5,16.5,82.5,
+deep_infra,anthropic/claude-opus-4-8,OK,0.0008910000000000001,24,6,16.5,82.5,16.5,82.5,16.5,82.5,
+deep_infra,anthropic/claude-sonnet-4-6,OK,0.0007260000000000001,19,5,16.5,82.5,16.5,82.5,16.5,82.5,
+deep_infra,deepseek-ai/DeepSeek-V3,OK,7.47e-06,15,3,0.32,0.89,0.32,0.89,0.32,0.89,
+deep_infra,deepseek-ai/DeepSeek-V3-0324,OK,5.31e-06,15,3,0.2,0.77,0.2,0.77,0.2,0.77,
+deep_infra,deepseek-ai/DeepSeek-V3.1,OK,6.15e-06,18,3,0.21,0.79,0.21,0.79,0.21,0.79,
+deep_infra,deepseek-ai/DeepSeek-V3.1-Terminus,OK,7.17e-06,16,3,0.27,0.95,0.27,0.95,0.27,0.95,
+deep_infra,deepseek-ai/DeepSeek-V3.2,OK,5.3e-06,16,3,0.26,0.38,0.26,0.38,0.26,0.38,
+deep_infra,deepseek-ai/DeepSeek-V4-Flash,OK,3.08e-06,16,3,0.14,0.28,0.14,0.28,0.14,0.28,
+deep_infra,deepseek-ai/DeepSeek-V4-Pro,OK,3.828e-05,16,3,1.74,3.48,1.74,3.48,1.74,3.48,
+deep_infra,google/gemini-2.5-flash,MISMATCH,8.360000000000001e-05,12,2,0.3,2.5,0.3,2.5,0.3,2.5,cost 8.360e-05!=recomputed 8.600e-06
+deep_infra,google/gemma-3-12b-it,OK,1.23e-06,21,3,0.04,0.13,0.04,0.13,0.04,0.13,
+deep_infra,google/gemma-3-27b-it,OK,2.32e-06,21,4,0.08,0.16,0.08,0.16,0.08,0.16,
+deep_infra,google/gemma-3-4b-it,OK,1.08e-06,21,3,0.04,0.08,0.04,0.08,0.04,0.08,
+deep_infra,google/gemma-4-26B-A4B-it,OK,2.77e-06,25,3,0.07,0.34,0.07,0.34,0.07,0.34,
+deep_infra,google/gemma-4-31B-it,OK,4.39e-06,25,3,0.13,0.38,0.13,0.38,0.13,0.38,
+deep_infra,google/gemma-4-31B-it-turbo,OK,0.00066,25,3,16.5,82.5,16.5,82.5,16.5,82.5,
+deep_infra,meta-llama/Llama-3.2-11B-Vision-Instruct,MISMATCH,6.124999999999999e-06,22,3,0.245,0.245,0.24,0.24,0.245,0.245,applied_in 0.245!=canon 0.24; applied_out 0.245!=canon 0.24; local_in 0.245!=canon 0.24; local_out 0.245!=canon 0.24
+deep_infra,meta-llama/Llama-3.3-70B-Instruct-Turbo,OK,3.1600000000000002e-06,22,3,0.1,0.32,0.1,0.32,0.1,0.32,
+deep_infra,meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8,OK,5.7e-06,22,4,0.15,0.6,0.15,0.6,0.15,0.6,
+deep_infra,meta-llama/Llama-4-Scout-17B-16E-Instruct,OK,2.66e-06,22,3,0.08,0.3,0.08,0.3,0.08,0.3,
+deep_infra,meta-llama/Meta-Llama-3.1-70B-Instruct,OK,1e-05,22,3,0.4,0.4,0.4,0.4,0.4,0.4,
+deep_infra,meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo,OK,1.04e-05,22,4,0.4,0.4,0.4,0.4,0.4,0.4,
+deep_infra,meta-llama/Meta-Llama-3.1-8B-Instruct,OK,5.900000000000001e-07,22,3,0.02,0.05,0.02,0.05,0.02,0.05,
+deep_infra,meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo,OK,5e-07,22,2,0.02,0.03,0.02,0.03,0.02,0.03,
+deep_infra,mistralai/Mistral-Nemo-Instruct-2407,OK,4.4e-07,16,3,0.02,0.04,0.02,0.04,0.02,0.04,
+deep_infra,mistralai/Mistral-Small-24B-Instruct-2501,OK,9.070000000000001e-06,175,4,0.05,0.08,0.05,0.08,0.05,0.08,
+deep_infra,mistralai/Mistral-Small-3.2-24B-Instruct-2506,MISMATCH,1.925e-06,15,4,0.075,0.2,0.08,0.2,0.075,0.2,applied_in 0.075!=canon 0.08; local_in 0.075!=canon 0.08
+deep_infra,moonshotai/Kimi-K2.5,OK,0.0001665,20,70,0.45,2.25,0.45,2.25,0.45,2.25,
+deep_infra,moonshotai/Kimi-K2.6,OK,0.00031949999999999996,20,87,0.75,3.5,0.75,3.5,0.75,3.5,
+deep_infra,nvidia/Llama-3.3-Nemotron-Super-49B-v1.5,OK,9.59e-05,31,232,0.1,0.4,0.1,0.4,0.1,0.4,
+deep_infra,nvidia/NVIDIA-Nemotron-3-Super-120B-A12B,OK,1.9299999999999998e-05,28,33,0.1,0.5,0.1,0.5,0.1,0.5,
+deep_infra,nvidia/NVIDIA-Nemotron-Nano-9B-v2,OK,1.616e-05,24,95,0.04,0.16,0.04,0.16,0.04,0.16,
+deep_infra,nvidia/Nemotron-3-Nano-30B-A3B,OK,4.24e-05,28,205,0.05,0.2,0.05,0.2,0.05,0.2,
+deep_infra,nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning,OK,1.4000000000000001e-05,54,4,0.2,0.8,0.2,0.8,0.2,0.8,
+deep_infra,openai/gpt-oss-120b,MISMATCH,9.984e-06,66,39,0.039,0.19,0.04,0.19,0.039,0.19,applied_in 0.039!=canon 0.04; local_in 0.039!=canon 0.04
+deep_infra,openai/gpt-oss-120b-Turbo,OK,3.2099999999999994e-05,66,37,0.15,0.6,0.15,0.6,0.15,0.6,
+deep_infra,openai/gpt-oss-20b,OK,8.28e-06,66,45,0.03,0.14,0.03,0.14,0.03,0.14,
+deep_infra,stepfun-ai/Step-3.5-Flash,OK,4.85e-05,23,154,0.1,0.3,0.1,0.3,0.1,0.3,
+deep_infra,zai-org/GLM-4.6,OK,0.0005693299999999999,17,323,0.43,1.74,0.43,1.74,0.43,1.74,
+deep_infra,zai-org/GLM-4.7,OK,0.0002238,17,124,0.4,1.75,0.4,1.75,0.4,1.75,
+deep_infra,zai-org/GLM-4.7-Flash,OK,3.8620000000000006e-05,17,94,0.06,0.4,0.06,0.4,0.06,0.4,
+deep_infra,zai-org/GLM-5,OK,0.00011004,17,48,0.6,2.08,0.6,2.08,0.6,2.08,
+deep_infra,zai-org/GLM-5.1,OK,0.00031185,17,84,1.05,3.5,1.05,3.5,1.05,3.5,
+deepseek,deepseek-v4-flash,MISMATCH,1.876e-05,16,31,0.14,0.28,0.14,0.28,0.14,0.28,cost 1.876e-05!=recomputed 1.092e-05
+deepseek,deepseek-v4-pro,MISMATCH,0.00028884,16,39,1.74,3.48,1.74,3.48,1.74,3.48,cost 2.888e-04!=recomputed 1.636e-04
+google,gemini-2.0-flash,OK,2.4000000000000003e-06,12,3,0.1,0.4,0.1,0.4,0.1,0.4,
+google,gemini-2.0-flash-001,OK,2.4000000000000003e-06,12,3,0.1,0.4,0.1,0.4,0.1,0.4,
+google,gemini-2.0-flash-lite,MISMATCH,1.8e-06,12,3,0.075,0.3,0.08,0.3,0.075,0.3,applied_in 0.075!=canon 0.08; local_in 0.075!=canon 0.08
+google,gemini-2.0-flash-lite-001,MISMATCH,1.8e-06,12,3,0.075,0.3,0.08,0.3,0.075,0.3,applied_in 0.075!=canon 0.08; local_in 0.075!=canon 0.08
+google,gemini-2.5-flash,MISMATCH,8.14e-05,13,2,0.3,2.5,0.3,2.5,0.3,2.5,cost 8.140e-05!=recomputed 8.900e-06
+google,gemini-2.5-flash-image,OK,6.390000000000001e-05,13,2,0.3,30.0,0.3,30.0,0.3,30.0,
+google,gemini-2.5-flash-lite,OK,2.1000000000000002e-06,13,2,0.1,0.4,0.1,0.4,0.1,0.4,
+google,gemini-2.5-pro,MISMATCH,0.0013362500000000002,13,2,1.25,10.0,1.25,10.0,1.25,10.0,cost 1.336e-03!=recomputed 3.625e-05
+google,gemini-3-flash-preview,MISMATCH,0.0001505,13,2,0.5,3.0,0.5,3.0,0.5,3.0,cost 1.505e-04!=recomputed 1.250e-05
+google,gemini-3-pro-image,MISMATCH,0.00457,13,2,10.0,30.0,10.0,30.0,10.0,30.0,cost 4.570e-03!=recomputed 1.900e-04
+google,gemini-3-pro-image-preview,MISMATCH,0.002174,13,2,2.0,12.0,2.0,12.0,2.0,12.0,cost 2.174e-03!=recomputed 5.000e-05
+google,gemini-3.1-flash-image,OK,0.00019,13,2,10.0,30.0,10.0,30.0,10.0,30.0,
+google,gemini-3.1-flash-image-preview,OK,1.2499999999999999e-05,13,2,0.5,3.0,0.5,3.0,0.5,3.0,
+google,gemini-3.1-flash-lite,OK,6.2499999999999995e-06,13,2,0.25,1.5,0.25,1.5,0.25,1.5,
+google,gemini-3.1-flash-lite-preview,OK,6.2499999999999995e-06,13,2,0.25,1.5,0.25,1.5,0.25,1.5,
+google,gemini-3.1-pro-preview,MISMATCH,0.0012980000000000001,13,2,2.0,12.0,2.0,12.0,2.0,12.0,cost 1.298e-03!=recomputed 5.000e-05
+google,gemini-3.1-pro-preview-customtools,MISMATCH,0.00107,13,2,2.0,12.0,2.0,12.0,2.0,12.0,cost 1.070e-03!=recomputed 5.000e-05
+google,gemini-3.5-flash,MISMATCH,0.0006765,13,2,1.5,9.0,1.5,9.0,1.5,9.0,cost 6.765e-04!=recomputed 3.750e-05
+google,gemini-flash-latest,MISMATCH,0.0009105,13,2,1.5,9.0,1.5,9.0,1.5,9.0,cost 9.105e-04!=recomputed 3.750e-05
+google,gemini-flash-lite-latest,OK,6.2499999999999995e-06,13,2,0.25,1.5,0.25,1.5,0.25,1.5,
+google,gemini-pro-latest,MISMATCH,0.001226,13,2,2.0,12.0,2.0,12.0,2.0,12.0,cost 1.226e-03!=recomputed 5.000e-05
+google,gemini-robotics-er-1.6-preview,MISMATCH,0.000368,13,2,1.0,5.0,1.0,5.0,1.0,5.0,cost 3.680e-04!=recomputed 2.300e-05
+google,nano-banana-pro-preview,MISMATCH,0.00442,13,2,10.0,30.0,10.0,30.0,10.0,30.0,cost 4.420e-03!=recomputed 1.900e-04
+groq,allam-2-7b,OK,2.9e-05,20,3,1.0,3.0,1.0,3.0,1.0,3.0,
+groq,groq/compound,OK,0.010464,9462,334,1.0,3.0,1.0,3.0,1.0,3.0,
+groq,groq/compound-mini,OK,0.000582,459,41,1.0,3.0,1.0,3.0,1.0,3.0,
+groq,llama-3.1-8b-instant,OK,2.6700000000000003e-06,47,4,0.05,0.08,0.05,0.08,0.05,0.08,
+groq,llama-3.3-70b-versatile,OK,3.0099999999999996e-05,47,3,0.59,0.79,0.59,0.79,0.59,0.79,
+groq,meta-llama/llama-4-scout-17b-16e-instruct,OK,3.7800000000000002e-06,22,4,0.11,0.34,0.11,0.34,0.11,0.34,
+groq,openai/gpt-oss-120b,MISMATCH,6.104999999999999e-05,83,46,0.15,0.6,0.15,0.6,0.15,0.6,cost 6.105e-05!=recomputed 4.005e-05
+groq,openai/gpt-oss-20b,MISMATCH,2.6924999999999997e-05,83,40,0.075,0.3,0.08,0.3,0.075,0.3,applied_in 0.075!=canon 0.08; local_in 0.075!=canon 0.08; cost 2.692e-05!=recomputed 1.823e-05
+groq,openai/gpt-oss-safeguard-20b,MISMATCH,2.6924999999999997e-05,83,40,0.075,0.3,0.08,0.3,0.075,0.3,applied_in 0.075!=canon 0.08; local_in 0.075!=canon 0.08; cost 2.692e-05!=recomputed 1.823e-05
+openai,gpt-3.5-turbo,OK,1.3999999999999998e-05,19,3,0.5,1.5,0.5,1.5,0.5,1.5,
+openai,gpt-3.5-turbo-0125,OK,1.3999999999999998e-05,19,3,0.5,1.5,0.5,1.5,0.5,1.5,
+openai,gpt-3.5-turbo-1106,OK,2.4999999999999998e-05,19,3,1.0,2.0,1.0,2.0,1.0,2.0,
+openai,gpt-3.5-turbo-16k,OK,6.9e-05,19,3,3.0,4.0,3.0,4.0,3.0,4.0,
+openai,gpt-4,OK,0.00075,19,3,30.0,60.0,30.0,60.0,30.0,60.0,
+openai,gpt-4-0613,OK,0.00075,19,3,30.0,60.0,30.0,60.0,30.0,60.0,
+openai,gpt-4-turbo,OK,0.00028000000000000003,19,3,10.0,30.0,10.0,30.0,10.0,30.0,
+openai,gpt-4-turbo-2024-04-09,OK,0.00028000000000000003,19,3,10.0,30.0,10.0,30.0,10.0,30.0,
+openai,gpt-4.1,OK,5.4e-05,19,2,2.0,8.0,2.0,8.0,2.0,8.0,
+openai,gpt-4.1-2025-04-14,OK,5.4e-05,19,2,2.0,8.0,2.0,8.0,2.0,8.0,
+openai,gpt-4.1-mini,OK,1.0800000000000002e-05,19,2,0.4,1.6,0.4,1.6,0.4,1.6,
+openai,gpt-4.1-mini-2025-04-14,OK,1.0800000000000002e-05,19,2,0.4,1.6,0.4,1.6,0.4,1.6,
+openai,gpt-4.1-nano,OK,2.7000000000000004e-06,19,2,0.1,0.4,0.1,0.4,0.1,0.4,
+openai,gpt-4.1-nano-2025-04-14,OK,2.7000000000000004e-06,19,2,0.1,0.4,0.1,0.4,0.1,0.4,
+openai,gpt-4o,OK,6.75e-05,19,2,2.5,10.0,2.5,10.0,2.5,10.0,
+openai,gpt-4o-2024-05-13,OK,0.000125,19,2,5.0,15.0,5.0,15.0,5.0,15.0,
+openai,gpt-4o-2024-08-06,OK,0.00010125,19,2,3.75,15.0,3.75,15.0,3.75,15.0,
+openai,gpt-4o-2024-11-20,OK,6.75e-05,19,2,2.5,10.0,2.5,10.0,2.5,10.0,
+openai,gpt-4o-mini,OK,4.6499999999999995e-06,19,3,0.15,0.6,0.15,0.6,0.15,0.6,
+openai,gpt-4o-mini-2024-07-18,OK,4.6499999999999995e-06,19,3,0.15,0.6,0.15,0.6,0.15,0.6,
+openai,gpt-5,OK,0.0001325,18,11,1.25,10.0,1.25,10.0,1.25,10.0,
+openai,gpt-5-chat-latest,OK,5.3750000000000005e-05,19,3,1.25,10.0,1.25,10.0,1.25,10.0,
+openai,gpt-5-mini,OK,2.65e-05,18,11,0.25,2.0,0.25,2.0,0.25,2.0,
+openai,gpt-5-nano,MISMATCH,3.0900000000000006e-05,18,11,0.05,0.4,0.05,0.4,0.05,0.4,cost 3.090e-05!=recomputed 5.300e-06
+openai,gpt-5.1,MISMATCH,0.0003115,18,11,1.75,14.0,1.75,14.0,1.75,14.0,cost 3.115e-04!=recomputed 1.855e-04
+openai,gpt-5.1-2025-11-13,OK,0.0001855,18,11,1.75,14.0,1.75,14.0,1.75,14.0,
+openai,gpt-5.2,OK,7.25e-05,18,5,1.25,10.0,1.25,10.0,1.25,10.0,
+openai,gpt-5.2-2025-12-11,OK,7.25e-05,18,5,1.25,10.0,1.25,10.0,1.25,10.0,
+openai,gpt-5.4,OK,0.00012000000000000002,18,5,2.5,15.0,2.5,15.0,2.5,15.0,
+openai,gpt-5.4-2026-03-05,OK,0.00012000000000000002,18,5,2.5,15.0,2.5,15.0,2.5,15.0,
+openai,gpt-5.4-mini,OK,3.6e-05,18,5,0.75,4.5,0.75,4.5,0.75,4.5,
+openai,gpt-5.4-mini-2026-03-17,OK,3.6e-05,18,5,0.75,4.5,0.75,4.5,0.75,4.5,
+openai,gpt-5.4-nano,OK,9.85e-06,18,5,0.2,1.25,0.2,1.25,0.2,1.25,
+openai,gpt-5.4-nano-2026-03-17,OK,9.85e-06,18,5,0.2,1.25,0.2,1.25,0.2,1.25,
+openai,gpt-5.5,MISMATCH,0.00072,18,11,5.0,30.0,5.0,30.0,5.0,30.0,cost 7.200e-04!=recomputed 4.200e-04
+openai,o1,OK,0.0012900000000000001,18,17,15.0,60.0,15.0,60.0,15.0,60.0,
+openai,o3,OK,0.000196,18,20,2.0,8.0,2.0,8.0,2.0,8.0,
+openai,o3-mini,MISMATCH,0.0003674,18,15,1.1,4.4,1.1,4.4,1.1,4.4,cost 3.674e-04!=recomputed 8.580e-05
+openai,o4-mini,MISMATCH,0.00038940000000000003,18,20,1.1,4.4,1.1,4.4,1.1,4.4,cost 3.894e-04!=recomputed 1.078e-04
+openai_v2,gpt-3.5-turbo,OK,1.5499999999999997e-05,19,4,0.5,1.5,0.5,1.5,0.5,1.5,
+openai_v2,gpt-3.5-turbo-0125,OK,1.5499999999999997e-05,19,4,0.5,1.5,0.5,1.5,0.5,1.5,
+openai_v2,gpt-3.5-turbo-1106,OK,2.7e-05,19,4,1.0,2.0,1.0,2.0,1.0,2.0,
+openai_v2,gpt-4,OK,0.00084,18,5,30.0,60.0,30.0,60.0,30.0,60.0,
+openai_v2,gpt-4-0613,OK,0.00084,18,5,30.0,60.0,30.0,60.0,30.0,60.0,
+openai_v2,gpt-4-turbo,OK,0.00031,19,4,10.0,30.0,10.0,30.0,10.0,30.0,
+openai_v2,gpt-4-turbo-2024-04-09,OK,0.00031,19,4,10.0,30.0,10.0,30.0,10.0,30.0,
+openai_v2,gpt-4.1,OK,6.199999999999999e-05,19,3,2.0,8.0,2.0,8.0,2.0,8.0,
+openai_v2,gpt-4.1-2025-04-14,OK,6.199999999999999e-05,19,3,2.0,8.0,2.0,8.0,2.0,8.0,
+openai_v2,gpt-4.1-mini,OK,1.2400000000000002e-05,19,3,0.4,1.6,0.4,1.6,0.4,1.6,
+openai_v2,gpt-4.1-mini-2025-04-14,OK,1.2400000000000002e-05,19,3,0.4,1.6,0.4,1.6,0.4,1.6,
+openai_v2,gpt-4.1-nano,OK,3.1000000000000004e-06,19,3,0.1,0.4,0.1,0.4,0.1,0.4,
+openai_v2,gpt-4.1-nano-2025-04-14,OK,3.1000000000000004e-06,19,3,0.1,0.4,0.1,0.4,0.1,0.4,
+openai_v2,gpt-4o,OK,7.750000000000001e-05,19,3,2.5,10.0,2.5,10.0,2.5,10.0,
+openai_v2,gpt-4o-2024-05-13,OK,0.00014000000000000001,19,3,5.0,15.0,5.0,15.0,5.0,15.0,
+openai_v2,gpt-4o-2024-08-06,OK,0.00011625,19,3,3.75,15.0,3.75,15.0,3.75,15.0,
+openai_v2,gpt-4o-2024-11-20,OK,7.750000000000001e-05,19,3,2.5,10.0,2.5,10.0,2.5,10.0,
+openai_v2,gpt-4o-mini,OK,5.25e-06,19,4,0.15,0.6,0.15,0.6,0.15,0.6,
+openai_v2,gpt-4o-mini-2024-07-18,OK,5.25e-06,19,4,0.15,0.6,0.15,0.6,0.15,0.6,
+openai_v2,gpt-5,OK,0.0005825,18,56,1.25,10.0,1.25,10.0,1.25,10.0,
+openai_v2,gpt-5-2025-08-07,OK,0.0006925,18,67,1.25,10.0,1.25,10.0,1.25,10.0,
+openai_v2,gpt-5-chat-latest,OK,6.375e-05,19,4,1.25,10.0,1.25,10.0,1.25,10.0,
+openai_v2,gpt-5-codex,OK,0.00019250000000000002,18,17,1.25,10.0,1.25,10.0,1.25,10.0,
+openai_v2,gpt-5-mini,OK,8.85e-05,18,42,0.25,2.0,0.25,2.0,0.25,2.0,
+openai_v2,gpt-5-mini-2025-08-07,MISMATCH,0.0001545,18,11,0.25,2.0,0.25,2.0,0.25,2.0,cost 1.545e-04!=recomputed 2.650e-05
+openai_v2,gpt-5-nano,MISMATCH,5.050000000000001e-05,18,60,0.05,0.4,0.05,0.4,0.05,0.4,cost 5.050e-05!=recomputed 2.490e-05
+openai_v2,gpt-5-nano-2025-08-07,MISMATCH,6.53e-05,18,33,0.05,0.4,0.05,0.4,0.05,0.4,cost 6.530e-05!=recomputed 1.410e-05
+openai_v2,gpt-5-pro,MISMATCH,0.01443,18,54,15.0,120.0,15.0,120.0,15.0,120.0,cost 1.443e-02!=recomputed 6.750e-03
+openai_v2,gpt-5-pro-2025-10-06,MISMATCH,0.01395,18,50,15.0,120.0,15.0,120.0,15.0,120.0,cost 1.395e-02!=recomputed 6.270e-03
+openai_v2,gpt-5.1,OK,0.0001995,18,12,1.75,14.0,1.75,14.0,1.75,14.0,
+openai_v2,gpt-5.1-2025-11-13,OK,0.0001995,18,12,1.75,14.0,1.75,14.0,1.75,14.0,
+openai_v2,gpt-5.1-chat-latest,OK,0.00021250000000000002,18,19,1.25,10.0,1.25,10.0,1.25,10.0,
+openai_v2,gpt-5.1-codex,OK,0.0002425,18,22,1.25,10.0,1.25,10.0,1.25,10.0,
+openai_v2,gpt-5.1-codex-mini,OK,4.05e-05,18,18,0.25,2.0,0.25,2.0,0.25,2.0,
+openai_v2,gpt-5.2,OK,8.250000000000001e-05,18,6,1.25,10.0,1.25,10.0,1.25,10.0,
+openai_v2,gpt-5.2-2025-12-11,OK,8.250000000000001e-05,18,6,1.25,10.0,1.25,10.0,1.25,10.0,
+openai_v2,gpt-5.3-codex,OK,0.00011549999999999999,18,6,1.75,14.0,1.75,14.0,1.75,14.0,
+openai_v2,gpt-5.4,OK,0.000135,18,6,2.5,15.0,2.5,15.0,2.5,15.0,
+openai_v2,gpt-5.4-2026-03-05,OK,0.000135,18,6,2.5,15.0,2.5,15.0,2.5,15.0,
+openai_v2,gpt-5.4-mini,OK,4.0499999999999995e-05,18,6,0.75,4.5,0.75,4.5,0.75,4.5,
+openai_v2,gpt-5.4-mini-2026-03-17,OK,4.0499999999999995e-05,18,6,0.75,4.5,0.75,4.5,0.75,4.5,
+openai_v2,gpt-5.4-nano,OK,1.1100000000000002e-05,18,6,0.2,1.25,0.2,1.25,0.2,1.25,
+openai_v2,gpt-5.4-nano-2026-03-17,OK,1.1100000000000002e-05,18,6,0.2,1.25,0.2,1.25,0.2,1.25,
+openai_v2,o1,MISMATCH,0.01659,18,144,15.0,60.0,15.0,60.0,15.0,60.0,cost 1.659e-02!=recomputed 8.910e-03
+openai_v2,o1-2024-12-17,MISMATCH,0.00885,18,79,15.0,60.0,15.0,60.0,15.0,60.0,cost 8.850e-03!=recomputed 5.010e-03
+openai_v2,o1-pro,MISMATCH,0.12149999999999998,18,134,150.0,600.0,150.0,600.0,150.0,600.0,cost 1.215e-01!=recomputed 8.310e-02
+openai_v2,o1-pro-2025-03-19,MISMATCH,0.11189999999999999,18,118,150.0,600.0,150.0,600.0,150.0,600.0,cost 1.119e-01!=recomputed 7.350e-02
+openai_v2,o3,OK,0.0004919999999999999,18,57,2.0,8.0,2.0,8.0,2.0,8.0,
+openai_v2,o3-2025-04-16,OK,0.0019000000000000002,18,43,10.0,40.0,10.0,40.0,10.0,40.0,
+openai_v2,o3-mini,MISMATCH,0.0013882,18,183,1.1,4.4,1.1,4.4,1.1,4.4,cost 1.388e-03!=recomputed 8.250e-04
+openai_v2,o3-mini-2025-01-31,OK,0.0003454,18,74,1.1,4.4,1.1,4.4,1.1,4.4,
+openai_v2,o3-pro,OK,0.0033200000000000005,18,37,20.0,80.0,20.0,80.0,20.0,80.0,
+openai_v2,o3-pro-2025-06-10,OK,0.00396,18,45,20.0,80.0,20.0,80.0,20.0,80.0,
+openai_v2,o4-mini,OK,0.0003058,18,65,1.1,4.4,1.1,4.4,1.1,4.4,
+openai_v2,o4-mini-2025-04-16,MISMATCH,0.0003586,18,13,1.1,4.4,1.1,4.4,1.1,4.4,cost 3.586e-04!=recomputed 7.700e-05
+perplexity,sonar,OK,1.4999999999999999e-05,13,2,1.0,1.0,1.0,1.0,1.0,1.0,
+perplexity,sonar-deep-research,OK,2.6e-05,13,0,2.0,8.0,2.0,8.0,2.0,8.0,
+perplexity,sonar-pro,OK,6.9e-05,13,2,3.0,15.0,3.0,15.0,3.0,15.0,
+perplexity,sonar-reasoning-pro,OK,4.2e-05,13,2,2.0,8.0,2.0,8.0,2.0,8.0,
+together,LiquidAI/LFM2-24B-A2B,OK,1.11e-06,21,4,0.03,0.12,0.03,0.12,0.03,0.12,
+together,arize-ai/qwen-2-1.5b-instruct,OK,0.000175,31,4,5.0,5.0,5.0,5.0,5.0,5.0,
+together,deepcogito/cogito-v2-1-671b,OK,5.3750000000000005e-05,40,3,1.25,1.25,1.25,1.25,1.25,1.25,
+together,essentialai/rnj-1-instruct,OK,7.65e-06,48,3,0.15,0.15,0.15,0.15,0.15,0.15,
+xai,grok-4.20-0309-non-reasoning,OK,0.00017250000000000002,134,2,1.25,2.5,1.25,2.5,1.25,2.5,
+xai,grok-4.20-0309-reasoning,MISMATCH,0.000755,136,30,1.25,2.5,1.25,2.5,1.25,2.5,cost 7.550e-04!=recomputed 2.450e-04
+xai,grok-4.3,MISMATCH,0.002785,142,2,5.0,25.0,5.0,25.0,5.0,25.0,cost 2.785e-03!=recomputed 7.600e-04
+xai,grok-build-0.1,MISMATCH,0.004005,136,2,5.0,25.0,5.0,25.0,5.0,25.0,cost 4.005e-03!=recomputed 7.300e-04

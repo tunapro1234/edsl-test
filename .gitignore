@@ -1,0 +1,21 @@
+# secrets — NEVER commit
+.env
+*.key
+
+# upstream EDSL clone (separate repo, huge)
+git-repo/
+
+# python env
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# EDSL local caches
+*.sqlite
+*.db
+.edsl_cache/
+edsl_cache/
+
+# os
+.DS_Store
