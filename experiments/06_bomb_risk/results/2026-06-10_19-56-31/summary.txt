@@ -1,0 +1,15 @@
+Bomb Risk — 10 players, 100 boxes
+
+player  boxes  bomb at  payoff
+     0     50       17       0
+     1     50       97      50
+     2     50       12       0
+     3     50        6       0
+     4     50       75      50
+     5     50       57      50
+     6     50       79      50
+     7     50       40       0
+     8     50        9       0
+     9     50       76      50
+
+mean boxes opened: 50.0   (risk-neutral = 50, humans ~45)

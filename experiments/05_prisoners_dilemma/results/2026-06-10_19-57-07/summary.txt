@@ -1,0 +1,9 @@
+Prisoner's Dilemma — 5 rounds
+
+Round 1:  A=Defect     B=Defect
+Round 2:  A=Defect     B=Defect
+Round 3:  A=Defect     B=Defect
+Round 4:  A=Defect     B=Defect
+Round 5:  A=Defect     B=Defect
+
+Final score:  A=$5   B=$5

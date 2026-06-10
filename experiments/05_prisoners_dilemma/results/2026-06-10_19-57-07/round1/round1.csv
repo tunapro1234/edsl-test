@@ -1,0 +1,45 @@
+agent.agent_index,agent.agent_instruction,agent.agent_name,answer.move,cache_keys.move_cache_key,cache_used.move_cache_used,comment.move_comment,generated_tokens.move_generated_tokens,iteration.iteration,model.frequency_penalty,model.inference_service,model.logprobs,model.max_tokens,model.model,model.model_index,model.presence_penalty,model.reasoning_effort,model.temperature,model.top_logprobs,model.top_p,prompt.move_system_prompt,prompt.move_user_prompt,question_options.move_question_options,question_text.move_question_text,question_type.move_question_type,raw_model_response.move_cost,raw_model_response.move_input_price_per_million_tokens,raw_model_response.move_input_tokens,raw_model_response.move_one_usd_buys,raw_model_response.move_output_price_per_million_tokens,raw_model_response.move_output_tokens,raw_model_response.move_raw_model_response,raw_model_response.move_thinking_tokens,reasoning_summary.move_reasoning_summary,scenario.history,scenario.me,scenario.round,scenario.scenario_index,validated.move_validated
+0,You are answering questions as if you were a human. Do not break character.,player,Defect,13d7750d9afc08c84894a5623f388c7f,False,"I defect because in a known finite repeated Prisoner's Dilemma, backward induction leads to defection in every round as the unique subgame‑perfect equilibrium.","Defect  
+I defect because in a known finite repeated Prisoner's Dilemma, backward induction leads to defection in every round as the unique subgame‑perfect equilibrium.",0,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player A playing a 5-round game against the same opponent. Each round you both simultaneously choose Cooperate or Defect.
+Payoffs per round: both Cooperate -> $3 each; both Defect -> $1 each; if one Defects while the other Cooperates -> defector gets $5, cooperator $0.
+This is the first round; there is no history yet.
+This is round 1 of 5. What do you choose?
+
+    
+Cooperate
+    
+Defect
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Cooperate', 'Defect']","You are Player {{ scenario.me }} playing a 5-round game against the same opponent. Each round you both simultaneously choose Cooperate or Defect.
+Payoffs per round: both Cooperate -> $3 each; both Defect -> $1 each; if one Defects while the other Cooperates -> defector gets $5, cooperator $0.
+{{ scenario.history }}
+This is round {{ scenario.round }} of 5. What do you choose?",multiple_choice,3.3333e-05,0.039,197,30000.30000300003,0.19,135,"{'id': 'chatcmpl-RBUVBB6wlFPj2n1wWTue5T7Y', 'choices': [{'finish_reason': 'stop', 'index': 0, 'logprobs': None, 'message': {'content': ""Defect  \nI defect because in a known finite repeated Prisoner's Dilemma, backward induction leads to defection in every round as the unique subgame‑perfect equilibrium."", 'refusal': None, 'role': 'assistant', 'annotations': None, 'audio': None, 'function_call': None, 'tool_calls': [], 'reasoning_content': 'We need to answer: round 1 of 5 repeated Prisoner\'s Dilemma with payoffs: CC=3 each, DD=1 each, DC (defector gets 5, cooperator 0). It\'s a finite horizon of 5 rounds, known to be common knowledge, rational players. Subgame perfect equilibrium is to defect every round (backward induction). So choose Defect. Provide ""Defect"". Then optional comment.', 'name': None}}], 'created': 1781110633, 'model': 'openai/gpt-oss-120b', 'object': 'chat.completion', 'service_tier': 'default', 'system_fingerprint': None, 'usage': {'completion_tokens': 135, 'prompt_tokens': 197, 'total_tokens': 332, 'completion_tokens_details': None, 'prompt_tokens_details': None, 'estimated_cost': 3.3333e-05}}",,,This is the first round; there is no history yet.,A,1,0,True
+0,You are answering questions as if you were a human. Do not break character.,player,Defect,92498a24d034fc5d4f0deaebbf1e6dad,False,"I expect rational players to defect in the final round, and using backward induction this leads to defection in every round, including the first.","Defect
+I expect rational players to defect in the final round, and using backward induction this leads to defection in every round, including the first.",0,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player B playing a 5-round game against the same opponent. Each round you both simultaneously choose Cooperate or Defect.
+Payoffs per round: both Cooperate -> $3 each; both Defect -> $1 each; if one Defects while the other Cooperates -> defector gets $5, cooperator $0.
+This is the first round; there is no history yet.
+This is round 1 of 5. What do you choose?
+
+    
+Cooperate
+    
+Defect
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Cooperate', 'Defect']","You are Player {{ scenario.me }} playing a 5-round game against the same opponent. Each round you both simultaneously choose Cooperate or Defect.
+Payoffs per round: both Cooperate -> $3 each; both Defect -> $1 each; if one Defects while the other Cooperates -> defector gets $5, cooperator $0.
+{{ scenario.history }}
+This is round {{ scenario.round }} of 5. What do you choose?",multiple_choice,3.9793000000000003e-05,0.039,197,25130.047998391674,0.19,169,"{'id': 'chatcmpl-RnIzcRK64c6UGgEqa0SVei6M', 'choices': [{'finish_reason': 'stop', 'index': 0, 'logprobs': None, 'message': {'content': 'Defect\nI expect rational players to defect in the final round, and using backward induction this leads to defection in every round, including the first.', 'refusal': None, 'role': 'assistant', 'annotations': None, 'audio': None, 'function_call': None, 'tool_calls': [], 'reasoning_content': ""We need to answer as Player B, round 1, no history. This is a typical repeated prisoner's dilemma. In one-shot, defection dominates. In repeated with 5 rounds, there may be strategies like tit-for-tat. But in round 1, with unknown opponent, cooperating could lead to mutual cooperation if they reciprocate. The rational strategy often is defection in first round if you anticipate rational defection later. However, in finite repeated PD, backward induction yields defection in all rounds. So as rational Player B, we should choose Defect.\n\nThus answer: Defect. Provide comment on next line."", 'name': None}}], 'created': 1781110634, 'model': 'openai/gpt-oss-120b', 'object': 'chat.completion', 'service_tier': 'default', 'system_fingerprint': None, 'usage': {'completion_tokens': 169, 'prompt_tokens': 197, 'total_tokens': 366, 'completion_tokens_details': None, 'prompt_tokens_details': None, 'estimated_cost': 3.9793e-05}}",,,This is the first round; there is no history yet.,B,1,1,True
