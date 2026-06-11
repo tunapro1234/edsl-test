@@ -1,0 +1,3 @@
+model,persona_method,agent_id,game,role,condition,wording_id,run,decision,belief,valid,raw_len,timestamp,cost_usd
+gpt-oss-120b,baseline,baseline-000,dictator,dictator,base,0,0,0,,1,133,2026-06-11T21:57:20,3.9e-05
+gpt-oss-120b,baseline,baseline-001,dictator,dictator,base,0,0,0,,1,138,2026-06-11T21:57:20,4.8e-05
