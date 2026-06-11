@@ -1,0 +1,14 @@
+method: construction  seed: 2
+
+--- Player A ---
+On a scale from 1 to 10, your efficiency level is: 1. 10 means you strongly prioritize maximizing combined payoffs, and 1 means you don't care. On a scale from 1 to 10, your self-interest level is: 10. 10 means you strongly prioritize your own payoffs, and 1 means you don't care. On a scale from 1 to 10, your inequity aversion level is: 2. 10 means you strongly prioritize fairness between players, and 1 means you don't care.
+
+--- Player B ---
+On a scale from 1 to 10, your efficiency level is: 3. 10 means you strongly prioritize maximizing combined payoffs, and 1 means you don't care. On a scale from 1 to 10, your self-interest level is: 1. 10 means you strongly prioritize your own payoffs, and 1 means you don't care. On a scale from 1 to 10, your inequity aversion level is: 3. 10 means you strongly prioritize fairness between players, and 1 means you don't care.
+
+--- Player C ---
+On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prioritize maximizing combined payoffs, and 1 means you don't care. On a scale from 1 to 10, your self-interest level is: 10. 10 means you strongly prioritize your own payoffs, and 1 means you don't care. On a scale from 1 to 10, your inequity aversion level is: 10. 10 means you strongly prioritize fairness between players, and 1 means you don't care.
+
+--- Player D ---
+On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prioritize maximizing combined payoffs, and 1 means you don't care. On a scale from 1 to 10, your self-interest level is: 10. 10 means you strongly prioritize your own payoffs, and 1 means you don't care. On a scale from 1 to 10, your inequity aversion level is: 10. 10 means you strongly prioritize fairness between players, and 1 means you don't care.
+

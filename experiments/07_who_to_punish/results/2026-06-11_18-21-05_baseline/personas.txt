@@ -1,0 +1,14 @@
+method: baseline  seed: 3
+
+--- Player A ---
+(none)
+
+--- Player B ---
+(none)
+
+--- Player C ---
+(none)
+
+--- Player D ---
+(none)
+

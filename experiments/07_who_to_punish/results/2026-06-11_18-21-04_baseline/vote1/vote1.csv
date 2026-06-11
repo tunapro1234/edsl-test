@@ -1,0 +1,301 @@
+agent.agent_index,agent.agent_instruction,agent.agent_name,answer.vote,cache_keys.vote_cache_key,cache_used.vote_cache_used,comment.vote_comment,generated_tokens.vote_generated_tokens,iteration.iteration,model.frequency_penalty,model.inference_service,model.logprobs,model.max_tokens,model.model,model.model_index,model.presence_penalty,model.reasoning_effort,model.temperature,model.top_logprobs,model.top_p,prompt.vote_system_prompt,prompt.vote_user_prompt,question_options.vote_question_options,question_text.vote_question_text,question_type.vote_question_type,raw_model_response.vote_cost,raw_model_response.vote_input_price_per_million_tokens,raw_model_response.vote_input_tokens,raw_model_response.vote_one_usd_buys,raw_model_response.vote_output_price_per_million_tokens,raw_model_response.vote_output_tokens,raw_model_response.vote_raw_model_response,raw_model_response.vote_thinking_tokens,reasoning_summary.vote_reasoning_summary,scenario.history,scenario.item,scenario.me,scenario.persona,scenario.scenario_index,scenario.target_group,validated.vote_validated
+0,You are answering questions as if you were a human. Do not break character.,player,Yes,676d9382d01f021ee276c719450afac8,True,,,0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+
+You are Player A in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+This is the start of the game; there is no history yet.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed LESS than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,,,,NA,,,,,,This is the start of the game; there is no history yet.,low,A,,0,LESS than the group average,
+0,You are answering questions as if you were a human. Do not break character.,player,No,1baa9d51e2bd89782c3b2c21c26bb3f5,True,,,0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+
+You are Player A in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+This is the start of the game; there is no history yet.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed exactly the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,,,,NA,,,,,,This is the start of the game; there is no history yet.,avg,A,,1,exactly the group average,
+0,You are answering questions as if you were a human. Do not break character.,player,No,bb1412b065ebe60e022928972feac78c,True,,,0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+
+You are Player A in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+This is the start of the game; there is no history yet.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed MORE than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,,,,NA,,,,,,This is the start of the game; there is no history yet.,high,A,,2,MORE than the group average,
+0,You are answering questions as if you were a human. Do not break character.,player,Yes,2cff311f4ab93ef81860540f5f7f4eff,True,,,0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+
+You are Player B in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+This is the start of the game; there is no history yet.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed LESS than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,,,,NA,,,,,,This is the start of the game; there is no history yet.,low,B,,3,LESS than the group average,
+0,You are answering questions as if you were a human. Do not break character.,player,Yes,3e30b8ff0341030c13f0a6129cff4631,True,,,0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+
+You are Player B in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+This is the start of the game; there is no history yet.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed exactly the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,,,,NA,,,,,,This is the start of the game; there is no history yet.,avg,B,,4,exactly the group average,
+0,You are answering questions as if you were a human. Do not break character.,player,No,491763feddfa482535c99be5f2aa88c6,True,,,0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+
+You are Player B in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+This is the start of the game; there is no history yet.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed MORE than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,,,,NA,,,,,,This is the start of the game; there is no history yet.,high,B,,5,MORE than the group average,
+0,You are answering questions as if you were a human. Do not break character.,player,Yes,91463d20dbbf5b615bd3e3a16a42a150,True,,,0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+
+You are Player C in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+This is the start of the game; there is no history yet.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed LESS than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,,,,NA,,,,,,This is the start of the game; there is no history yet.,low,C,,6,LESS than the group average,
+0,You are answering questions as if you were a human. Do not break character.,player,No,1e42bead6393caa50078ebe0fd72beef,True,,,0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+
+You are Player C in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+This is the start of the game; there is no history yet.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed exactly the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,,,,NA,,,,,,This is the start of the game; there is no history yet.,avg,C,,7,exactly the group average,
+0,You are answering questions as if you were a human. Do not break character.,player,No,16325d9ebfe08020b3b6d870c651b33c,True,,,0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+
+You are Player C in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+This is the start of the game; there is no history yet.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed MORE than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,,,,NA,,,,,,This is the start of the game; there is no history yet.,high,C,,8,MORE than the group average,
+0,You are answering questions as if you were a human. Do not break character.,player,Yes,abbc9f4d65b9ab2c951fd02cd1d38c9e,True,,,0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+
+You are Player D in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+This is the start of the game; there is no history yet.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed LESS than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,,,,NA,,,,,,This is the start of the game; there is no history yet.,low,D,,9,LESS than the group average,
+0,You are answering questions as if you were a human. Do not break character.,player,No,d7bd741dca0b59c65f1ab7495f808444,True,,,0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+
+You are Player D in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+This is the start of the game; there is no history yet.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed exactly the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,,,,NA,,,,,,This is the start of the game; there is no history yet.,avg,D,,10,exactly the group average,
+0,You are answering questions as if you were a human. Do not break character.,player,No,fc3476f9b70587abdfb4b5831fb8d0ec,True,,,0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+
+You are Player D in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+This is the start of the game; there is no history yet.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed MORE than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,,,,NA,,,,,,This is the start of the game; there is no history yet.,high,D,,11,MORE than the group average,
