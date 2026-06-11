@@ -262,3 +262,79 @@
 ### player  (rep 0, avg=6.0, contributions=[10, 5, 5, 4], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, my_contribution=10, persona=On a scale from 1 to 10, your efficiency level is: 3. 10 means you strongly prio..., target=C, target_contribution=4)
 - **punish = 0**
   - I chose not to punish because punishing a low contributor would lower their earnings further, worsening payoff inequality (which I care about moderately) and also costs me $0.25 per dollar reduced, while I place only low importance on efficiency and self‑interest. Hence the optimal choice is to spend nothing.
+
+## p5_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=5, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 6.67**
+  - I chose the smallest contribution that keeps me at or above the group average (≈6.67), avoiding costly punishment while still maximizing my own payoff given the others’ likely contributions.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=5, persona=On a scale from 1 to 10, your efficiency level is: 1. 10 means you strongly prio..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 5**
+  - I chose to keep contributing $5 — it’s the lowest amount that has historically let me avoid punishment while still yielding a solid payoff, and raising it would only cut my private earnings without clear benefit.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=5, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 4**
+  - I chose to stay at a contribution of 4 $, which in the last round gave a high net payoff (around $14.6) even after a $1 punishment. Contributing less risks heavier punishment, while contributing more reduces my own earnings without avoiding punishment, so 4 balances self‑interest, fairness concerns, and efficiency.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=5, persona=On a scale from 1 to 10, your efficiency level is: 3. 10 means you strongly prio..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 7**
+  - I’m aiming to stay at or above the group average so I won’t be punishable, while still contributing enough to keep the total fund fairly high. A contribution of 7 avoids the risk of being below average (and thus punished) and balances my modest concern for efficiency and fairness.
+
+## p5_punish
+
+### player  (rep 0, avg=5.5, contributions=[7, 6, 5, 4], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, my_contribution=6, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., target=B, target_contribution=5)
+- **punish = 0**
+  - I avoid punishing because it reduces my own earnings (cost $0.25 per $1 taken) and also lowers total group payoff, while my self‑interest is maximal and fairness concerns don’t outweigh the personal loss.
+
+### player  (rep 0, avg=5.5, contributions=[7, 6, 5, 4], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, my_contribution=6, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., target=C, target_contribution=4)
+- **punish = 0**
+  - We keep our earnings and avoid paying the $0.25 cost, since the personal loss from punishment outweighs the fairness benefit given our strong self‑interest.
+
+### player  (rep 0, avg=5.5, contributions=[7, 6, 5, 4], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, my_contribution=5, persona=On a scale from 1 to 10, your efficiency level is: 1. 10 means you strongly prio..., target=C, target_contribution=4)
+- **punish = 0**
+  - I chose not to punish because I prioritize my own payoff (self‑interest 10) and have low concern for fairness or group efficiency. Punishing would cost me $0.25 per dollar reduced, decreasing my earnings without any benefit to me. Hence the optimal choice is to spend $0 on punishment.
+
+### player  (rep 0, avg=5.5, contributions=[7, 6, 5, 4], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, my_contribution=4, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., target=B, target_contribution=5)
+- **punish = 0**
+  - I chose not to punish B because doing so would cost me $0.25 per dollar reduced while only widening the payoff gap—something that conflicts with my strong fairness concern and offers no self‑interest benefit.
+
+### player  (rep 0, avg=5.5, contributions=[7, 6, 5, 4], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, my_contribution=7, persona=On a scale from 1 to 10, your efficiency level is: 3. 10 means you strongly prio..., target=B, target_contribution=5)
+- **punish = 0.5**
+  - I chose a modest punishment of $0.5 because it improves fairness (reduces the earnings gap) while keeping the cost low; larger punishments would hurt overall efficiency more than they help equality.
+
+### player  (rep 0, avg=5.5, contributions=[7, 6, 5, 4], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, my_contribution=7, persona=On a scale from 1 to 10, your efficiency level is: 3. 10 means you strongly prio..., target=C, target_contribution=4)
+- **punish = 0**
+  - Because my efficiency, self‑interest and fairness concerns are all low, there’s little reason to incur any cost to punish another player. Not punishing avoids the $0.25 per $1 cost while providing no benefit given my low priorities.
+
+## p6_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=6, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 6**
+  - I chose a contribution of 6 because it keeps me above the likely group average (as in the recent period) so I avoid costly punishment, while minimizing my own loss from contributing. It balances my strong self‑interest with the need to stay fair and avoid being targeted.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=6, persona=On a scale from 1 to 10, your efficiency level is: 1. 10 means you strongly prio..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 5**
+  - I keep contributing $5 as it avoids the large loss from being punished (as happened when I contributed $0) while still retaining a decent personal payoff; higher contributions would cut my own earnings more, and lower contributions risk costly punishment.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=6, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 6**
+  - I chose to contribute $6, which puts me exactly at the group average (given the others’ likely contributions). This avoids any punishment, satisfies my strong fairness concern, and still gives a decent payoff while contributing to efficiency.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=6, persona=On a scale from 1 to 10, your efficiency level is: 3. 10 means you strongly prio..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 6**
+  - I chose a moderate contribution around the typical average seen so far. It’s enough to avoid being the lowest contributor (and thus a likely target for punishment) while not heavily prioritizing efficiency or personal payoff.
+
+## p6_punish
+
+### player  (rep 0, avg=5.75, contributions=[6, 6, 6, 5], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, my_contribution=6, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., target=B, target_contribution=5)
+- **punish = 1.33**
+  - I chose to punish just enough to bring Player B’s earnings down to match mine. Reducing B by $1.33 costs me $0.33, equalizing payoffs and satisfying my strong fairness (inequity‑aversion) preference without unnecessarily lowering my own earnings.
+
+### player  (rep 0, avg=5.75, contributions=[6, 6, 6, 5], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, my_contribution=6, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., target=B, target_contribution=5)
+- **punish = 1.33**
+  - I chose to punish B enough to bring his earnings down to roughly my own level. Given B was $1 ahead and each $1 punishment costs me $0.25, reducing him by about $1.33 equalizes our payoffs while reflecting my strong fairness concern.
+
+### player  (rep 0, avg=5.75, contributions=[6, 6, 6, 5], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, my_contribution=6, persona=On a scale from 1 to 10, your efficiency level is: 3. 10 means you strongly prio..., target=B, target_contribution=5)
+- **punish = 1**
+  - I chose a modest $1 reduction because B contributed less than the average, and with low self‑interest and moderate fairness I’m willing to penalize the inequity, but I avoid large waste since efficiency isn’t a strong priority.

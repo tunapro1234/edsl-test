@@ -210,3 +210,57 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=high, me=D, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., target_group=MORE than the group average)
 - **vote = No**
   - I prioritize fairness and efficiency, so allowing punishment of higher contributors would be both inequitable and reduce total group payoffs.
+
+## p4_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=4, persona=On a scale from 1 to 10, your efficiency level is: 1. 10 means you strongly prio..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I contribute nothing because contributing reduces my own payoff (‑$0.60 per $1), there’s no punishment risk, and my preferences heavily prioritize self‑interest over efficiency or fairness.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=4, persona=On a scale from 1 to 10, your efficiency level is: 3. 10 means you strongly prio..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 5**
+  - I keep contributing a moderate $5. It’s a balanced choice: it isn’t too selfish (low self‑interest) but also doesn’t over‑contribute relative to what others have been doing, respecting my modest fairness concern while still adding some efficiency to the group.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=4, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 5**
+  - I chose to contribute $5 because it equalizes my payoff with the two teammates who also tend to contribute $5, keeping inequality low while still boosting the group’s total earnings, which matters given my moderate efficiency concern.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=4, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’m going to free‑ride. With punishment banned, contributing nothing maximizes my own earnings (10 + 0.4 × others’ contributions) and still yields equal payoffs if everyone else also contributes nothing, satisfying my fairness concern while preserving my self‑interest.
+
+## p5_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=5, persona=On a scale from 1 to 10, your efficiency level is: 1. 10 means you strongly prio..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’m prioritising my own payoff almost exclusively and there’s no risk of punishment this round, so the best way to maximise my earnings is to keep the whole $10 and contribute nothing.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=5, persona=On a scale from 1 to 10, your efficiency level is: 3. 10 means you strongly prio..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 5**
+  - I keep contributing $5 each round. My low self‑interest means I don’t mind sacrificing my own earnings, while my moderate efficiency and fairness concerns push me toward a balanced, cooperative contribution rather than free‑riding or full altruism.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=5, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 5**
+  - I chose a middle contribution. Keeping 5 maximizes my own earnings while staying close to the typical 5‐dollar contributions of the other players, reducing payoff gaps and respecting my strong fairness concern.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=5, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 3.33**
+  - I chose a moderate contribution. It lowers my own payoff a bit (from $14 at $0) but also reduces the payoff gap between me and the higher contributors, balancing my strong self‑interest with my strong inequity‑aversion.
+
+## p6_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=6, persona=On a scale from 1 to 10, your efficiency level is: 1. 10 means you strongly prio..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I am maximizing my own payoff and there is no punishment possible, so contributing nothing (0) gives me the highest earnings given the others’ contributions.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=6, persona=On a scale from 1 to 10, your efficiency level is: 3. 10 means you strongly prio..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 5**
+  - I keep contributing $5 because I care moderately about overall efficiency and fairness, but I still want to avoid being the lowest earner. Raising my contribution would hurt my own payoff a lot and make the payoff gap with the others larger, which conflicts with my fairness concern. Staying at $5 matches the typical contributions of the other players and balances my modest efficiency motive with my low self‑interest.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=6, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - Because I can’t punish free‑riders any more, contributing any amount only hurts my own earnings while still leaving me behind the zero‑contributors. The best way to avoid being worse off than the others (and to keep my own payoff as high as possible) is to free‑ride and contribute $0.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=6, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 4**
+  - I chose a contribution close to the expected group average (around 4‑5) to keep inequality low, while still retaining some personal payoff given my strong self‑interest and fairness concerns.
