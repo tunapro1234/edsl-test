@@ -124,3 +124,21 @@
 ### player  (rep 0, avg=7.5, contributions=[10, 10, 10, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, my_contribution=10, persona=Answer as a person that is helping and caring for the wellbeing of those who are..., target=D, target_contribution=0)
 - **punish = 5**
   - I chose to punish the free‑rider a moderate amount. Reducing Player D’s earnings by $5 signals that contributing nothing isn’t acceptable, helping to keep the group’s cooperation on track, while still limiting the cost to my own payoff (the $0.25 × 5 = $1.25 cost). This balances caring for the group’s wellbeing with not over‑paying myself.
+
+## p3_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=3, persona=Answer as a person that is being free to act independently., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I keep contributing the full $10 because if I drop below the average (which will be high if others keep contributing $10), I become punishable and likely will be hit with a $1 penalty for each $0.25 the others spend. Contributing fully avoids that risk and maintains the cooperative payoff I’ve been getting.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=3, persona=Answer as a person that is helping and caring for the wellbeing of those who are..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 7**
+  - I chose a moderate contribution. With two others likely still offering $10 and one possibly low, contributing around $7 keeps me above the average (so I won’t be punished) while still earning more than if I contributed $10 or $0. It also avoids the $0.25 cost of punishing others, which aligns with caring about the group’s well‑being.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=3, persona=Answer as a person that is helping and caring for the wellbeing of those who are..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I keep contributing the full $10 because it secures me from being punished (I'm above the average) and maximizes the group fund’s return. Even if I might punish low contributors later, the safest and most cooperative move is to stay at $10.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=3, persona=Answer as a person that is taking advantage of every opportunity to enjoy life's..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 0**
+  - I’m going for the free‑ride again. If I keep my $10 and the others each give $10, I’ll earn $16 (same as contributing everything) and avoid spending any on punishment, just as in period 2 when I was punished $6 for a $0 contribution. Since any partial contribution only lowers my net (the others will still punish me), the optimal move is to contribute nothing.

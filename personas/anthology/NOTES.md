@@ -56,3 +56,11 @@ Uniform draws would simulate a college sample, not the public.
 on all five variables and append matched demographics in the paper's Bio
 format — that is the full-fidelity Anthology (NA, greedy), its best
 configuration (Table 1: WD 0.227 vs 0.254 for demographic templates).
+
+## Who-to-punish v1 run (seed 1, clean) — 2026-06-11_15-37-18
+- BOTH votes banned ALL punishment — narrative-backstory people are too prosocial to
+  legalize sanctions (paper 14's positive-sentiment bias, live).
+- Contributions: the classic NO-punishment VCM decay, start high → unravel:
+  means 9.25 / 9.25 / 7.5 / 5.0 / 5.0 / 2.5 as defectors (B p3, C p4, D p6) go
+  unpunished. The most human-like *no-sanctions* trajectory of any method; the
+  institutional choice itself is the anti-human part (humans adopt punish-low).
