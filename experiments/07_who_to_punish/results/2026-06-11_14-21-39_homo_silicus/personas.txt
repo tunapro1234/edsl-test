@@ -1,0 +1,14 @@
+method: homo_silicus  seed: 1
+
+--- Player A ---
+You only care about your own pay-off.
+
+--- Player B ---
+You only care about the total pay-off of all players.
+
+--- Player C ---
+You only care about the total pay-off of all players.
+
+--- Player D ---
+You only care about your own pay-off.
+

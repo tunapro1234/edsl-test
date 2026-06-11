@@ -1,0 +1,14 @@
+method: value_anchor  seed: 1
+
+--- Player A ---
+Answer as a person for whom being very successful is the most important guiding value in life.
+
+--- Player B ---
+Answer as a person for whom understanding people who are different from you is the most important guiding value in life.
+
+--- Player C ---
+Answer as a person for whom having all sorts of new experiences is the most important guiding value in life.
+
+--- Player D ---
+Answer as a person for whom living in secure surroundings is the most important guiding value in life.
+

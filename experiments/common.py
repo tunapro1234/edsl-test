@@ -16,9 +16,10 @@ def make_model():
     return Model("openai/gpt-oss-120b", service_name="deep_infra", temperature=1)
 
 
-def new_run_dir(results_root):
-    """Create and return results/<timestamp>/ for this run."""
-    run_dir = os.path.join(results_root, datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))
+def new_run_dir(results_root, suffix=None):
+    """Create and return results/<timestamp>[_suffix]/ for this run."""
+    name = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + (f"_{suffix}" if suffix else "")
+    run_dir = os.path.join(results_root, name)
     os.makedirs(run_dir, exist_ok=True)
     return run_dir
 
@@ -49,7 +50,9 @@ def append_reasoning(results, run_dir, tag):
         bits = []
         if has_iter:
             bits.append(f"rep {row.get('iteration')}")
-        bits += [f"{s}={row.get(s)}" for s in scen_fields]
+        for s in scen_fields:  # truncate long fields (history, persona) in headers
+            val = str(row.get(s)).replace("\n", " ")
+            bits.append(f"{s}={val[:80]}{'...' if len(val) > 80 else ''}")
         ctx = ", ".join(bits)
         lines.append(f"### {row.get('agent_name', 'agent')}" + (f"  ({ctx})" if ctx else ""))
         for q in qnames:

@@ -19,11 +19,15 @@ Paper's human result: NO group ever allowed punishing high contributors;
 most converged to "punish low only", which beat everything on efficiency.
 """
 
+import argparse
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.dirname(_HERE))                  # experiments/ -> common
+sys.path.insert(0, os.path.dirname(os.path.dirname(_HERE)))  # repo root -> personas
 from common import make_model, new_run_dir, run_and_save
+from personas import sample_personas
 
 from edsl import QuestionNumerical, QuestionMultipleChoice, Agent, Scenario, ScenarioList
 
@@ -44,6 +48,7 @@ BALLOT = {  # the 3 ballot items: who may be punished?
 
 # NOTE: the numbers in this text must match the constants above.
 RULES = (
+    "{{ scenario.persona }}\n"
     "You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated "
     "public goods game. Each period every player receives $10 and privately "
     "decides how much to put into a group fund. Every dollar in the fund pays "
@@ -108,11 +113,11 @@ def rule_text(rule):
     return "Voted rules — may a player be punished for contributing... " + "; ".join(bits)
 
 
-def run_vote(vote_no, logs, run_dir):
+def run_vote(vote_no, logs, run_dir, personas):
     """All players vote Yes/No on each ballot item; strict majority allows it."""
     scenarios = ScenarioList([
-        Scenario({"me": L, "item": k, "target_group": BALLOT[k],
-                  "history": history_text(logs[L])})
+        Scenario({"me": L, "persona": personas[L], "item": k,
+                  "target_group": BALLOT[k], "history": history_text(logs[L])})
         for L in LABELS for k in BALLOT
     ])
     res = run_and_save(
@@ -127,11 +132,11 @@ def run_vote(vote_no, logs, run_dir):
     return rule
 
 
-def play_period(period_no, rule, logs, run_dir):
+def play_period(period_no, rule, logs, run_dir, personas):
     """One period: contributions, then punishment (if the rule allows any)."""
     scenarios = ScenarioList([
-        Scenario({"me": L, "period": period_no, "rule": rule_text(rule),
-                  "history": history_text(logs[L])})
+        Scenario({"me": L, "persona": personas[L], "period": period_no,
+                  "rule": rule_text(rule), "history": history_text(logs[L])})
         for L in LABELS
     ])
     res = run_and_save(
@@ -153,7 +158,8 @@ def play_period(period_no, rule, logs, run_dir):
     received = {L: 0 for L in LABELS}
     if pairs:
         scenarios = ScenarioList([
-            Scenario({"me": p, "target": t, "my_contribution": contrib[p],
+            Scenario({"me": p, "persona": personas[p], "target": t,
+                      "my_contribution": contrib[p],
                       "target_contribution": contrib[t], "contributions": shown,
                       "avg": round(avg, 2), "history": history_text(logs[p])})
             for p, t in pairs
@@ -180,13 +186,27 @@ def play_period(period_no, rule, logs, run_dir):
 
 
 def main():
-    run_dir = new_run_dir(os.path.join(HERE, "results"))
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--personas", default="baseline", help="persona method name")
+    parser.add_argument("--seed", type=int, default=1)
+    args = parser.parse_args()
+
+    texts = sample_personas(args.personas, len(LABELS), args.seed)
+    personas = dict(zip(LABELS, texts))
+
+    run_dir = new_run_dir(os.path.join(HERE, "results"), suffix=args.personas)
+    with open(os.path.join(run_dir, "personas.txt"), "w") as f:
+        f.write(f"method: {args.personas}  seed: {args.seed}\n\n")
+        for L in LABELS:
+            f.write(f"--- Player {L} ---\n{personas[L] or '(none)'}\n\n")
+
     logs = {L: [] for L in LABELS}
-    summary = [f"Who to punish? — {VOTES} votes x {PERIODS_PER_VOTE} periods", ""]
+    summary = [f"Who to punish? — {VOTES} votes x {PERIODS_PER_VOTE} periods "
+               f"— personas: {args.personas} (seed {args.seed})", ""]
 
     period = 0
     for v in range(1, VOTES + 1):
-        rule = run_vote(v, logs, run_dir)
+        rule = run_vote(v, logs, run_dir, personas)
         line = f"Vote {v}: punish low={rule['low']}  avg={rule['avg']}  high={rule['high']}"
         summary += [line]
         print(line)
@@ -195,7 +215,7 @@ def main():
 
         for _ in range(PERIODS_PER_VOTE):
             period += 1
-            contrib, received, earnings = play_period(period, rule, logs, run_dir)
+            contrib, received, earnings = play_period(period, rule, logs, run_dir, personas)
             line = (f"  Period {period}: contrib {contrib}  "
                     f"punishment received {received}  "
                     f"earnings { {L: round(e, 2) for L, e in earnings.items()} }")

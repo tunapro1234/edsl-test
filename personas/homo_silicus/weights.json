@@ -1,0 +1,31 @@
+{
+  "weights": {
+    "self_interested": 0.0,
+    "efficient": 0.58,
+    "inequity_averse": 0.42
+  },
+  "sse": 0.11630224999999997,
+  "behavior": {
+    "self_interested": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "efficient": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "inequity_averse": [
+      0.5,
+      0.0,
+      1.0
+    ]
+  },
+  "target": [
+    0.2835,
+    0.36,
+    0.17
+  ],
+  "reps": 10
+}

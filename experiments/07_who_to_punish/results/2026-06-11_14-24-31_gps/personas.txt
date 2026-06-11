@@ -1,0 +1,14 @@
+method: gps  seed: 1
+
+--- Player A ---
+Your risk taking (willingness to take risks) is 8 out of 10. Your patience (willingness to give up something today in order to gain more in the future) is 8 out of 10. Your altruism (willingness to give to good causes without expecting anything in return) is 5 out of 10. Your trust (belief that other people have only the best intentions) is 3 out of 10. Your positive reciprocity (willingness to return a favor) is 3 out of 10. Your negative reciprocity (willingness to punish unfair treatment, even at a cost to yourself) is 5 out of 10. Your prosociality (concern for others' payoffs relative to your own) is 3 out of 10. You are a person with these preferences, and you decide based on them.
+
+--- Player B ---
+Your risk taking (willingness to take risks) is 2 out of 10. Your patience (willingness to give up something today in order to gain more in the future) is 5 out of 10. Your altruism (willingness to give to good causes without expecting anything in return) is 5 out of 10. Your trust (belief that other people have only the best intentions) is 6 out of 10. Your positive reciprocity (willingness to return a favor) is 3 out of 10. Your negative reciprocity (willingness to punish unfair treatment, even at a cost to yourself) is 5 out of 10. Your prosociality (concern for others' payoffs relative to your own) is 5 out of 10. You are a person with these preferences, and you decide based on them.
+
+--- Player C ---
+Your risk taking (willingness to take risks) is 2 out of 10. Your patience (willingness to give up something today in order to gain more in the future) is 6 out of 10. Your altruism (willingness to give to good causes without expecting anything in return) is 6 out of 10. Your trust (belief that other people have only the best intentions) is 10 out of 10. Your positive reciprocity (willingness to return a favor) is 5 out of 10. Your negative reciprocity (willingness to punish unfair treatment, even at a cost to yourself) is 5 out of 10. Your prosociality (concern for others' payoffs relative to your own) is 7 out of 10. You are a person with these preferences, and you decide based on them.
+
+--- Player D ---
+Your risk taking (willingness to take risks) is 5 out of 10. Your patience (willingness to give up something today in order to gain more in the future) is 7 out of 10. Your altruism (willingness to give to good causes without expecting anything in return) is 4 out of 10. Your trust (belief that other people have only the best intentions) is 5 out of 10. Your positive reciprocity (willingness to return a favor) is 7 out of 10. Your negative reciprocity (willingness to punish unfair treatment, even at a cost to yourself) is 6 out of 10. Your prosociality (concern for others' payoffs relative to your own) is 5 out of 10. You are a person with these preferences, and you decide based on them.
+
