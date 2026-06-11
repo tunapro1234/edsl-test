@@ -254,3 +254,21 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=5, persona=, rule=The group voted to allow NO punishment at all.)
 - **contribution = 0**
   - I contribute nothing because with no punishment possible the dominant strategy is free‑riding: I keep my $10 and still get any returns from others’ contributions, which in the last round were zero. This maximizes my payoff.
+
+## p6_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=6, persona=, rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I choose to contribute nothing because with no punishment possible the other three players are already contributing $0, and any positive contribution would reduce my own payoff (10 − 0.6c). The best response is therefore $0.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=6, persona=, rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I contribute nothing because with no punishment possible, the private incentive is to free‑ride: any positive contribution reduces my payoff (10−0.6c) while a contribution of $0 yields the maximum $10.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=6, persona=, rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I contribute nothing because with punishment disabled, any positive contribution just costs me $1 while only giving me $0.40 back from the public good—so the best response to the others’ zero contributions is to also contribute $0.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=6, persona=, rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - Because punishment has been banned, each dollar contributed returns only $0.40 to you while costing $1, making contribution strictly dominated by free‑riding. The group already settled on zero contributions in periods 4–5, so the best response is to contribute nothing.

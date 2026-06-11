@@ -272,3 +272,17 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=4, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
 - **contribution = 7**
   - I chose to contribute enough to stay at or above the group average (avoiding punishable low contributions) while not over‑contributing, balancing my strong self‑interest (maximizing payoff) with my high inequity aversion (preventing large payoff gaps). A contribution of 7 keeps my payoff relatively high yet reduces the risk of punishment and narrows the payoff gap with higher contributors.
+
+## p4_punish
+
+### player  (rep 0, avg=6.75, contributions=[10, 10, 7, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, my_contribution=10, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., target=A, target_contribution=0)
+- **punish = 0**
+  - I chose not to punish because it costs me $0.25 per $1 reduction and lowers my own payoff, while even a large reduction would still leave A richer than me. With strong self‑interest and fairness concerns, the modest equity gain isn’t worth the personal loss.
+
+### player  (rep 0, avg=6.75, contributions=[10, 10, 7, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, my_contribution=10, persona=On a scale from 1 to 10, your efficiency level is: 3. 10 means you strongly prio..., target=A, target_contribution=0)
+- **punish = 10**
+  - I chose the maximum punishable amount because my low self‑interest and moderate fairness concern outweigh efficiency concerns, so I’m willing to spend the full $2.50 to reduce the free‑rider’s earnings as much as allowed.
+
+### player  (rep 0, avg=6.75, contributions=[10, 10, 7, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, my_contribution=7, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., target=A, target_contribution=0)
+- **punish = 4**
+  - I chose a moderate punishment. Reducing A’s earnings by $4 costs me $1 (0.25 × 4), lowering my payoff from $13.8 to $12.8 while bringing A’s payoff down from $20.8 to $16.8. This partially addresses the inequity (A is still richer, but the gap narrows) without sacrificing too much of my own earnings, balancing my strong self‑interest with strong fairness concerns and a moderate efficiency priority.

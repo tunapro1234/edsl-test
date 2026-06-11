@@ -1,11 +1,152 @@
 {
-  "status": "UNCALIBRATED fallback — Horton (arXiv:2301.07543, Sec. 2.2.1) GPT-4o weights for his 3 types, 0 for the new types. Run calibrate.py to fit all 6.",
   "weights": {
-    "self_interested": 0.53,
-    "efficient": 0.37,
-    "inequity_averse": 0.10,
+    "self_interested": 0.36,
+    "efficient": 0.5,
+    "inequity_averse": 0.0,
     "competitive": 0.0,
     "reciprocal": 0.0,
-    "selfish_but_fair": 0.0
+    "selfish_but_fair": 0.14
+  },
+  "train_sse": 0.08893600000000002,
+  "val_rmse": 0.31485491897062684,
+  "behavior_cr": {
+    "self_interested": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "efficient": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.8
+    ],
+    "inequity_averse": [
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "competitive": [
+      1.0,
+      1.0,
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "reciprocal": [
+      0.9,
+      1.0,
+      0.4,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "selfish_but_fair": [
+      0.8,
+      1.0,
+      1.0,
+      0.6,
+      0.1,
+      0.0
+    ]
+  },
+  "cr_target": [
+    0.31,
+    0.52,
+    1.0,
+    0.67,
+    0.27,
+    0.78
+  ],
+  "behavior_dictator": {
+    "self_interested": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "efficient": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "inequity_averse": [
+      0.5,
+      0.0,
+      1.0
+    ],
+    "competitive": [
+      0.4,
+      0.6,
+      0.0
+    ],
+    "reciprocal": [
+      0.05,
+      0.9,
+      0.1
+    ],
+    "selfish_but_fair": [
+      0.48,
+      0.0,
+      0.9
+    ]
+  },
+  "dictator_target": [
+    0.2835,
+    0.3611,
+    0.1674
+  ],
+  "reps": 10,
+  "n_eff": {
+    "self_interested/Berk29": 10,
+    "self_interested/Barc2": 10,
+    "self_interested/Berk23": 10,
+    "self_interested/Barc8": 10,
+    "self_interested/Berk15": 10,
+    "self_interested/Berk26": 10,
+    "efficient/Berk29": 10,
+    "efficient/Barc2": 10,
+    "efficient/Berk23": 10,
+    "efficient/Barc8": 10,
+    "efficient/Berk15": 10,
+    "efficient/Berk26": 10,
+    "inequity_averse/Berk29": 10,
+    "inequity_averse/Barc2": 10,
+    "inequity_averse/Berk23": 10,
+    "inequity_averse/Barc8": 10,
+    "inequity_averse/Berk15": 10,
+    "inequity_averse/Berk26": 10,
+    "competitive/Berk29": 10,
+    "competitive/Barc2": 10,
+    "competitive/Berk23": 10,
+    "competitive/Barc8": 10,
+    "competitive/Berk15": 10,
+    "competitive/Berk26": 10,
+    "reciprocal/Berk29": 10,
+    "reciprocal/Barc2": 10,
+    "reciprocal/Berk23": 10,
+    "reciprocal/Barc8": 10,
+    "reciprocal/Berk15": 10,
+    "reciprocal/Berk26": 10,
+    "selfish_but_fair/Berk29": 10,
+    "selfish_but_fair/Barc2": 10,
+    "selfish_but_fair/Berk23": 10,
+    "selfish_but_fair/Barc8": 10,
+    "selfish_but_fair/Berk15": 10,
+    "selfish_but_fair/Berk26": 10,
+    "self_interested/dictator": 10,
+    "efficient/dictator": 10,
+    "inequity_averse/dictator": 10,
+    "competitive/dictator": 10,
+    "reciprocal/dictator": 10,
+    "selfish_but_fair/dictator": 10
   }
 }
