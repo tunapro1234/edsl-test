@@ -11,7 +11,8 @@ We re-run it in miniature with OUR shipped personas and OUR calibrate.py
 question on the same menus, and check each type's P(Left) vector lands on the
 paper's per-persona "Expected" pattern (Fig. 3 gold bars). Scrambled payoffs
 or a broken template would push some type off its corner and fail the
-pre-registered MAD band below.
+pre-registered criteria below: a MAD band plus a per-cell cap, so even a
+single fully flipped game (a 1.0 deviation in one cell) fails outright.
 
 Default invocation only PRINTS the design and cost estimate.
 Real run (bills the API):
@@ -25,8 +26,10 @@ from datetime import datetime
 
 from edsl import Agent, Model, Scenario, ScenarioList
 
-from . import PERSONAS
-from .calibrate import CR_GAMES, q_choice
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))))
+from personas.homo_silicus import PERSONAS
+from personas.homo_silicus.calibrate import CR_GAMES, q_choice
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -49,14 +52,20 @@ PAPER_TARGETS = {
 }
 HORTON_TYPES = list(PAPER_TARGETS)    # the paper's 3 types, not our full 6
 
-# PRE-REGISTERED pass criterion (fixed before any results exist).
-# MAD <= 0.2 per type over its non-ambiguous games: at REPS=10 that tolerates
-# ~2 stray picks per game (binomial noise + our GSA humanizing prefix), but a
-# single fully flipped game (wrong payoff column) already costs 1/5 = 0.2 and
-# anything worse fails.
+# PRE-REGISTERED pass criteria (fixed before any results exist).
+# (1) MAD <= 0.2 per type over its non-ambiguous games: at REPS=10 that
+#     tolerates ~2 stray picks per game (binomial noise + our GSA humanizing
+#     prefix).
+# (2) Per-cell cap: any single scored cell with |P(Left) - target| >= 0.5
+#     fails. A fully flipped game (wrong payoff column) puts that cell at a
+#     1.0 deviation — REPS=10 binomial noise essentially never does — whereas
+#     under MAD alone one flipped game would sit exactly at 1/5 = 0.2 (1/6
+#     for inequity-averse) and squeak through.
 MAD_MAX = 0.2
+CELL_MAX = 0.5
 CRITERIA = (f"each persona's P(Left) vector is within mean-absolute-deviation "
-            f"<= {MAD_MAX} of its Fig. 3 'Expected' pattern, ambiguous cells "
+            f"<= {MAD_MAX} of its Fig. 3 'Expected' pattern AND no scored "
+            f"cell deviates from its target by >= {CELL_MAX}; ambiguous cells "
             f"excluded")
 
 N_CALLS = len(HORTON_TYPES) * len(CR_GAMES) * REPS
@@ -68,6 +77,12 @@ def mad(p_left, target):
     """Mean absolute deviation over the games the paper scores (non-None)."""
     scored = [g for g in target if target[g] is not None]
     return sum(abs(p_left[g] - target[g]) for g in scored) / len(scored)
+
+
+def worst_cell(p_left, target):
+    """Largest single-cell |P(Left) - target| over the scored games."""
+    return max(abs(p_left[g] - target[g])
+               for g in target if target[g] is not None)
 
 
 def design():
@@ -109,7 +124,10 @@ def run():
             p_left[t][g] = sum(c == "Left" for c in picks) / len(picks)
 
     mads = {t: round(mad(p_left[t], PAPER_TARGETS[t]), 4) for t in HORTON_TYPES}
-    passed = all(m <= MAD_MAX for m in mads.values())
+    worsts = {t: round(worst_cell(p_left[t], PAPER_TARGETS[t]), 4)
+              for t in HORTON_TYPES}
+    passed = (all(m <= MAD_MAX for m in mads.values())
+              and all(w < CELL_MAX for w in worsts.values()))
 
     artifact = {
         "method": "homo_silicus",
@@ -117,7 +135,8 @@ def run():
         "experiment": "Horton Fig. 3: 3 theory personas x 6 Charness-Rabin "
                       "unilateral dictator menus, P(Left) per persona per game",
         "paper_targets": PAPER_TARGETS,
-        "results": {"p_left": p_left, "mad": mads, "n_eff": n_eff},
+        "results": {"p_left": p_left, "mad": mads, "worst_cell": worsts,
+                    "n_eff": n_eff},
         "pass": passed,
         "criteria": CRITERIA,
         "n_calls": N_CALLS,
@@ -129,7 +148,8 @@ def run():
 
     for t in HORTON_TYPES:
         print(f"{t:<16} P(Left) {[p_left[t][g] for g in CR_GAMES]}  "
-              f"MAD={mads[t]:.3f} (max {MAD_MAX})")
+              f"MAD={mads[t]:.3f} (max {MAD_MAX})  "
+              f"worst cell={worsts[t]:.3f} (must be < {CELL_MAX})")
     print(f"pass: {passed}")
     print("saved replication.json")
 

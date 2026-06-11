@@ -7,9 +7,11 @@ of the digital-twin evaluation in Toubia, Gui, Peng, Merlau, Li & Chen (2025),
 
 ## What the paper does
 
-The paper holds out the 88 heuristics-and-biases questions from the persona,
-asks the LLM twin to answer them, and scores against the person's wave 1-3
-answers ("The model's completion is ... compared with the Wave 1-3 ground
+The paper holds out 88 questions across 17 tasks — heuristics-and-biases
+experiments plus the wave-3 pricing study (Sec. 2, p.3; Sec. 3, p.6: "88
+holdout questions (across 17 tasks)"; 17 = 11 between-subjects + 5
+within-subjects + 1 pricing) — from the persona, asks the LLM twin to answer
+them, and scores against the person's wave 1-3 answers ("The model's completion is ... compared with the Wave 1-3 ground
 truth", Sec. 4, p.7). The same questions were re-asked in wave 4, giving a
 human test-retest ceiling (Sec. 2, p.4; Sec. 3, p.6). Accuracy metric
 (Sec. 3, p.6): binary questions -> exact match; non-binary -> 1 − |deviation|
@@ -43,41 +45,51 @@ human test-retest ceiling (Sec. 2, p.4; Sec. 3, p.6). Accuracy metric
   Also reported: exact-match accuracy, accuracy vs the wave-4 answer, and the
   probe's own human test-retest ceiling (wave-4 vs wave 1-3 answers on the
   same 40 questions = **0.7475**) plus the analytic uniform-random baseline on
-  the same 40 questions (**0.5404** — reassuringly close to the paper's 59.17%
-  random benchmark on its larger question set).
+  the same 40 questions (mean **0.5404**, SD of the 40-item mean **0.0619** —
+  the mean reassuringly close to the paper's 59.17% random benchmark on its
+  larger question set).
 
 ## Pre-registered pass rule (fixed in code before any API call)
 
 Paper-metric accuracy vs wave 1-3 truth must
 1. reach `0.6802 − 0.15 = 0.5302` (Table 2 Persona Summary minus small-N slack),
-2. beat the analytic random baseline on our exact 40 questions (0.5404 — the
-   binding constraint; a scrambled template/persona scores at random), and
+2. exceed the analytic uniform-random **mean + 1 SD of the 40-item random
+   mean** on our exact 40 questions (`0.5404 + 0.0619 ≈ 0.602`, a one-sided
+   z ≥ 1 test against the random distribution — the binding constraint), and
 3. have ≥ 90% of the 40 calls answered.
+
+Criterion 2 was strengthened from a bare `> 0.5404` strict inequality
+**before any model call** (`replication.json` did not yet exist): a strict
+inequality at the random *mean* is one a fully scrambled persona/template
+still passes with probability ~0.5, so it had no discriminating power
+(especially since the 0.5302 floor in criterion 1 sits below the 0.5404
+random mean). At z ≥ 1 a scrambled run passes with probability ~0.16, while
+a working twin is expected near **0.655** (probe test-retest 0.7475 × the
+paper's 87.67% relative accuracy) — comfortably above the ~0.602 bar.
 
 ## Deviations from the paper
 
-1. **Model: `gpt-4o` (openai), not GPT-4.1-mini.** The paper contains no
-   GPT-4o run anywhere; its models are GPT-4.1-mini, GPT-4.1, and
-   Gemini-flash2.5 (Table 2, p.7). gpt-4o is the only OpenAI model verified
-   live on our Expected Parrot account, and Table 2 shows accuracy is flat
-   across models/variants (67.88–71.92%), so the target band transfers.
-2. **N = 5 people × 8 questions** vs 2,058 × 88 — this is a ~$0.5 correctness
-   check, not a study. Hence the 0.15 slack in the pass floor.
-3. **MC-only probe.** The paper also scores sliders, numeric text entries, and
+(The model is **not** a deviation: we run `gpt-4.1-mini` (openai), the same
+model as the paper's primary Persona Summary condition (Table 2, p.7), listed
+as approved on our Expected Parrot account in `MODELS.md`.)
+
+1. **N = 5 people × 8 questions** vs 2,058 × 88 — this is a sub-$0.10
+   correctness check, not a study. Hence the 0.15 slack in the pass floor.
+2. **MC-only probe.** The paper also scores sliders, numeric text entries, and
    matrix rows (transformed to numeric). We keep only single-answer MC
    questions so the paper's position-based metric applies cleanly. Our probe's
    human test-retest (0.7475) is accordingly below the paper's 17-task average
    (0.8172) — the MC experiment items are noisier than the average task — which
    is why the pass rule keys off the twin-accuracy target, with the probe's own
    random baseline and ceiling reported alongside.
-4. **Aggregation:** per-question mean over all 40, instead of the paper's
+3. **Aggregation:** per-question mean over all 40, instead of the paper's
    per-task-then-per-respondent averaging (too few items per task at mini-N).
-5. **Prompt framing:** persona inline in the user message via our module's
+4. **Prompt framing:** persona inline in the user message via our module's
    HEADER/FOOTER (mirrors the authors' own simulation-repo framing,
    see NOTES.md), not the paper's system prompt; one MC answer per call via
    EDSL's answer-format template, not the paper's batched completion format.
    This is deliberate — the inline framing is the implementation under test.
-6. **`persona_summary` (~13k chars) is the injected persona**, matching the
+5. **`persona_summary` (~13k chars) is the injected persona**, matching the
    paper's "Persona Summary" condition (App. A.1, p.13), not the ~128k-char
    "Text Persona" — hence 68.02% (not 71.72%) is the primary target.
 
@@ -86,13 +98,13 @@ Paper-metric accuracy vs wave 1-3 truth must
 ```
 python3 -m personas.twin2k.replication --prepare   # one-time, system python3 (pyarrow), no API
 .venv/bin/python -m personas.twin2k.replication        # dry run: design + cost, exits
-.venv/bin/python -m personas.twin2k.replication --run  # 40 gpt-4o calls, writes replication.json
+.venv/bin/python -m personas.twin2k.replication --run  # 40 gpt-4.1-mini calls, writes replication.json
 ```
 
-Dry-run estimate: **~$0.44** (40 calls × ~3.7k input tokens at $2.5/M +
-small outputs at $10/M). EDSL's own prompt-level estimator says $1.41 because
-it assumes near-max output tokens; actual outputs are one option string plus a
-one-line comment. Either way under the $1.5 budget.
+Dry-run estimate: **~$0.07** (40 calls × ~3.7k input tokens at $0.40/M +
+small outputs at $1.60/M). EDSL's own prompt-level estimator runs higher
+because it assumes near-max output tokens; actual outputs are one option
+string plus a one-line comment. Either way far under the $1.5 budget.
 
 Artifact: `personas/twin2k/replication.json` with the schema asserted by
 `tests/test_replications.py` (`pass` must be `true`).

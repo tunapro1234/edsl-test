@@ -57,6 +57,29 @@ def test_no_jinja_collisions():
             assert "{{" not in p and "}}" not in p, m
 
 
+def test_value_anchor_opposites_pinned():
+    # Pins the circle geometry the value_anchor replication gate depends on.
+    # The gate (own > mean of 3 "opposite" ratings) cannot itself detect a
+    # shuffled circle order — if anchoring works, own is the top score and
+    # beats the mean of ANY 3 values — so the opposite sets are asserted here.
+    from personas.value_anchor.replication import TEST_ANCHORS, opposites
+    expected = {
+        "stimulation": [
+            "conformity-rules", "conformity-interpersonal", "humility"],
+        "power-resources": [
+            "benevolence-dependability", "benevolence-caring",
+            "universalism-concern"],
+        "security-personal": [
+            "universalism-nature", "universalism-tolerance",
+            "self-direction-thought"],
+        "benevolence-caring": [
+            "power-resources", "power-dominance", "face"],
+    }
+    assert TEST_ANCHORS == list(expected)
+    for anchor, opp in expected.items():
+        assert opposites(anchor) == opp, anchor
+
+
 def test_agent_banks_stable():
     # frozen econbench banks must match what sample_personas regenerates today
     bank_dir = os.path.join(REPO, "econbench", "b01", "agents_bank")

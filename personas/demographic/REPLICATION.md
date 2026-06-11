@@ -14,7 +14,10 @@ party ID, political interest, church attendance, discussing politics,
 flag-patriotism, state — p. 10 and Appendix C.1, p. 30). The vote was read off
 as the probability that "In [year], I voted for..." completes with each
 candidate's token set, dichotomized at 0.50 (p. 10; Appendix C, p. 31).
-One query per ANES respondent: 5,914 (2012), 4,270 (2016), 5,442 (2020).
+One query per ANES respondent: 5,914 (2012), 4,270 (2016), 5,442 (2020), for a
+total of 15,626 queries (Appendix E "Cost Analysis", p. 50: "Study 2 consisted
+of 3 experiments… for a total of 15,626 queries" — these counts appear there,
+not on p. 10).
 
 ## Paper targets (every number read from the PDF)
 
@@ -43,11 +46,22 @@ One query per ANES respondent: 5,914 (2012), 4,270 (2016), 5,442 (2020).
 - **Pre-registered pass criterion** (in code, above any results):
   own-party-aligned share ≥ 0.80 among ≥ 20 valid answers.
 
-Why this detects a broken implementation: if `_render` scrambled fragments or
-dropped `partyid`, every persona would collapse to the model's own prior, the
-same answer for everyone → alignment ≈ 0.50 → fail. The paper's strong-partisan
-agreement is 0.97–1.00, so 0.80 leaves room for honest noise (binomial N=24:
-a true rate of 0.95 fails < 1% of the time) without admitting a coin flip.
+Why this detects a broken implementation — two layers, because the statistical
+criterion alone cannot catch every bug:
+
+- **Deterministic guard (free, runs even on dry run).** `pick_rows()` asserts
+  that each rendered persona contains its row's verbatim `partyid` fragment.
+  This is needed because the backstory also carries `polviews`, and 17 of the
+  24 selected personas state a party-consistent ideology (5 are moderates,
+  only 2 crossed) — so a bug that dropped *only* the partyid fragment would
+  plausibly still score ~0.75–0.9 and could clear the 0.80 threshold. The
+  assert catches that case directly, before any API call.
+- **Statistical criterion (the run itself).** A template that is scrambled,
+  empty, or left unsubstituted collapses every persona to the model's own
+  prior — the same answer for everyone → alignment ≈ 0.50 → fail. The paper's
+  strong-partisan agreement is 0.97–1.00, so 0.80 leaves room for honest noise
+  (binomial N=24: a true rate of 0.95 fails < 1% of the time) without
+  admitting a coin flip (a 0.5-prior responder passes with p ≈ 0.0008).
 
 ## Deviations from the paper (all of them)
 

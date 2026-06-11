@@ -11,9 +11,13 @@ Mini version with OUR pipeline: take the first 12 strong-Democrat and first
 each with the module's own _render(), and ask the 2020 vote (Biden/Trump),
 one rep at temperature 0.  Ground truth proxy = own party (the GSS extract
 has no vote variable; strong partisans vote own-party near-universally, which
-is exactly the paper's 0.97-1.00 strong-partisan row).  A broken template —
-scrambled fragments, dropped partyid — would push alignment toward 0.5
-(the model's own prior, same for everyone) and fail the criterion below.
+is exactly the paper's 0.97-1.00 strong-partisan row).  Two failure guards:
+(1) pick_rows() asserts each rendered persona contains its verbatim partyid
+fragment — deterministic, runs on the dry run too; needed because the
+backstory also carries polviews (17/24 selected personas party-consistent),
+so dropping ONLY partyid could still score ~0.75-0.9 and clear 0.80.
+(2) The run criterion catches scrambled/empty/unsubstituted templates, which
+collapse everyone to the model's own prior (~0.5 alignment -> fail).
 
 Default invocation only PRINTS the design and cost estimate.
 Real run (bills the API):
@@ -28,11 +32,11 @@ from datetime import datetime
 from edsl import Agent, Model, QuestionMultipleChoice, Scenario, ScenarioList
 
 if __package__:                       # python -m personas.demographic.replication
-    from . import _load, _render
+    from . import PARTYID, _load, _render
 else:                                 # python personas/demographic/replication.py
     sys.path.insert(0, os.path.dirname(os.path.dirname(
         os.path.dirname(os.path.abspath(__file__)))))
-    from personas.demographic import _load, _render
+    from personas.demographic import PARTYID, _load, _render
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -82,6 +86,12 @@ def pick_rows():
     out = []
     for party in OWN_CANDIDATE:
         out += [r for r in rows if r["partyid"] == party][:N_PER_PARTY]
+    # Deterministic guard, free, runs on dry run too: the statistical criterion
+    # alone could miss a dropped partyid (polviews would carry most personas),
+    # so require the verbatim partyid fragment in every rendered persona.
+    for r in out:
+        assert PARTYID[r["partyid"]] in _render(r), (
+            f"rendered persona for row {r['id']} lost its partyid fragment")
     return out
 
 N_CALLS = 2 * N_PER_PARTY * REPS

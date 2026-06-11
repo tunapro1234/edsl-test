@@ -30,7 +30,8 @@ import sys
 from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from personas.gps import PREFS, R, RISK_ITEM, SELF_ASSESSMENT_ITEMS, _draw_traits, sample
+from personas.gps import (PREFS, R, RISK_ITEM, SELF_ASSESSMENT_ITEMS,
+                          WILLINGNESS_ITEMS, _answer, _draw_traits, sample)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -39,7 +40,8 @@ N_OFFLINE = 200_000   # draws for the distribution checks
 MAX_CORR_GAP = 0.01   # worst |empirical - Table 12| over the 15 pairs
 MAX_ABS_MEAN = 0.02   # latent traits should be ~N(0,1)
 MAX_SD_DEV = 0.02
-MAX_CLIP = 0.02       # round(5+2z) clips iff |z|>2.5 -> expected 2*Phi(-2.5)=1.24%
+MAX_CLIP = 0.02       # raw 5+2z leaves [0,10] iff |z|>2.5 -> expected 2*Phi(-2.5)=1.24%
+                      # (the post-round clamp in _answer() itself binds only iff |z|>2.75)
 N_PERSONAS = 6
 SEED = 27             # chosen for dial SPREAD (risk 2-8, trust 2-7) so a model that
                       # ignores the persona and answers mid-scale FAILS (selection is
@@ -64,10 +66,39 @@ PRICE_IN, PRICE_OUT = 0.02, 0.05  # $/1M tokens (verified live)
 TRUST_ITEM = SELF_ASSESSMENT_ITEMS[2][1]
 assert "best intentions" in TRUST_ITEM
 
+# NBER WP 23943, App. C, Table 12, p. 62 — transcribed HERE by hand, as an
+# independent second transcription of the paper, deliberately NOT imported from
+# personas/gps/__init__.py. If we reused R, a mis-transcribed or scrambled R
+# would pass the gap check and be recorded in the artifact as "paper targets".
+TABLE12 = {
+    ("patience", "risk"): 0.210,
+    ("patience", "posrec"): 0.084,
+    ("patience", "negrec"): 0.112,
+    ("patience", "altruism"): 0.098,
+    ("patience", "trust"): 0.044,
+    ("risk", "posrec"): 0.068,
+    ("risk", "negrec"): 0.228,
+    ("risk", "altruism"): 0.106,
+    ("risk", "trust"): 0.047,
+    ("posrec", "negrec"): 0.010,
+    ("posrec", "altruism"): 0.329,
+    ("posrec", "trust"): 0.114,
+    ("negrec", "altruism"): 0.067,
+    ("negrec", "trust"): 0.075,
+    ("altruism", "trust"): 0.151,
+}
+assert len(TABLE12) == 15
+
+# The module's R must equal the paper transcription BEFORE any sampling: this
+# is the de-circularization — a scrambled R now fails here, not silently.
+_IDX = {p: i for i, p in enumerate(PREFS)}
+for (_a, _b), _v in TABLE12.items():
+    assert R[_IDX[_a]][_IDX[_b]] == R[_IDX[_b]][_IDX[_a]] == _v, \
+        f"personas/gps R[{_a}][{_b}] = {R[_IDX[_a]][_IDX[_b]]} != Table 12 value {_v}"
+assert all(R[i][i] == 1.0 for i in range(len(PREFS)))
+
 PAPER_TARGETS = {
-    "table12_pairwise_correlations": {   # NBER WP 23943, App. C, Table 12, p. 62
-        f"{PREFS[i]}~{PREFS[j]}": R[i][j]
-        for i in range(len(PREFS)) for j in range(i)},
+    "table12_pairwise_correlations": {f"{a}~{b}": v for (a, b), v in TABLE12.items()},
     "latent_mean": 0.0, "latent_sd": 1.0,  # standardized individual-level scale (WP p. 60, Fig. 10)
     "llm_probe": "none published — readback consistency check of our own instrument",
 }
@@ -93,18 +124,37 @@ def offline_checks():
         sx, sy = statistics.stdev(xs), statistics.stdev(ys)
         return sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / ((len(xs) - 1) * sx * sy)
 
-    worst_gap = max(abs(corr(cols[PREFS[i]], cols[PREFS[j]]) - R[i][j])
-                    for i in range(len(PREFS)) for j in range(i))
+    # gap measured against the hard-coded paper transcription, not the module's R
+    worst_gap = max(abs(corr(cols[a], cols[b]) - v) for (a, b), v in TABLE12.items())
     clip = (sum(1 for d in draws for p in PREFS if not 0 <= 5 + 2 * d[p] <= 10)
             / (N_OFFLINE * len(PREFS)))
     deterministic = (sample(5, seed=42) == sample(5, seed=42)
                      and sample(5, seed=42) != sample(5, seed=43))
 
+    # Template-scramble guard: the LLM probe compares answers to the dial parsed
+    # from the persona's OWN text, so a _one() bug that prints the wrong trait's
+    # number on e.g. the risk or trust line would pass both probe criteria.
+    # Re-derive the probe personas' answers from the same rng stream (_one()
+    # consumes the rng only via _draw_traits, so this is exact) and assert every
+    # printed per-item dial equals the per-preference answer. Line order in the
+    # rendered text: 4 willingness items, risk, 3 self-assessment items; negrec
+    # appears three times, so this also asserts its three lines agree.
+    item_order = [p for p, _ in WILLINGNESS_ITEMS] + ["risk"] + [p for p, _ in SELF_ASSESSMENT_ITEMS]
+    rederive_rng = random.Random(SEED)
+    for pidx, persona in enumerate(sample(N_PERSONAS, seed=SEED)):
+        expected = {p: _answer(z) for p, z in _draw_traits(rederive_rng).items()}
+        printed = [int(m) for m in re.findall(r"your answer: (\d+)", persona)]
+        assert printed == [expected[p] for p in item_order], \
+            f"persona {pidx}: printed dials {printed} != re-derived {expected} over {item_order}"
+    dials_rederived = True
+
     results = {"worst_corr_gap": round(worst_gap, 4), "worst_abs_mean": round(worst_mean, 4),
                "worst_sd_dev": round(worst_sd, 4), "clip_rate": round(clip, 4),
-               "deterministic": deterministic, "n_draws": N_OFFLINE}
+               "deterministic": deterministic, "probe_dials_rederived": dials_rederived,
+               "n_draws": N_OFFLINE}
     ok = (worst_gap < MAX_CORR_GAP and worst_mean < MAX_ABS_MEAN
-          and worst_sd < MAX_SD_DEV and clip < MAX_CLIP and deterministic)
+          and worst_sd < MAX_SD_DEV and clip < MAX_CLIP and deterministic
+          and dials_rederived)
     return results, ok
 
 

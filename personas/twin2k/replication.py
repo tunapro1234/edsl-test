@@ -4,8 +4,8 @@ Source: Toubia, Gui, Peng, Merlau, Li & Chen (2025), *Twin-2K-500*,
 arXiv:2505.17479 (research/papers-to-read/07-twin-2k-500-benchmark.pdf).
 
 The paper builds LLM "digital twins" of 2,058 real US respondents and has
-them answer 88 HOLDOUT heuristics-and-biases questions that were excluded
-from the persona. Accuracy metric (Sec. 3, p.6): binary question -> exact
+them answer 88 HOLDOUT questions across 17 tasks (heuristics-and-biases
+experiments plus the pricing study) that were excluded from the persona. Accuracy metric (Sec. 3, p.6): binary question -> exact
 match; non-binary -> 1 - |prediction - truth| / answer range. Predictions
 are scored against the person's wave 1-3 answers ("compared with the Wave
 1-3 ground truth", Sec. 4, p.7); the person's wave-4 re-answers give a
@@ -42,13 +42,13 @@ WAVE_SPLIT = os.path.normpath(os.path.join(
     REPO, "..", "research", "datasets", "twin2k500",
     "LLM-Digital-Twin___twin-2k-500", "wave_split"))
 
-MODEL_NAME, SERVICE = "gpt-4o", "openai"   # paper used GPT-4.1(-mini): see
-TEMPERATURE = 0      # paper App. A.1 p.13  # REPLICATION.md deviation #1
+MODEL_NAME, SERVICE = "gpt-4.1-mini", "openai"  # paper's primary condition
+TEMPERATURE = 0      # paper App. A.1 p.13       # (Table 2, p.7: 68.02%)
 MAX_TOKENS = 2048
 REPS = 1
 N_PERSONS, N_QUESTIONS = 5, 8              # 40 calls
 SKIP_BLOCK = "Product Preferences - Pricing"  # 41 qs would swamp the probe
-PRICE_IN, PRICE_OUT = 2.5 / 1e6, 10 / 1e6  # gpt-4o $/token (EP live price)
+PRICE_IN, PRICE_OUT = 0.40 / 1e6, 1.60 / 1e6  # gpt-4.1-mini $/tok (MODELS.md)
 
 # Every paper number below was read from the PDF (page cites above).
 PAPER = {
@@ -61,14 +61,19 @@ PAPER = {
 
 # PRE-REGISTERED pass rule, fixed before any model call:
 #   paper-metric accuracy vs wave 1-3 truth must (a) reach the paper's
-#   Persona Summary number minus 0.15 small-N slack, (b) beat the analytic
-#   uniform-random baseline on our exact 40 questions (computed from the
-#   probe file, no API; this is the binding constraint at ~0.54 — a scrambled
-#   persona/template scores at random), and (c) have >=90% of calls answered.
+#   Persona Summary number minus 0.15 small-N slack, (b) exceed the analytic
+#   uniform-random MEAN by at least 1 SD of the 40-item random mean (both
+#   computed analytically from the probe file, no API: ~0.5404 + ~0.0619 =
+#   ~0.602 — this is the binding constraint; a scrambled persona/template
+#   scores at the random mean and so passes a bare "> mean" test with prob
+#   ~0.5 but a one-sided z>=1 test with prob ~0.16, while a working twin is
+#   expected at ~0.655 = probe retest 0.7475 x paper relative accuracy
+#   0.8767), and (c) have >=90% of calls answered.
 PASS_FLOOR = PAPER["persona_summary_accuracy"] - 0.15
 CRITERIA = ("paper-metric holdout accuracy (vs wave 1-3 truth) >= 0.6802 - "
-            "0.15 = 0.5302 AND > analytic random baseline on the same 40 "
-            "questions, with >= 90% of calls answered")
+            "0.15 = 0.5302 AND >= analytic random mean + 1 SD of the 40-item "
+            "random mean on the same 40 questions (one-sided z >= 1, ~0.602), "
+            "with >= 90% of calls answered")
 
 
 def paper_metric(pred_pos, truth_pos, k):
@@ -83,11 +88,22 @@ def analytic_random(entry):
     return sum(paper_metric(p, entry["truth_pos"], k) for p in range(1, k + 1)) / k
 
 
+def analytic_random_var(entry):
+    """Variance of the paper-metric score of a uniform-random answer."""
+    k = len(entry["options"])
+    scores = [paper_metric(p, entry["truth_pos"], k) for p in range(1, k + 1)]
+    mean = sum(scores) / k
+    return sum((s - mean) ** 2 for s in scores) / k
+
+
 def probe_stats(probe):
-    rnd = sum(analytic_random(e) for e in probe) / len(probe)
+    n = len(probe)
+    rnd = sum(analytic_random(e) for e in probe) / n
+    # SD of the n-item MEAN under independent uniform-random answers.
+    rnd_sd = (sum(analytic_random_var(e) for e in probe)) ** 0.5 / n
     retest = sum(paper_metric(e["retest_pos"], e["truth_pos"], len(e["options"]))
-                 for e in probe) / len(probe)
-    return rnd, retest
+                 for e in probe) / n
+    return rnd, rnd_sd, retest
 
 
 def prepare():
@@ -140,10 +156,11 @@ def prepare():
         json.dump({"source": "Twin-2K-500 wave_split holdout questions "
                              "(Toubia et al. 2025, arXiv:2505.17479)",
                    "probe": probe}, f, ensure_ascii=False, indent=1)
-    rnd, retest = probe_stats(probe)
+    rnd, rnd_sd, retest = probe_stats(probe)
     print(f"wrote {len(probe)} questions ({N_PERSONS} people x {N_QUESTIONS}) "
           f"-> {PROBE_PATH}")
-    print(f"probe analytic random={rnd:.4f}  human test-retest={retest:.4f}")
+    print(f"probe analytic random={rnd:.4f} (SD of mean {rnd_sd:.4f})  "
+          f"human test-retest={retest:.4f}")
 
 
 def load_probe():
@@ -169,7 +186,7 @@ def cost_estimate(probe, personas):
 
 
 def print_design(probe, personas):
-    rnd, retest = probe_stats(probe)
+    rnd, rnd_sd, retest = probe_stats(probe)
     n_calls = len(probe) * REPS
     print("Twin-2K-500 replication — holdout-question accuracy (twin2k method)")
     print(f"  model: {MODEL_NAME} ({SERVICE}), temperature={TEMPERATURE}, "
@@ -183,7 +200,8 @@ def print_design(probe, personas):
     print(f"  paper targets: persona-summary twins {PAPER['persona_summary_accuracy']:.4f}, "
           f"random {PAPER['random_guessing']:.4f}, "
           f"test-retest {PAPER['human_test_retest']:.4f} (Table 2, p.7)")
-    print(f"  probe set: analytic random={rnd:.4f}, human test-retest={retest:.4f}")
+    print(f"  probe set: analytic random={rnd:.4f} (SD of mean {rnd_sd:.4f}, "
+          f"pass bar {rnd + rnd_sd:.4f}), human test-retest={retest:.4f}")
     print(f"  pre-registered pass: {CRITERIA}")
     print(f"  cost estimate: ~${cost_estimate(probe, personas):.2f} "
           f"({n_calls} calls, ~{len(personas[probe[0]['pid']]) // 4} persona "
@@ -220,7 +238,7 @@ def run(probe, personas):
         s4.append(paper_metric(pos, e["retest_pos"], k))
         exact.append(pos == e["truth_pos"])
 
-    rnd, retest = probe_stats(probe)
+    rnd, rnd_sd, retest = probe_stats(probe)
     n, n_ans = len(probe), len(s13)
     acc = sum(s13) / n_ans if n_ans else 0.0
     results = {
@@ -228,11 +246,14 @@ def run(probe, personas):
         "exact_match_accuracy": round(sum(exact) / n_ans, 4) if n_ans else 0.0,
         "accuracy_vs_wave4": round(sum(s4) / n_ans, 4) if n_ans else 0.0,
         "probe_random_baseline": round(rnd, 4),
+        "probe_random_sd_of_mean": round(rnd_sd, 4),
+        "probe_random_pass_bar": round(rnd + rnd_sd, 4),
         "probe_test_retest": round(retest, 4),
         "relative_accuracy": round(acc / retest, 4) if retest else None,
         "n_questions": n, "n_answered": n_ans,
     }
-    passed = bool(n_ans >= 0.9 * n and acc >= PASS_FLOOR and acc > rnd)
+    passed = bool(n_ans >= 0.9 * n and acc >= PASS_FLOOR
+                  and acc >= rnd + rnd_sd)
 
     artifact = {
         "method": "twin2k",

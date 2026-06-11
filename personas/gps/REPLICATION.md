@@ -17,19 +17,27 @@ https://www.nber.org/system/files/working_papers/w23943/w23943.pdf.
 |---|---|---|
 | 15 pairwise correlations | 0.210 (patience~risk), 0.084, 0.112, 0.098, 0.044, 0.068 (risk~posrec), 0.228, 0.106, 0.047, 0.010 (posrec~negrec), 0.329, 0.114, 0.067 (negrec~altruism), 0.075, 0.151 (altruism~trust) | WP Appendix C, **Table 12, p. 62** ("Partial correlations between preferences at individual level conditional on country fixed effects"; all marked \*\*\* p<0.01) |
 | latent traits mean 0, sd 1 | 0 / 1 per trait | WP **p. 60, Fig. 10 caption**: "All data are standardized at the level of the individual in the full sample" (same standardization as QJE 2018 p. 1653) |
-| answer clipping rare | < 2% (expected 1.24%) | NOT a paper number — follows from OUR documented z→round(5+2z) mapping (`__init__.py`); clips iff \|z\|>2.5 |
+| answer clipping rare | < 2% (expected 1.24%) | NOT a paper number — follows from OUR documented z→round(5+2z) mapping (`__init__.py`); the metric counts raw 5+2z leaving [0,10], which happens iff \|z\|>2.5 (the post-round clamp itself binds only iff \|z\|>2.75, expected 0.60%) |
 | determinism | sample(n, seed) reproducible | our requirement, not the paper's |
 
 Pass thresholds (pre-registered in `replication.py` before any results): worst
 correlation gap < 0.01, worst \|mean\| < 0.02, worst \|sd−1\| < 0.02, clip
-rate < 2%, deterministic. A scrambled correlation matrix or broken Cholesky
-fails the gap check; a broken answer mapping fails the clip check.
+rate < 2%, deterministic. The 15 Table 12 targets are hard-coded in
+`replication.py` as an independent second transcription of the paper (NOT
+imported from `__init__.py`), and the module's `R` is asserted equal to them
+before any sampling — so a scrambled or mis-transcribed `R` fails that
+assertion, a broken Cholesky fails the gap check, and a broken answer mapping
+fails the clip check. A further template-scramble guard re-derives each probe
+persona's answers from the seed and asserts every dial printed in the rendered
+text matches the right preference (the LLM probe alone could not catch a
+template that prints the wrong trait's number, because it compares against the
+persona's own printed dial).
 
 ## Part 2 — LLM readback probe (--run, real billing)
 
 6 personas (seed 27) × 2 verbatim GPS items × 3 reps = **36 calls** on
 `meta-llama/Meta-Llama-3.1-8B-Instruct` (deep_infra), est. **$0.0008**.
-EDSL pattern copied from `personas/homo_silicus/calibrate.py`
+EDSL pattern copied from `personas/value_anchor/replication.py`
 (QuestionLinearScale + ScenarioList + `.by(model).run(n=REPS)`; persona in a
 scenario field).
 

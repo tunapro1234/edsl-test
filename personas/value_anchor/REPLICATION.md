@@ -35,7 +35,10 @@ that is [value]."* followed by one description per call, framed with the paper's
    ±150–180°. So own-minus-opposite gaps of ~2–3 points on the 6-point scale.
 3. **Serial prompting validity** — Appendix H pp. 18–19: for Llama 3.1 8B, serial Value
    Anchor Spearman vs human ranking = **0.80** at both temperatures (Fig. 6 p. 19) and MDS
-   SSD = 0.18 (Table 5 p. 19), ≈ batch (0.75/0.80 Spearman, 0.18/0.16 MDS, Table 1 p. 8).
+   SSD = 0.18 (Table 5 p. 19), ≈ batch (0.75/0.80 Spearman, Fig. 6 p. 19 batch rows —
+   Table 1 p. 8 holds only the MDS SSDs, 0.18/0.16; main-text Fig. 2a prints 0.76/0.79
+   for the same cell, but Fig. 6 is the Appendix-H batch-vs-serial comparison invoked
+   here).
 4. **Human benchmark means** (for the informational Spearman) — Table 2 p. 14, "Human
    Data" column (Schwartz & Cieciuch 2022, 49 cultural groups), acronyms via App. C p. 17.
 
@@ -47,10 +50,14 @@ that is [value]."* followed by one description per call, framed with the paper's
 Defined in `replication.py` constants before any model call. Ordinal rather than
 magnitude-based because mean-centered magnitudes from a 57-item PVQ-RR (Fig. 4) are not
 comparable to a 19-item mini-instrument; the ordering own > opposite is the core §4.1
-claim and would break under a scrambled template, swapped scale, or shuffled circle
-order. The 3-of-4 margin tolerates one noisy anchor at REPS=3. Opposite sets are
-conceptually right (e.g. power-resources vs benevolence-dependability/-caring +
-universalism-concern), so wrong payoff-style bugs would flip the sign, not hide in it.
+claim and would break under a scrambled anchor template or a swapped scale. It would
+NOT catch a shuffled circle order: if anchoring works, the anchored value is the top
+score (Fig. 4), so own > mean(any 3 other values) passes no matter which 3 `opposites()`
+picks. The circle geometry is therefore pinned offline —
+`tests/test_personas_offline.py::test_value_anchor_opposites_pinned` asserts all four
+opposite sets (e.g. opposites("power-resources") == [benevolence-dependability,
+benevolence-caring, universalism-concern]). The 3-of-4 margin tolerates one noisy
+anchor at REPS=3.
 
 ## Deviations from the paper (all intentional)
 
@@ -72,8 +79,12 @@ universalism-concern), so wrong payoff-style bugs would flip the sign, not hide 
 5. **No male/female questionnaire versions** (paper split runs 50/50, p. 4) — BWVr texts
    are ungendered.
 6. **Power label swap** (module docstring): App. E pairs the power-dominance label with
-   the money text and vice versa; we keep texts verbatim under standard codes. Irrelevant
-   here — the two power values are adjacent on the circle, so opposite sets are unchanged.
+   the money text and vice versa; we keep texts verbatim under standard codes. This
+   shifts one member of the power-resources anchor's opposite set: index 5 (as
+   implemented) gives {benevolence-dependability, benevolence-caring,
+   universalism-concern}; the standard-circle position (index 6) would give
+   {benevolence-caring, universalism-concern, universalism-nature}. Both variants are
+   151–171° away (maximally distant), so the gate is unaffected.
 7. **Informational Spearman vs human hierarchy** is reported but NOT gated: pooling 4
    uniform anchored runs (the paper pools all 19) over-weights power-resources, a value
    humans rank 18/19, so we expect a value below the paper's 0.80.

@@ -9,9 +9,9 @@ version), Sec. 2.2 "A social preferences experiment (Charness and Rabin,
 
 The paper's persona-fidelity result: LLM agents endowed with one of three
 theory personas — efficient, inequity-averse, self-interested — play the six
-Charness & Rabin (2002) unilateral dictator menus and "follow the
-instructions tied to their assigned type almost perfectly" (Sec. 2.2.1,
-p. 13). This fidelity is what licenses the calibrated mixture our module
+Charness & Rabin (2002) unilateral dictator menus; the paper reports that
+"they followed the instructions tied to their assigned type almost
+perfectly" (Sec. 2.2.1, p. 13). This fidelity is what licenses the calibrated mixture our module
 ships (GPT-4o weights w_E=.37, w_I=.10, w_S=.53, p. 14), so it is the right
 correctness check for our implementation: if our payoffs were scrambled or
 the template broken, the types could not land on their corners.
@@ -26,7 +26,7 @@ the template broken, the types could not land on their corners.
   a scenario field. Payoffs verified against Horton's own
   `charness_rabin.py` scenarios (mirrored in
   `replicant/replication/homo_silicus/charness_rabin.py`).
-- Cells: 3 personas x 6 menus x REPS=10 = 180 calls, ~$0.32
+- Cells: 3 personas x 6 menus x REPS=10 = 180 calls, ~$0.33
   (vs the paper's 100 reps/cell).
 - Statistic: per persona, the vector of P(choose Left) across menus —
   exactly the paper's Fig. 3 white bars / the v vectors of Sec. 2.2.1.
@@ -62,15 +62,24 @@ in .68 for Berk29, contradicting the paper's own Fig. 3 ("31%") and CR 2002
 Table I (.31). Irrelevant here — we target the per-persona patterns, not the
 human vector.
 
-## Pre-registered pass criterion
+## Pre-registered pass criteria
 
-For each persona, mean absolute deviation of its measured P(Left) vector
-from the expected pattern, computed over that persona's non-ambiguous games
-(5 for efficient, 6 for inequity-averse, 5 for self-interested), must be
-<= 0.2. At REPS=10 this tolerates ~2 stray picks per game (noise + the GSA
-prefix), while one fully flipped game already costs 1/5 = 0.2 and any
-scrambled-payoff failure mode is larger. Threshold and targets are constants
-in `replication.py`, written before any run.
+Two conditions, both required, for each persona over its non-ambiguous games
+(5 for efficient, 6 for inequity-averse, 5 for self-interested):
+
+1. **MAD band**: mean absolute deviation of the measured P(Left) vector from
+   the expected pattern must be <= 0.2. At REPS=10 this tolerates ~2 stray
+   picks per game (noise + the GSA prefix).
+2. **Per-cell cap**: no single scored cell may deviate from its target by
+   >= 0.5. This closes a boundary hole in the MAD band alone: one fully
+   flipped game (e.g. one menu's Left/Right payoffs swapped) yields MAD of
+   exactly 1/5 = 0.2 (1/6 for inequity-averse) and would pass criterion 1
+   with zero other noise, but it puts that cell at a 1.0 deviation —
+   something REPS=10 binomial noise essentially never produces — and so
+   fails criterion 2.
+
+Thresholds and targets are constants in `replication.py`, written before any
+run.
 
 ## Deviations from the paper (all intentional)
 

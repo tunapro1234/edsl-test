@@ -21,16 +21,19 @@ method", mean trait score on the 1,000-item MPI, 1-5 scale:
 | Neuroticism | 2.73 | 3.01 |
 
 Supporting reads:
-- Sec. 4.1, p.4: design — target trait set to 100 on scale n=100, other traits
+- Sec. 4.1, pp.4-5: design — target trait set to 100 on scale n=100, other traits
   omitted; baselines NEUTRAL/NAIVE/WORDS/P2; "All prompt-based evaluations are
-  conducted using the Alpaca-7B model" (footnote 1); scored with the 1,000-item MPI.
+  conducted using the Alpaca-7B model" (body text, p.4, carrying footnote marker 1;
+  footnote 1 itself is just the stanford_alpaca repo URL); scored with the
+  1,000-item MPI and its 1-5 score range (both stated on p.5).
 - Sec. 4 intro, p.4: generation settings `max_new_tokens = 512, temperature = 1.0,
   top_p = 0.8`.
 - Sec. 5.1, p.6: "One consistent exception is the Neuroticism trait, where all
   methods, including Big5-Scaler, underperform... safety alignment objectives."
 - Sec. 6 Observations, p.8: best combo = **Phi4-14B + simple prompt + scale of 10**;
   scale 10 gave the lowest RMSE across all models; simple beat specific/simspec.
-- Abstract, p.1: headline "average Big Five trait scores exceeding 4.0 (max 5)".
+- Introduction, p.1 (contributions paragraph, right column): headline "average Big
+  Five trait scores exceeding 4.0 (max 5, min 1)".
 
 ## Our miniature (replication.py)
 

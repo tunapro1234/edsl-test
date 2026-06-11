@@ -42,8 +42,14 @@ pool, broken regex, or off-by-one bracket edges would systematically disagree.
 | Anthology (NA, greedy) WD, Llama-3-70B-**Instruct**, ATP W34 | **0.413** | Table 4 (App. A.2), p. 16. Known direction of the instruct deviation: fine-tuning nearly doubles WD; A.2 (p. 15): "none of the fine-tuned models show better metrics in both Representativeness and Consistency criteria." |
 | age-locating instrument | Fig. 17 prompt, options (A) 18-29 (B) 30-49 (C) 50-64 (D) 65 or Above (E) Was not mentioned | App. F.2, p. 32; applied at T=0, top_p=1.0 (App. F.1, p. 31) |
 | age brackets used throughout | 18-29 / 30-49 / 50-64 / 65+ | Fig. 17 (p. 32), Fig. 18 (p. 33), Table 6 (p. 34) |
-| pool young-skew the matching corrects | Anthology age shares 42.5 / 36.5 / 13.3 / 7.7 vs Census 17.8 / 34.2 / 25.3 / 22.7 | Table 6 + App. F.4, p. 34 — corroborates prep.py's finding (58% of extractable stories read 18-29), which is why our pool is age-stratified at all |
+| pool young-skew the matching corrects | Anthology age shares 42.5 / 36.5 / 13.3 / 7.7 vs Census 17.8 / 34.2 / 25.3 / 22.7 | Table 6[^t6] + App. F.4, p. 34 — corroborates prep.py's finding (58% of extractable stories read 18-29), which is why our pool is age-stratified at all |
 | pre-registered local target | bracket agreement >= **0.80** | ours, not the paper's — fixed in `replication.py:TARGETS` before any results exist |
+
+[^t6]: The paper's Table 6 *caption* attributes the backstories to
+**davinci-003**, while App. B.1 (p. 17) and the released HF pool that prep.py
+downloads say **davinci-002**. This is the paper's own internal inconsistency,
+not ours; read the "corroborates prep.py" claim against the davinci-002
+generator pool actually released — the one our 58% figure is computed on.
 
 ## Design
 
@@ -67,8 +73,26 @@ teens" → 18. For these, the true bracket is undefined, so they cannot serve as
 ground truth either way. This drops 6 of 610 stories; all other decade phrases
 ("in my 40s" → 45 etc.) map strictly inside a bracket and stay eligible.
 
+**Known ground-truth caveat (P_BARE past-age false positives):** the
+eligibility rationale — "literal digits in the head mean an exact age was
+stated" — is literally true, but the stated age can be *retrospective*. Three
+pool stories (sids 18, 47, 106 in `backstories.json`) say "when/until I was 18
+years old": prep.py's `P_BARE` pattern reads that PAST age as the narrator's
+current age and assigns 18, so their ground-truth bracket may itself be wrong.
+`pool[18]` IS in the seed-7 sample, so up to 1 of the 4 allowed misses may be
+charged to prep.py's own extraction error rather than instrument noise. That
+is fine by design — this check audits prep.py, and an extraction error
+surfacing as a locator disagreement is the check working — but interpret a
+20/24 result accordingly: it can mean 1 prep.py extraction error plus 3
+instrument quirks, not necessarily 4 instrument quirks.
+
 Calls: 24 × 1 rep = **24**. Cost: ~750 prompt + ~80 completion tokens per call
-at $0.40/$0.40 per 1M → **≈ $0.008**.
+at $0.40 in / $0.40 out per 1M → **≈ $0.008**. Pricing verified 2026-06-11
+against the DeepInfra pricing sheet and the EP canonical price list
+(`Coop.fetch_working_models()`): both state a **symmetric** $0.40/$0.40 for
+`Meta-Llama-3.1-70B-Instruct-Turbo`. (Some other DeepInfra Turbo models *are*
+asymmetric — e.g. Llama-3.3-70B-Instruct-Turbo at $0.10/$0.32 — but not this
+one.)
 
 ## Deviations from the paper
 

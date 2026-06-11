@@ -29,7 +29,9 @@ from datetime import datetime
 
 from edsl import Agent, Model, QuestionLinearScale, Scenario, ScenarioList
 
-from . import GLOSS, TRAITS, sample
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))))
+from personas.big5 import GLOSS, TRAITS, sample
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 BFI2_CSV = os.path.join(HERE, "..", "..", "..", "research", "datasets",
@@ -92,7 +94,8 @@ assert persona(_scores) == _probe, "replication template drifted from big5._one"
 CELLS = {t: persona({**{u: 5 for u in TRAITS}, t: 10}) for t in TRAITS}
 CELLS["neutral"] = persona({t: 5 for t in TRAITS})
 
-# BFI-2 response scale and item stem verbatim from bfi2_scoring_key.json.
+# BFI-2 response scale and item stem verbatim from the published BFI-2 form
+# (semicolon variant: "Neutral; no opinion"; bfi2_scoring_key.json has a comma).
 q_rate = QuestionLinearScale(
     question_name="rating",
     question_text=(

@@ -24,8 +24,10 @@ from datetime import datetime
 
 from edsl import Agent, Model, Scenario, ScenarioList
 
-from . import PAPER_DIALS, render
-from .calibrate import GAMES, HUMAN_LEFT, key, mae, q_choose
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))))
+from personas.construction import PAPER_DIALS, render
+from personas.construction.calibrate import GAMES, HUMAN_LEFT, key, mae, q_choose
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 

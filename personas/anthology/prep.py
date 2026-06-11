@@ -16,7 +16,7 @@ What this script does (each step justified in NOTES.md):
  6. write backstories.json (the small file the module reads at sample() time)
 
 Age stratification stands in for the paper's Step 2+3 (LLM demographic survey +
-greedy matching): the raw pool is heavily young-skewed (59% age 18-29, 0.7%
+greedy matching): the raw pool is heavily young-skewed (58% age 18-29, 0.7%
 65+ among extractable), so unstratified draws would NOT look like the public.
 
 Run:  python personas/anthology/prep.py          (stdlib only)
