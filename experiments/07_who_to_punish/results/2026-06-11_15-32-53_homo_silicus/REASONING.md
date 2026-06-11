@@ -84,3 +84,71 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=2, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
 - **contribution = 10**
   - I’m maximizing the sum of everyone’s earnings. Each contributed dollar adds $0.40 to each of the four players (total $1.60) while costing the contributor $1, netting a +$0.60 to total welfare. Hence the socially optimal choice is to contribute the maximum $10.
+
+## p3_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=A, period=3, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I contribute nothing because, with no possible punishment, free‑riding maximizes my payoff regardless of the others’ high contributions.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=B, period=3, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I keep my entire $10 because there’s no punishment and contributing only reduces my own payoff (each $1 I give away costs me $0.60 net). Free‑riding yields $18 each round, which is the best I can do.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=C, period=3, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I want to maximize total earnings of the group. Since each contributed dollar only returns $0.40 to each player (total $1.60), contributions have a net social loss. By contributing nothing while others keep contributing, the group’s total payoff rises (e.g., from $32 to $46 in the observed pattern). No punishment is allowed, so free‑riding is safe. Hence I contribute $0.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=3, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I contribute the full $10 because total group payoff rises with total contributions (total payoff = 40 + 0.6·C). Contributing maximizes current and future group earnings and helps keep the other player who’s still contributing from stopping.
+
+## vote2
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=A, persona=You are a human being with all the cognitive biases and heuristics that come wit..., target_group=LESS than the group average)
+- **vote = No**
+  - I want to keep the ability to free‑ride without risk of being fined, and allowing punishment would let others target me (and cost me if I chose to punish them).
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=A, persona=You are a human being with all the cognitive biases and heuristics that come wit..., target_group=exactly the group average)
+- **vote = No**
+  - I don’t want the rule to allow punishment of players who simply match the group average, since that could target me if everyone ends up contributing $0, and it seems unfair to punish someone who isn’t below the group norm.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=A, persona=You are a human being with all the cognitive biases and heuristics that come wit..., target_group=MORE than the group average)
+- **vote = Yes**
+  - I want to be able to punish the players who contribute more than average, because they reduce my payoff by contributing to the public good. Allowing punishment lets me spend a little to lower their earnings and discourage contributions, which benefits my free‑riding strategy.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=B, persona=You are a human being with all the cognitive biases and heuristics that come wit..., target_group=LESS than the group average)
+- **vote = No**
+  - I don’t want others to be able to punish me for contributing nothing, since that would reduce my earnings. Voting “No” protects my free‑riding payoff.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=B, persona=You are a human being with all the cognitive biases and heuristics that come wit..., target_group=exactly the group average)
+- **vote = No**
+  - I don’t want to risk being punished myself if I ever end up contributing exactly the group average, and allowing punishment of average contributors doesn’t help my free‑riding strategy.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=B, persona=You are a human being with all the cognitive biases and heuristics that come wit..., target_group=MORE than the group average)
+- **vote = No**
+  - I want to keep contributions high because my earnings increase with the total amount contributed, and allowing punishment only creates costs (if I punish) and may discourage others from contributing, hurting my payoff.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=C, persona=You are a human being with all the cognitive biases and heuristics that come wit..., target_group=LESS than the group average)
+- **vote = No**
+  - I’m only interested in maximizing the total earnings of the group. Punishment costs $0.75 of group payoff for each $0.25 spent, while any extra contribution only adds $0.60 to the group total per dollar. Hence allowing punishment can only lower the total payoff.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=C, persona=You are a human being with all the cognitive biases and heuristics that come wit..., target_group=exactly the group average)
+- **vote = No**
+  - I’d prefer to keep punishment disallowed because punishments reduce total welfare, and allowing punishment of average contributors is unlikely to boost contributions enough to offset the social cost.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=C, persona=You are a human being with all the cognitive biases and heuristics that come wit..., target_group=MORE than the group average)
+- **vote = No**
+  - Allowing punishment of high contributors would discourage contributions and lower the total payoff for the group.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=D, persona=You are a human being with all the cognitive biases and heuristics that come wit..., target_group=LESS than the group average)
+- **vote = No**
+  - I’d vote against allowing punishment because it reduces total welfare – each punishment costs the group $1.25 in net losses, which runs counter to my goal of maximizing total pay‑off.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=D, persona=You are a human being with all the cognitive biases and heuristics that come wit..., target_group=exactly the group average)
+- **vote = No**
+  - I prefer not to allow punishment of players who are merely at the group average, as punishments are costly to the group's total payoff and shouldn't be applied to moderate contributors.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=D, persona=You are a human being with all the cognitive biases and heuristics that come wit..., target_group=MORE than the group average)
+- **vote = No**
+  - I chose “No” because punishing players—especially those who contribute above average—reduces total group earnings (the punisher pays $0.25 while the punished loses $1). Since I care only about maximizing total pay‑off for all players, allowing such punishment would lower overall welfare.
