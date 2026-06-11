@@ -29,8 +29,26 @@ Lessons:
 
 (two runs, seed 1)
 
-### Run A — Horton default weights (population: 2× self_interested, 2× efficient)
-TBD
+### Run A — Horton default weights (A,D = self_interested; B,C = efficient)
+`results/2026-06-11_14-21-39_homo_silicus/`
+- Vote 1: punish-low allowed. Vote 2: ALL punishment banned — self_interested players
+  explicitly vote to protect their free-riding ("I want to avoid being punishable...").
+- Contributions perfectly type-consistent: efficient B,C give $10 every period; A gives $0
+  always; D (self_interested) gave $10 in P1 **under punishment threat**, saw nobody
+  punishes, dropped to $0 from P2 on. Strategic, not noisy.
+- Zero punishment all game (efficient types won't destroy surplus; selfish won't pay $0.25).
+- Result: stable exploitation — selfish earn $18/period, efficient earn $8 and keep giving.
 
-### Run B — calibrated weights (population: 2× efficient, 2× inequity_averse)
-TBD
+### Run B — calibrated weights (A,D = efficient; B,C = inequity_averse)
+`results/2026-06-11_14-31-10_homo_silicus/`
+- Full cooperation $10×4 every period, all 6 periods; everyone earns $16.
+- Vote 1: NO punishment of anyone (no selfish types to deter); vote 2 allowed punish-low,
+  but it never fired (nobody below average).
+- Calibration changed the INSTITUTION: removing the selfish share removed the demand for
+  punishment. Population composition → institutional choice, live.
+
+### Verdict
+Injection works and is razor type-consistent; but with these 3 types the population is a
+step function (all-give or all-keep). Intermediate human behavior needs either richer types
+or trait dials (see construction method). Both runs lack any punisher type — negative
+reciprocity is missing from the library entirely.

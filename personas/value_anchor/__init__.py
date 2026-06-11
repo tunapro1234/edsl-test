@@ -1,43 +1,45 @@
 """A7 — Schwartz Value Anchor (Rozen et al., arXiv:2407.12878).
 
-Persona = one sentence anchoring the agent on ONE of the 19 refined Schwartz
-values (anchor phrasings adapted from the Best-Worst Refined Values scale).
-The paper showed this single anchor produces internally coherent "individuals"
-whose value structure matches the human value circle.
+Persona = the paper's verbatim template "Answer as a person that is [value]",
+where [value] is one of the 19 Best-Worst Refined Values descriptions, copied
+EXACTLY from the paper's Appendix E (Lee et al. 2019 BWVr; the 20th BWVr item,
+animal welfare, is not part of the 19-value Schwartz set and is excluded).
+A single anchor produces an internally coherent "individual" whose value
+structure matches the human value circle.
 
 Sampling is uniform over the 19 values, as in the paper. TODO for population
 realism: reweight by human value prevalence (Schwartz & Cieciuch 2022, N=53k).
+
+NOTE: Appendix E pairs power-dominance with the money/possessions text and
+power-resources with the authority text (swapped vs. standard Schwartz
+definitions); we keep the paper's texts verbatim — only the comments label them.
 """
 
 import random
 
-ANCHORS = [  # 19 refined values
-    "thinking up your own original ideas",                          # self-direction (thought)
-    "making your own decisions about your life",                    # self-direction (action)
-    "having all sorts of new experiences",                          # stimulation
-    "enjoying life's pleasures",                                    # hedonism
-    "being very successful",                                        # achievement
-    "having the power to make people do what you want",             # power (dominance)
-    "having wealth and material possessions",                       # power (resources)
-    "protecting your public image and avoiding being shamed",       # face
-    "living in secure surroundings",                                # security (personal)
-    "living in a country that is safe and stable",                  # security (societal)
-    "maintaining traditional values and ways of thinking",          # tradition
-    "obeying all rules and laws",                                   # conformity (rules)
-    "never annoying or upsetting others",                           # conformity (interpersonal)
-    "being humble and avoiding public attention",                   # humility
-    "being a completely reliable and trustworthy friend",           # benevolence (dependability)
-    "caring for and helping the people dear to you",                # benevolence (caring)
-    "equal treatment and justice for everyone, even strangers",     # universalism (concern)
-    "protecting the natural environment",                           # universalism (nature)
-    "understanding people who are different from you",              # universalism (tolerance)
+ANCHORS = [  # verbatim from Appendix E
+    "developing your own original ideas and opinions",                 # self-direction (thought)
+    "being free to act independently",                                 # self-direction (action)
+    "having an exciting life; having all sorts of new experiences",    # stimulation
+    "taking advantage of every opportunity to enjoy life's pleasures", # hedonism
+    "being ambitious and successful",                                  # achievement
+    "having the power that money and possessions can bring",           # power (dominance, sic)
+    "having the authority to get others to do what you want",          # power (resources, sic)
+    "protecting your public image and avoiding being shamed",          # face
+    "living and acting in ways that ensure that you are personally safe and secure",  # security (personal)
+    "living in a safe and stable society",                             # security (societal)
+    "following cultural family or religious practices",                # tradition
+    "obeying all rules and laws",                                      # conformity (rules)
+    "making sure you never upset or annoy others",                     # conformity (interpersonal)
+    "being humble and avoiding public recognition",                    # humility
+    "being a completely dependable and trustworthy friend and family member",  # benevolence (dependability)
+    "helping and caring for the wellbeing of those who are close",     # benevolence (caring)
+    "caring and seeking justice for everyone especially the weak and vulnerable in society",  # universalism (concern)
+    "protecting the natural environment from destruction or pollution",  # universalism (nature)
+    "being open-minded and accepting of people and ideas, even when you disagree with them",  # universalism (tolerance)
 ]
 
 
 def sample(n, seed=None):
     rng = random.Random(seed)
-    return [
-        f"Answer as a person for whom {rng.choice(ANCHORS)} is the most "
-        "important guiding value in life."
-        for _ in range(n)
-    ]
+    return [f"Answer as a person that is {rng.choice(ANCHORS)}." for _ in range(n)]

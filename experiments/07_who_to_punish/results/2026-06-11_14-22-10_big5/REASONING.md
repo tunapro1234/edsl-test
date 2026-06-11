@@ -151,3 +151,102 @@
 
 ### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=3, persona=People with a high extraversion score are sociable and assertive. Your extravers..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
 - **contribution = None**
+
+## p3_punish
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, my_contribution=0, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target=B, target_contribution=0)
+- **punish = 0**
+  - I’m very cooperative and don’t want to hurt a fellow player, especially since I also contributed nothing this round. The cost to me also outweighs any benefit, so I choose not to punish.
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, my_contribution=0, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target=D, target_contribution=0)
+- **punish = 0**
+  - I chose not to punish D because I’m highly agreeable and compassionate, and I also contributed nothing myself this round, so it feels unfair to penalize a fellow low‑contributor while I’m doing the same.
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, my_contribution=0, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target=A, target_contribution=0)
+- **punish = None**
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, my_contribution=0, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target=D, target_contribution=0)
+- **punish = 0**
+  - I chose not to punish D because I’m also contributing nothing, so targeting a fellow free‑rider feels unfair and would only cost me $0.25 per dollar spent, reducing my own earnings without any clear benefit.
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, my_contribution=10, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target=A, target_contribution=0)
+- **punish = 8**
+  - I chose to punish Player A fairly strongly—reducing their earnings by $8 (costing me $2). My moderate agreeableness and decent conscientiousness push me to enforce fairness against the clear free‑rider, while not going to the extreme of the full $10, keeping a reasonable net payoff for myself.
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, my_contribution=10, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target=B, target_contribution=0)
+- **punish = None**
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, my_contribution=10, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target=D, target_contribution=0)
+- **punish = 3**
+  - I chose a moderate punishment. It signals that free‑riding isn’t acceptable, but it limits the cost to me (only $0.75) while still penalising D enough to discourage future non‑contributions.
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, my_contribution=0, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target=A, target_contribution=0)
+- **punish = None**
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, my_contribution=0, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target=B, target_contribution=0)
+- **punish = 2**
+  - I chose a moderate punishment. Given my cooperative yet disciplined personality, I want to discourage free‑riding without overly harming my own payoff, so a $2 reduction (costing $0.50) seems a balanced response.
+
+## vote2
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=low, me=A, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target_group=LESS than the group average)
+- **vote = Yes**
+  - Allowing punishment for below‑average contributions helps deter free‑riding and encourages everyone to contribute, which supports group cooperation and fairness.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=avg, me=A, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target_group=exactly the group average)
+- **vote = No**
+  - I’d rather keep punishments limited to clear free‑riders (those below the average) to maintain fairness and group harmony. Punishing someone who’s exactly average seems unnecessarily harsh.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=high, me=A, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target_group=MORE than the group average)
+- **vote = No**
+  - I believe we should keep the rule that only low contributors can be punished; allowing punishment of high contributors would discourage cooperation and seems unfair, which goes against my cooperative, agreeable nature.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=low, me=B, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target_group=LESS than the group average)
+- **vote = No**
+  - I want to avoid being punished for low contributions, so I’d rather disallow punishing players who fall below the group average.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=avg, me=B, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target_group=exactly the group average)
+- **vote = No**
+  - I’d rather keep the rule that only below‑average contributors can be punished, limiting the risk of being penalized for meeting the group norm.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=high, me=B, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target_group=MORE than the group average)
+- **vote = Yes**
+  - I want to shift punishment toward high contributors so I can free‑ride more effectively and avoid being punished for low contributions.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=low, me=C, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target_group=LESS than the group average)
+- **vote = Yes**
+  - I want to keep the ability to punish below‑average contributors so that free‑riders are discouraged and the group stays cooperative.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=avg, me=C, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target_group=exactly the group average)
+- **vote = Yes**
+  - I think allowing punishment of those who match the average will help deter free‑riding and push everyone toward higher contributions, which aligns with my tendency to enforce group norms and protect my own high contributions.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=high, me=C, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target_group=MORE than the group average)
+- **vote = No**
+  - I want to keep the focus on rewarding high contributions rather than penalizing those who do more than the average, supporting cooperation and fairness.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=low, me=D, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target_group=LESS than the group average)
+- **vote = Yes**
+  - I vote to allow punishing players who contribute less than the group average because it discourages free‑riding and helps keep the group cooperative, which aligns with my cooperative and disciplined nature.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=avg, me=D, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target_group=exactly the group average)
+- **vote = No**
+  - I prefer to keep punishment limited to those falling below the group average. Allowing punishment for exactly average contributions would increase the risk of being penalized even when I’m not under‑contributing, and seems unfairly harsh.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=high, me=D, persona=People with a high extraversion score are sociable and assertive. Your extravers..., target_group=MORE than the group average)
+- **vote = No**
+  - I don’t think it’s fair to let players be punished for contributing above the average; it would discourage cooperation and hurt the group’s overall earnings.
+
+## p4_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=4, persona=People with a high extraversion score are sociable and assertive. Your extravers..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=4, persona=People with a high extraversion score are sociable and assertive. Your extravers..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=4, persona=People with a high extraversion score are sociable and assertive. Your extravers..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=4, persona=People with a high extraversion score are sociable and assertive. Your extravers..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**

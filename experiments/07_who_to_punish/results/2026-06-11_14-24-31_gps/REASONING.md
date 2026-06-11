@@ -110,3 +110,84 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=2, persona=Your risk taking (willingness to take risks) is 5 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
 - **contribution = 10**
   - I’m contributing the full $10 so I’m not below the group average and won’t be punishable. This protects me from costly punishment and encourages mutual cooperation, aligning with my relatively high patience and reciprocity tendencies.
+
+## p3_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=3, persona=Your risk taking (willingness to take risks) is 8 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=3, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I choose to contribute the full $10 to avoid being below the group average and risking costly punishment, which aligns with my low risk tolerance and moderate prosocial preferences.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=3, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I expect the others to keep contributing the full $10 (as they did in period 2) and, given my very high trust and low risk tolerance, I want to avoid being below the group average where I could be punished. Contributing $10 maximizes my earnings and aligns with my prosocial and altruistic preferences.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=3, persona=Your risk taking (willingness to take risks) is 5 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I’m going full‑contribution to stay at the group average, avoid being punished, and reciprocate the others’ cooperation—given my relatively high patience, reciprocity, and moderate risk aversion.
+
+## p3_punish
+
+### player  (rep 0, avg=7.5, contributions=[10, 10, 10, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, my_contribution=10, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., target=A, target_contribution=0)
+- **punish = 2.0**
+  - I chose a
+
+### player  (rep 0, avg=7.5, contributions=[10, 10, 10, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, my_contribution=10, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., target=A, target_contribution=0)
+- **punish = 2**
+  - I chose a modest punishment. My negative reciprocity is only moderate (5/10), so I’m willing to penalize the
+
+### player  (rep 0, avg=7.5, contributions=[10, 10, 10, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, my_contribution=10, persona=Your risk taking (willingness to take risks) is 5 out of 10. Your patience (will..., target=A, target_contribution=0)
+- **punish = 10**
+  - I chose to punish the free‑rider fully. My negative reciprocity (6) makes me willing to incur a cost to penalize unfair behavior, and my patience (7) supports a strong signal to keep the group cooperative in future rounds. The cost to me ($2.50) is acceptable given my moderate risk tolerance and desire to discourage zero contributions.
+
+## vote2
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=low, me=A, persona=Your risk taking (willingness to take risks) is 8 out of 10. Your patience (will..., target_group=LESS than the group average)
+- **vote = Yes**
+  - I’m inclined to allow punishment of low contributors so I can retaliate against free‑riders and deter them, even though it costs me a bit; my high risk tolerance and moderate negative reciprocity support this choice.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=avg, me=A, persona=Your risk taking (willingness to take risks) is 8 out of 10. Your patience (will..., target_group=exactly the group average)
+- **vote = No**
+  - I prefer not to allow punishment of players who contributed exactly the group average, as it would enable unfair penalties against cooperative contributors and could undermine long‑term group cooperation, which aligns with my low prosociality and moderate negative reciprocity.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=high, me=A, persona=Your risk taking (willingness to take risks) is 8 out of 10. Your patience (will..., target_group=MORE than the group average)
+- **vote = No**
+  - I want to keep the ability to punish low contributors (free‑riders) but not open punishment to those who contribute more than average, which would only increase costly retaliation and doesn’t help me deter under‑contributing players.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=low, me=B, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., target_group=LESS than the group average)
+- **vote = No**
+  - I prefer to avoid the risk of being punished for under‑contributing, even though punishing low contributors can promote cooperation. My low risk tolerance makes me favor a rule that protects me from potential costly punishment.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=avg, me=B, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., target_group=exactly the group average)
+- **vote = No**
+  - I prefer to keep the restriction because allowing punishment of players who contribute exactly the average increases the risk of being punished for merely matching the group norm, which I want to avoid given my low risk‑taking preference.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=high, me=B, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., target_group=MORE than the group average)
+- **vote = No**
+  - I’d rather not allow punishment of higher contributors, as it discourages cooperation and could hurt group welfare, which conflicts with my moderate altruism and prosocial preferences.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=low, me=C, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., target_group=LESS than the group average)
+- **vote = Yes**
+  - I favor allowing punishment of below‑average contributors because it helps keep contributions high, which benefits the group—a priority given my strong prosocial, altruistic, and trusting preferences—while the low risk of retaliation aligns with my low risk‑taking tendency.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=avg, me=C, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., target_group=exactly the group average)
+- **vote = No**
+  - I prefer not to allow punishment for exact‑average contributions because it increases the risk of unfair penalties and could destabilise cooperation, which doesn’t align with my low risk tolerance and prosocial preferences.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=high, me=C, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., target_group=MORE than the group average)
+- **vote = No**
+  - I prefer not to allow punishment of players who contribute more than the group average because it would discourage generous contributions, harm overall group welfare, and increase the risk of being punished for over‑contributing, which conflicts with my low risk tolerance and prosocial preferences.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=low, me=D, persona=Your risk taking (willingness to take risks) is 5 out of 10. Your patience (will..., target_group=LESS than the group average)
+- **vote = Yes**
+  - I want a rule that lets us punish low contributors, both to deter free‑riding and to respond when someone under‑contributes, which matches my relatively high negative reciprocity and patience for future cooperation.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=avg, me=D, persona=Your risk taking (willingness to take risks) is 5 out of 10. Your patience (will..., target_group=exactly the group average)
+- **vote = No**
+  - I don’t want to expand punishable behavior to people who are already matching the group norm, as that could create unnecessary conflict and hurt cooperation.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=high, me=D, persona=Your risk taking (willingness to take risks) is 5 out of 10. Your patience (will..., target_group=MORE than the group average)
+- **vote = No**
+  - I prefer to keep the incentive for high contributions intact; allowing punishment of those who give above average would discourage cooperation and could be used against me, which doesn’t align with my relatively high patience and positive reciprocity.
