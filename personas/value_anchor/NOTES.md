@@ -67,3 +67,12 @@ persistent Nones; future runs cannot fabricate contributions.)
   → genuine collapse 0x4 in P4-6 (clean data, not artifact).
 - Story: high trust early; one unpunished defection killed the institution. Next test:
   prevalence weights (benevolence-heavy draws should stabilize cooperation).
+
+## Who-to-punish v3 (seed 1, verbatim template + PREVALENCE weights, clean)
+`results/2026-06-11_15-37-17_value_anchor/` — draws: self-direction-action,
+2x benevolence-caring, hedonism (the realistic distribution at work).
+- punish-low RETAINED in both votes (benevolence majority keeps the institution).
+- Free-rider D punished $6 then $15 → reforms to 9 from P4 on; later dips (B, C)
+  also punished. Contributions sustained in the 6-10 band with active enforcement.
+- The v2 collapse story is gone: prevalence weighting fixed the institution's
+  survival exactly as predicted.
