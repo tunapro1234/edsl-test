@@ -15,11 +15,18 @@ fit, mirroring the paper's red bars). Fit: enumerate every 3-subset, score the
 uniform mixture by mean absolute error against the human shares choosing
 "Left", keep the best.
 
-Human targets: v_CR = (.52, .67, .27, 1.00, .78, .68) for (Barc2, Barc8,
-Berk15, Berk23, Berk26, Berk29) — Horton 2023 (arXiv:2301.07543), "A social
-preferences experiment" section; payoffs as printed in GSA Fig. A1 = Horton
-Fig. 3. Note: in Berk23 "Right" = (0,0) is Pareto-dominated, so ALL humans
-chose Left — the target is 1.00.
+Human targets: Left shares (.52, .67, .27, 1.00, .78, .31) for (Barc2, Barc8,
+Berk15, Berk23, Berk26, Berk29) — Charness & Rabin 2002 Table I / Horton 2023
+Figure 3; payoffs as printed in GSA Fig. A1 = Horton Fig. 3. Notes: in Berk23
+"Right" = (0,0) is Pareto-dominated, so ALL humans chose Left (target 1.00);
+in Berk29 Horton's in-text v_CR says .68 but his Figure 3 says 31% — we use
+the figure/primary source (see HUMAN_LEFT comment).
+
+Discipline: the fitted dials.json must NOT be trusted over the paper's
+validated dials just because its in-sample MAE is lower — at REPS=10 the
+exhaustive subset search has ~+0.03 winner's-curse optimism (verifier
+simulation). Validate on held-out games (GSA's 20 two-stage CR games) or
+bump REPS before letting dials.json drive real experiments.
 
 Writes probe.json (raw per-vector behavior; delete it to re-probe — EDSL's
 remote cache makes re-running already-probed vectors free, so densifying GRID
@@ -53,9 +60,12 @@ GAMES = {
     "Berk26": ((0, 800), (400, 400)),
     "Berk29": ((400, 400), (750, 400)),
 }
-# Human share choosing Left (Charness & Rabin 2002, via Horton 2023's v_CR).
+# Human share choosing Left (Charness & Rabin 2002 Table I; Horton 2023 Fig. 3).
+# WARNING: Horton's in-text v_CR ends ".68" for Berk29 — that is a typo (it is
+# the share choosing RIGHT). His own Figure 3 and GSA Fig. A1 both put the
+# Berk29 human Left share at ~0.31; we calibrate on the primary sources.
 HUMAN_LEFT = {"Barc2": 0.52, "Barc8": 0.67, "Berk15": 0.27,
-              "Berk23": 1.00, "Berk26": 0.78, "Berk29": 0.68}
+              "Berk23": 1.00, "Berk26": 0.78, "Berk29": 0.31}
 
 q_choose = QuestionMultipleChoice(
     question_name="choice",

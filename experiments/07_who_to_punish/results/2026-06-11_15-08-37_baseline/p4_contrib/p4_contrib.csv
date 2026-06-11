@@ -1,0 +1,106 @@
+agent.agent_index,agent.agent_instruction,agent.agent_name,answer.contribution,cache_keys.contribution_cache_key,cache_used.contribution_cache_used,comment.contribution_comment,generated_tokens.contribution_generated_tokens,iteration.iteration,model.frequency_penalty,model.inference_service,model.logprobs,model.max_tokens,model.model,model.model_index,model.presence_penalty,model.reasoning_effort,model.temperature,model.top_logprobs,model.top_p,prompt.contribution_system_prompt,prompt.contribution_user_prompt,question_options.contribution_question_options,question_text.contribution_question_text,question_type.contribution_question_type,raw_model_response.contribution_cost,raw_model_response.contribution_input_price_per_million_tokens,raw_model_response.contribution_input_tokens,raw_model_response.contribution_one_usd_buys,raw_model_response.contribution_output_price_per_million_tokens,raw_model_response.contribution_output_tokens,raw_model_response.contribution_raw_model_response,raw_model_response.contribution_thinking_tokens,reasoning_summary.contribution_reasoning_summary,scenario.history,scenario.me,scenario.period,scenario.persona,scenario.rule,scenario.scenario_index,validated.contribution_validated
+0,You are answering questions as if you were a human. Do not break character.,player,0,84c70456476a95d7d3026298889c2852,True,"I contributed nothing because with punishment disabled my payoff is maximized by free‑riding; any contribution only costs me $0.60 per dollar while giving me $0.40 back, so the best self‑interest move is to keep the full $10.",,0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player A in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+The group voted to allow NO punishment at all.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 10, 10, 0] (avg 7.5); you spent $0.00 on punishing and received $10 of punishment; you earned $12.00.
+Period 2: you contributed $10, all contributions were [10, 10, 6, 0] (avg 6.5); you spent $0.00 on punishing and received $0 of punishment; you earned $10.40.
+Period 3: you contributed $10, all contributions were [10, 6, 5, 0] (avg 5.25); you spent $0.00 on punishing and received $0 of punishment; you earned $8.40.
+Vote 2 outcome: The group voted to allow NO punishment at all.
+This is period 4. How much of your $10 do you contribute to the group fund (0-10)?
+
+This question requires a numerical response in the form of an integer or decimal (e.g., -12, 0, 1, 2, 3.45, ...).
+Respond with just your number on a single line.
+If your response is equivalent to zero, report '0'
+
+
+After the answer, put a comment explaining your choice on the next line.",,"{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.rule }}
+{{ scenario.history }}
+This is period {{ scenario.period }}. How much of your $10 do you contribute to the group fund (0-10)?",numerical,0.000392304,0.039,486,2549.0435988417144,0.19,1965,,,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 10, 10, 0] (avg 7.5); you spent $0.00 on punishing and received $10 of punishment; you earned $12.00.
+Period 2: you contributed $10, all contributions were [10, 10, 6, 0] (avg 6.5); you spent $0.00 on punishing and received $0 of punishment; you earned $10.40.
+Period 3: you contributed $10, all contributions were [10, 6, 5, 0] (avg 5.25); you spent $0.00 on punishing and received $0 of punishment; you earned $8.40.
+Vote 2 outcome: The group voted to allow NO punishment at all.",A,4,,The group voted to allow NO punishment at all.,0,True
+0,You are answering questions as if you were a human. Do not break character.,player,0,d39b336319405955ed290252bb811682,False,"I contribute nothing because without any punishment the dominant strategy is to free‑ride: each dollar I keep gives me $1, while contributing only returns $0.40 to me, a net loss of $0.60 per dollar. Hence $0 maximizes my payoff.","0
+I contribute nothing because without any punishment the dominant strategy is to free‑ride: each dollar I keep gives me $1, while contributing only returns $0.40 to me, a net loss of $0.60 per dollar. Hence $0 maximizes my payoff.",0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player B in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+The group voted to allow NO punishment at all.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $10, all contributions were [10, 10, 10, 0] (avg 7.5); you spent $0.00 on punishing and received $0 of punishment; you earned $12.00.
+Period 2: you contributed $0, all contributions were [10, 10, 6, 0] (avg 6.5); you spent $0.00 on punishing and received $10 of punishment; you earned $10.40.
+Period 3: you contributed $6, all contributions were [10, 6, 5, 0] (avg 5.25); you spent $0.00 on punishing and received $0 of punishment; you earned $12.40.
+Vote 2 outcome: The group voted to allow NO punishment at all.
+This is period 4. How much of your $10 do you contribute to the group fund (0-10)?
+
+This question requires a numerical response in the form of an integer or decimal (e.g., -12, 0, 1, 2, 3.45, ...).
+Respond with just your number on a single line.
+If your response is equivalent to zero, report '0'
+
+
+After the answer, put a comment explaining your choice on the next line.",,"{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.rule }}
+{{ scenario.history }}
+This is period {{ scenario.period }}. How much of your $10 do you contribute to the group fund (0-10)?",numerical,0.00021921400000000002,0.039,486,4561.752442818432,0.19,1054,"{'id': 'chatcmpl-RVm3KEGdw2IRrzdU8LCCW8UF', 'choices': [{'finish_reason': 'stop', 'index': 0, 'logprobs': None, 'message': {'content': '0\nI contribute nothing because without any punishment the dominant strategy is to free‑ride: each dollar I keep gives me $1, while contributing only returns $0.40 to me, a net loss of $0.60 per dollar. Hence $0 maximizes my payoff.', 'refusal': None, 'role': 'assistant', 'annotations': None, 'audio': None, 'function_call': None, 'tool_calls': [], 'reasoning_content': ""We need to decide contribution in period 4 given history, voting, and preferences. As Player B in a repeated public goods game, we may aim to maximize earnings.\n\nGame: each player gets $10 each period, decide contribution c_i ∈ [0,10]. The total contributions sum S = Σ c_i. Each dollar in fund yields $0.40 to each of the 4 players: i.e., each player gets 0.40 * S. So individual payoff = (10 - c_i) + 0.40 * S, ignoring punishment.\n\nIf punishment allowed, there could be costs, but group has voted NO punishment period 4. So no punishment will happen; not possible to spend on punishment? In previous periods they spent $0. So we ignore punishment.\n\nGiven contributions history: period 1 contributions: [10,10,10,0] (your contribution 10). You earned 12.00. Let's verify: S = 30. Each player gets 0.40*30 = $12. So each gets 12 plus their leftover (10 - c_i). For you: 10-10=0. So total 12. matches.\n\nPeriod 2 contributions: [10,10,6,0]; your contribution 0. S=26. Each gets 0.40*26=10.4. You contributed 0, leftover 10. So total 20.4? Wait you earned $10.40 per record. That suggests maybe they didn't count leftover? Actually they reported earned $10.40, which equals 0.40*26 = 10.4. So they only count the public good payoff, not private leftover? But period 1 earned 12.00, which equals 0.40*30. So they are ignoring private leftover, maybe they consider earnings = payoff from group fund only. That's weird. In period 3 contributions: [10,6,5,0]; your contribution 6, S=21. Each gets 0.40*21=8.4. But you earned $12.40. That equals 8.4 + leftover? 10-6=4, 8.4+4=12.4 matches. So period 2 they omitted leftover? Wait leftover was 10, so 8.4+10=18.4, not 10.4. So record says you earned $10.40, which is only the public good payoff. Maybe because they also received punishment? They received $10 of punishment? Wait period 2: you spent $0 on punishing and received $10 of punishment. Received $10 of punishment means you were punished? Punishment reduces earnings by $1 per $0.25 spent by others? Not sure. If you received $10 of punishment, that would be -$10. So you would have base payoff (public good + private) then minus punishment. Let's calculate: public good payoff 0.40*26 = $10.4. Private leftover 10. So total before punishment = $20.4. Received $10 of punishment (i.e., lost $10). So net = $10.4. That matches recorded. So punishment can subtract from total.\n\nNow for period 4, no punishment allowed per vote. So no one can punish, so we just get public good payoff + private leftover.\n\nOur goal: maximize our own payoff. In a one-shot with no punishment, the dominant strategy is to contribute $0, because you keep 10 and still get 0.40*S from others. Since others contributions likely not zero, you want to free ride. However repeated game and voting may affect future behavior, but currently period 4 maybe last? Not stated, but we assume repeated but unknown horizon. Since there is no punishment, you can't enforce cooperation. Best response is to contribute 0.\n\nBut consider you may affect future votes or reputation? But we just need to decide period 4 contribution. Typically we would contribute 0.\n\nCheck other players' history: contributions were varying. Player others maybe some contributed 10,6,5 etc. Without punishment, they may also contribute 0. So the contribution to group fund may be low. But you could still contribute something if you expect others to contribute high, but you don't know. The safest is to contribute 0 to maximize guaranteed earnings of 10 + 0.40*S where S includes others contributions. Since your own contribution reduces your private leftover by same amount with only 0.40 return, you lose 0.60 per dollar contributed.\n\nThus best is 0.\n\nThus answer: 0\n\nAdd comment: I choose 0 because with no punishment, free riding dominates; contributing reduces my payoff by $0.60 per dollar.\n\n"", 'name': None}}], 'created': 1781180888, 'model': 'openai/gpt-oss-120b', 'object': 'chat.completion', 'service_tier': 'default', 'system_fingerprint': None, 'usage': {'completion_tokens': 1054, 'prompt_tokens': 486, 'total_tokens': 1540, 'completion_tokens_details': None, 'prompt_tokens_details': None, 'estimated_cost': 0.00021921400000000002}}",,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $10, all contributions were [10, 10, 10, 0] (avg 7.5); you spent $0.00 on punishing and received $0 of punishment; you earned $12.00.
+Period 2: you contributed $0, all contributions were [10, 10, 6, 0] (avg 6.5); you spent $0.00 on punishing and received $10 of punishment; you earned $10.40.
+Period 3: you contributed $6, all contributions were [10, 6, 5, 0] (avg 5.25); you spent $0.00 on punishing and received $0 of punishment; you earned $12.40.
+Vote 2 outcome: The group voted to allow NO punishment at all.",B,4,,The group voted to allow NO punishment at all.,1,True
+0,You are answering questions as if you were a human. Do not break character.,player,0,4dcc3a28ebc117d60529fd8763189213,True,"I contribute nothing because with punishment disabled, my payoff is highest when I free‑ride: each dollar I keep yields $1, while contributing only gives me $0.40 back, a net loss of $0.60 per dollar. Hence the best selfish choice is $0.",,0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player C in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+The group voted to allow NO punishment at all.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $10, all contributions were [10, 10, 10, 0] (avg 7.5); you spent $0.00 on punishing and received $0 of punishment; you earned $12.00.
+Period 2: you contributed $6, all contributions were [10, 10, 6, 0] (avg 6.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.40.
+Period 3: you contributed $0, all contributions were [10, 6, 5, 0] (avg 5.25); you spent $0.00 on punishing and received $10 of punishment; you earned $8.40.
+Vote 2 outcome: The group voted to allow NO punishment at all.
+This is period 4. How much of your $10 do you contribute to the group fund (0-10)?
+
+This question requires a numerical response in the form of an integer or decimal (e.g., -12, 0, 1, 2, 3.45, ...).
+Respond with just your number on a single line.
+If your response is equivalent to zero, report '0'
+
+
+After the answer, put a comment explaining your choice on the next line.",,"{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.rule }}
+{{ scenario.history }}
+This is period {{ scenario.period }}. How much of your $10 do you contribute to the group fund (0-10)?",numerical,0.000258734,0.039,486,3864.9732930345453,0.19,1262,,,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $10, all contributions were [10, 10, 10, 0] (avg 7.5); you spent $0.00 on punishing and received $0 of punishment; you earned $12.00.
+Period 2: you contributed $6, all contributions were [10, 10, 6, 0] (avg 6.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.40.
+Period 3: you contributed $0, all contributions were [10, 6, 5, 0] (avg 5.25); you spent $0.00 on punishing and received $10 of punishment; you earned $8.40.
+Vote 2 outcome: The group voted to allow NO punishment at all.",C,4,,The group voted to allow NO punishment at all.,2,True
+0,You are answering questions as if you were a human. Do not break character.,player,0,1682e300e00115fe4dea853ac6a7d219,True,"I chose to contribute nothing because punishment is now prohibited, so there’s no cost to free‑riding. Keeping the full $10 while still receiving $0.40 per dollar contributed by the others maximizes my own earnings.",,0,0,deep_infra,False,8192,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player D in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+The group voted to allow NO punishment at all.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $10, all contributions were [10, 10, 10, 0] (avg 7.5); you spent $2.50 on punishing and received $0 of punishment; you earned $9.50.
+Period 2: you contributed $10, all contributions were [10, 10, 6, 0] (avg 6.5); you spent $2.50 on punishing and received $0 of punishment; you earned $7.90.
+Period 3: you contributed $5, all contributions were [10, 6, 5, 0] (avg 5.25); you spent $2.50 on punishing and received $0 of punishment; you earned $10.90.
+Vote 2 outcome: The group voted to allow NO punishment at all.
+This is period 4. How much of your $10 do you contribute to the group fund (0-10)?
+
+This question requires a numerical response in the form of an integer or decimal (e.g., -12, 0, 1, 2, 3.45, ...).
+Respond with just your number on a single line.
+If your response is equivalent to zero, report '0'
+
+
+After the answer, put a comment explaining your choice on the next line.",,"{{ scenario.persona }}
+You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.rule }}
+{{ scenario.history }}
+This is period {{ scenario.period }}. How much of your $10 do you contribute to the group fund (0-10)?",numerical,0.00022339400000000002,0.039,486,4476.395964081398,0.19,1076,,,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $10, all contributions were [10, 10, 10, 0] (avg 7.5); you spent $2.50 on punishing and received $0 of punishment; you earned $9.50.
+Period 2: you contributed $10, all contributions were [10, 10, 6, 0] (avg 6.5); you spent $2.50 on punishing and received $0 of punishment; you earned $7.90.
+Period 3: you contributed $5, all contributions were [10, 6, 5, 0] (avg 5.25); you spent $2.50 on punishing and received $0 of punishment; you earned $10.90.
+Vote 2 outcome: The group voted to allow NO punishment at all.",D,4,,The group voted to allow NO punishment at all.,3,True

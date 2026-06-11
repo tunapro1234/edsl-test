@@ -54,3 +54,13 @@ Baseline: votes punish-low, then nobody pays to punish, contributions collapse t
 vote 2 dismantles the institution. Twin2k markers of success: interior + heterogeneous
 contributions across the 4 distinct people, actual paid punishment of low contributors,
 punish-low rule retained in vote 2, earnings above the $10 no-cooperation floor.
+
+## Who-to-punish v2 result (seed 1, clean: 0/72 None) — 2026-06-11_15-08-43
+Textbook Fehr-Gächter/Ertan trajectory, the strongest run of any method:
+- P1 interior heterogeneous contributions 5/5/10/6; low contributors punished ($2/$2).
+- P2-P3 monotonic ratchet up (7/8/10/7 → 9/8/10/10) with punishment tracking laggards.
+- Vote 2: punish-low RETAINED (humans do exactly this; bare model dismantled it).
+- P4: 10/10/10/9 — the lone 9 still drew $5 punishment (strict norm enforcement).
+- P5-P6: full cooperation 10x4, punishment no longer needed (pure deterrence).
+Earnings end at $16/period (max cooperative payoff). Real-person profiles with embedded
+behavioral evidence produced the complete institutional success story.

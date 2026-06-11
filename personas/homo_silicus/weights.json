@@ -1,31 +1,11 @@
 {
+  "status": "UNCALIBRATED fallback — Horton (arXiv:2301.07543, Sec. 2.2.1) GPT-4o weights for his 3 types, 0 for the new types. Run calibrate.py to fit all 6.",
   "weights": {
-    "self_interested": 0.0,
-    "efficient": 0.58,
-    "inequity_averse": 0.42
-  },
-  "sse": 0.11630224999999997,
-  "behavior": {
-    "self_interested": [
-      0.0,
-      1.0,
-      0.0
-    ],
-    "efficient": [
-      0.0,
-      1.0,
-      0.0
-    ],
-    "inequity_averse": [
-      0.5,
-      0.0,
-      1.0
-    ]
-  },
-  "target": [
-    0.2835,
-    0.36,
-    0.17
-  ],
-  "reps": 10
+    "self_interested": 0.53,
+    "efficient": 0.37,
+    "inequity_averse": 0.10,
+    "competitive": 0.0,
+    "reciprocal": 0.0,
+    "selfish_but_fair": 0.0
+  }
 }

@@ -31,3 +31,11 @@ The most human-like dynamics of any method so far:
   per trait (counters neuroticism suppression; low scores otherwise undefined).
 - personas/big5/check_calibration.py — offline sanity check (determinism, moments,
   correlations).
+
+## Who-to-punish v2 result (seed 1, upgraded module) — 2026-06-11_15-08-39
+Interior, non-corner contributions throughout — the upgrade worked:
+- P1: 10/7/6/5 (heterogeneous, human-scale); low contributors punished ($3/$6).
+- P2-P3: contributions climb to 8-10 under continued targeted punishment.
+- Vote 2 dismantled punishment (anti-human move, 3 players self-protecting), BUT
+  P4-6 showed gradual decay with heterogeneity (9/8/0/10 → 8/6/0/10), not collapse:
+  only one free-rider; others stayed 6-10 — the classic no-sanctions decay pattern.

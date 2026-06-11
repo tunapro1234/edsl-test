@@ -2,10 +2,10 @@
 
 Persona = the paper's "Simple Prompt" (Cho & Cheong 2025, Figure 2): one
 sentence per trait stating what a high score means plus "Your X score is
-{s} out of 10", then the closing line — verbatim where possible. Their best
-configuration for imitating real humans was exactly this: the SIMPLE
-trait-level prompt with the smallest scale, n = 10 (Table 7: lowest RMSE
-across all models; Section 6 observations).
+{s} out of 10", then the closing line — verbatim where possible. Their
+best-performing configuration for EXPRESSING assigned trait scores was
+exactly this: the SIMPLE trait-level prompt with the smallest scale, n = 10
+(Table 7: lowest RMSE across all models; Section 6 observations).
 
 One deliberate addition to the template: each sentence also describes the
 LOW pole neutrally ("people with low X score are ..."). Reason: the paper
@@ -16,12 +16,15 @@ high-pole-only template leaves undefined. Low-pole wordings paraphrase the
 BFI-2 reverse-keyed items (research/datasets/bfi2/bfi2_items.csv).
 
 Scores: sampled from published human norms — Soto & John (2017), JPSP
-113(1), Internet validation sample, N = 1,000 (median age 24; skews young
-and self-selected, the closest published general-population norm we have;
-TODO: swap in nationally representative norms if we adopt a source).
-Domains are sampled JOINTLY: a multivariate normal with the published
-domain intercorrelations (Cholesky), then truncated to the 1-5 BFI-2 scale
-and rescaled to integers 0-10 (truncation clips ~1-2% of draws per tail).
+113(1), Internet validation sample, N = 1,000 (ages 18-74, M = 28.73,
+65% under 30; skews young and self-selected, the closest published
+general-population norm we have; TODO: swap in nationally representative
+norms if we adopt a source). Domains are sampled JOINTLY: a multivariate
+normal with the published domain intercorrelations (Cholesky), then
+truncated to the 1-5 BFI-2 scale and rescaled to integers 0-10 (truncation
+clips up to ~5% at the openness ceiling; ~9% of openness draws round to 10).
+Caveat (paper 04): BFI factor structure is not guaranteed to survive inside
+an LLM — treat trait->behavior claims modestly.
 BFI-2 "Negative Emotionality" / "Open-Mindedness" are the same constructs
 as the paper's "neuroticism" / "openness"; we keep the paper's trait names.
 """

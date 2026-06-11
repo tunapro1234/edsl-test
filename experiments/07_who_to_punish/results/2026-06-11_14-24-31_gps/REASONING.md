@@ -257,3 +257,17 @@
 
 ### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=5, persona=Your risk taking (willingness to take risks) is 5 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
 - **contribution = None**
+
+## p6_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=6, persona=Your risk taking (willingness to take risks) is 8 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=6, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=6, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=6, persona=Your risk taking (willingness to take risks) is 5 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
