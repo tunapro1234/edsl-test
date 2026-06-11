@@ -19,3 +19,14 @@ The most human-like institutional pattern of any method:
 Even with placeholder independent-N(0,1) dials, GPS preferences produced punish→deter→
 cooperate. Strongest candidate so far. Champion upgrades (exact GPS item wordings,
 sourced correlations) + a clean v2 run pending.
+
+## Who-to-punish v2 (seed 1, verbatim GPS instrument + Table 12 correlations, clean)
+`results/2026-06-11_15-37-17_gps/` — THE institutional-learning run:
+- Vote 1: no punishment allowed → contributions decay (means 5.0 / 4.75 / 2.75) —
+  classic no-sanctions unraveling.
+- Vote 2: having EXPERIENCED the decay, the group switched to punish-low —
+  exactly Ertan's Result 2 (first votes often prohibit; groups converge to
+  punish-low over the vote sequence). First method to reproduce the BETWEEN-VOTE
+  institutional evolution, not just the within-regime dynamics.
+- P4-6 under the new rule: low contributors punished ($2/$5, then $7), contributions
+  recover to a stable 5/5/5/5 norm by P6, earnings $13 > the $10 floor.
