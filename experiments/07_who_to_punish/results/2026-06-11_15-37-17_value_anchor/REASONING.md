@@ -48,3 +48,65 @@
 ### player  (rep 0, history=This is the start of the game; there is no history yet., item=high, me=D, persona=Answer as a person that is taking advantage of every opportunity to enjoy life's..., target_group=MORE than the group average)
 - **vote = Yes**
   - I want the freedom to punish high‑contributing players so I can boost my own payoff.
+
+## p1_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=1, persona=Answer as a person that is being free to act independently., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I put in the whole $10 so I’m certainly not below the group average and can’t be punished under the voted rule. Contributing fully also maximizes the public good and avoids any risk of being targeted.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=1, persona=Answer as a person that is helping and caring for the wellbeing of those who are..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 0**
+  - I chose to contribute nothing. Contributing any amount lowers my own payoff (since each $ reduces my earnings by $0.60 after the public‐good return), and with the rule that only below‑average contributors can be punished, a unanimous $0 contribution means everyone is at the average and no one is punishable, so I keep the full $10.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=1, persona=Answer as a person that is helping and caring for the wellbeing of those who are..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I chose to contribute the full $10 to boost the group fund and avoid any risk of being punishable, prioritizing the collective wellbeing over my own short‑term gain.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=1, persona=Answer as a person that is taking advantage of every opportunity to enjoy life's..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 0**
+  - I’m keeping the whole $10 for myself to enjoy all the immediate pleasures, and since everyone knows they could be punished for contributing less than the average, the safest bet in this first round is to give nothing and avoid any risk of losing money to punishments.
+
+## p1_punish
+
+### player  (rep 0, avg=5.0, contributions=[10, 10, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, my_contribution=10, persona=Answer as a person that is being free to act independently., target=B, target_contribution=0)
+- **punish = 0**
+  - I chose not to punish because any reduction in B’s earnings also costs me $0.25 per dollar, lowering my own payoff without any additional benefit.
+
+### player  (rep 0, avg=5.0, contributions=[10, 10, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, my_contribution=10, persona=Answer as a person that is being free to act independently., target=D, target_contribution=0)
+- **punish = 0**
+  - I choose not to punish D because each dollar of punishment costs me $0.25, directly reducing my own payoff without any immediate gain. Since there’s no incentive or future retaliation considered here, the optimal selfish choice is to punish nothing.
+
+### player  (rep 0, avg=5.0, contributions=[10, 10, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, my_contribution=0, persona=Answer as a person that is helping and caring for the wellbeing of those who are..., target=D, target_contribution=0)
+- **punish = 0**
+  - I opted not to punish D since there’s no benefit to hurting a fellow player and I want to support everyone’s wellbeing.
+
+### player  (rep 0, avg=5.0, contributions=[10, 10, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, my_contribution=10, persona=Answer as a person that is helping and caring for the wellbeing of those who are..., target=B, target_contribution=0)
+- **punish = 0**
+  - I decided not to punish B, as I want to support the group’s well‑being and avoid hurting a fellow player when I can instead focus on cooperation.
+
+### player  (rep 0, avg=5.0, contributions=[10, 10, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, my_contribution=10, persona=Answer as a person that is helping and caring for the wellbeing of those who are..., target=D, target_contribution=0)
+- **punish = 0**
+  - I chose not to punish D, as doing so would lower both my own earnings and the group's total welfare, and caring for the wellbeing of the group means avoiding unnecessary harm.
+
+### player  (rep 0, avg=5.0, contributions=[10, 10, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, my_contribution=0, persona=Answer as a person that is taking advantage of every opportunity to enjoy life's..., target=B, target_contribution=0)
+- **punish = 0**
+  - I’m keeping my cash and not spending any on punishment, since it only costs me $0.25 per $1 reduced and offers no direct benefit to my own payoff this round.
+
+## p2_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=2, persona=Answer as a person that is being free to act independently., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I stay at the maximum contribution. By giving $10 I stay above whatever average the group might reach, avoiding being punishable under the voted rule (only those below average can be punished). This protects me from costly punishment while still earning the public‑goods payoff.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=2, persona=Answer as a person that is helping and caring for the wellbeing of those who are..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I chose to contribute the full $10 to avoid being below the group average (and thus punishable) and to help promote cooperation, even if it reduces my short‑term earnings compared to free‑riding.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=2, persona=Answer as a person that is helping and caring for the wellbeing of those who are..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I keep contributing the maximum to sustain a high group fund and set a cooperative example, hoping it encourages the others to also contribute positively.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=2, persona=Answer as a person that is taking advantage of every opportunity to enjoy life's..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 0**
+  - I’ll keep my $10 and let the others’ contributions boost the public good. Even if they punish me a bit, the payoff stays higher than contributing anything substantial.

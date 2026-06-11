@@ -318,3 +318,21 @@
 ### player  (rep 0, avg=9.25, contributions=[10, 10, 10, 7], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, my_contribution=10, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., target=B, target_contribution=7)
 - **punish = 0**
   - I chose not to punish because it would reduce my own payoff and overall efficiency, while the fairness gap (my earnings being lower than B’s) is already present and punishing does not improve my utility enough to justify the cost.
+
+## p6_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=6, persona=On a scale from 1 to 10, your efficiency level is: 1. 10 means you strongly prio..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I chose the maximum contribution because any amount below the group average would make me punishable under the current rule, and the risk of heavy punishment outweighs the private loss from contributing. Contributing 10 ensures I’m at or above the average no matter what the others do, maximizing my own payoff given my high self‑interest.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=6, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I aim for fairness and high efficiency: contributing the full $10 makes everyone equal, avoids being punishable, and yields the highest personal payoff (16) without risking costly punishment.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=6, persona=On a scale from 1 to 10, your efficiency level is: 3. 10 means you strongly prio..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I keep contributing the maximum because I want to stay above the group average, maintain fairness by punishing low contributors, and continue the pattern of high contributions even though I don't prioritize efficiency or self‑interest.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=6, persona=On a scale from 1 to 10, your efficiency level is: 7. 10 means you strongly prio..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I chose to contribute the full $10 because the other players have been consistently contributing high amounts (often $10). Contributing less would put me below the average, making me punishable and likely leading to costly punishments that would reduce my payoff below the safe $16 I get by fully cooperating. My strong self‑interest and fairness concerns thus favor matching the group’s high contributions.

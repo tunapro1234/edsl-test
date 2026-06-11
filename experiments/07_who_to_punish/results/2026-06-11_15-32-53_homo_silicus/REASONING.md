@@ -152,3 +152,39 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=D, persona=You are a human being with all the cognitive biases and heuristics that come wit..., target_group=MORE than the group average)
 - **vote = No**
   - I chose “No” because punishing players—especially those who contribute above average—reduces total group earnings (the punisher pays $0.25 while the punished loses $1). Since I care only about maximizing total pay‑off for all players, allowing such punishment would lower overall welfare.
+
+## p4_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=A, period=4, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I chose to contribute nothing because, with punishment disallowed, each dollar I give up reduces my own payoff (my payoff falls by $0.60 per $1 contributed) while I already reap the benefits of the others’ contributions. Thus, self‑interest dictates a zero contribution.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=B, period=4, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I keep contributing nothing because each dollar I give costs me $1 but only returns $0.40 to me, so any contribution lowers my payoff. With no punishment possible, free‑riding is the selfish best response.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=C, period=4, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I care about the total earnings of the group. Total payoff rises with the sum of contributions, so to encourage the highest possible group fund (and because past behaviour shows others contribute more when I do), I contribute the maximum $10.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=4, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I contribute the full $10 because total group payoff rises with every dollar contributed (total payoff = 40 + 0.6·Σ contributions). To maximize the sum of all players’ earnings, I should give the maximum amount.
+
+## p5_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=A, period=5, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I continue to free‑ride because the payoff formula (10 − c + 0.40·total) always gives a higher return the less I contribute, and there’s no punishment or enforcement to compel cooperation. The others have kept contributing despite my zero contributions, so my best self‑interested move remains to contribute nothing.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=B, period=5, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I contribute nothing because each dollar I put in costs me $1 but only returns $0.40 to me, netting a loss of $0.60 per dollar. With no punishment possible, the best self‑interested move is to free‑ride and keep the full $10.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=C, period=5, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I choose to contribute the full $10 because each dollar I put in raises total group welfare by $0.60 (I lose $1 but the group gains $1.60). Since I only care about the sum of everyone's payoffs, maximizing contributions is optimal.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=5, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I’m aiming to maximize the total earnings of the group. Since each contributed dollar adds $0.6 to the total payoff (40 + 0.6·total contributions), the best choice for the group’s welfare is to contribute the maximum $10.

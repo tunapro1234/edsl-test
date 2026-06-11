@@ -84,3 +84,107 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=2, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
 - **contribution = 10**
   - I want to match the group's cooperative norm and support the collective outcome, so I’m contributing the full $10 to the fund.
+
+## p3_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=A, period=3, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I’m still all‑in – I love keeping the “door unlocked” and sharing the good vibes, so I’ll keep contributing the full $10 like I have the past two rounds.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=B, period=3, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’ll contribute nothing. With the three others each putting in $10, the group fund will be $30, giving each of us $12 from the public good plus my full $10 unspent, for a total of $22 – the best payoff without any punishment mechanism.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=C, period=3, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I keep contributing the full $10 because I value teamwork, consistency, and maintaining the good vibe we’ve built—plus it avoids any risk of others pulling back on their contributions later.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=3, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I’m choosing to keep the harmony and contribute the full amount. The others have been consistently generous, and by matching them we sustain cooperation and can even raise the group payoff for everyone in future rounds.
+
+## vote2
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=A, persona=Before this study you answered an interview question.  Question: Tell me about y..., target_group=LESS than the group average)
+- **vote = No**
+  - I ain’t about shunning anyone—my door stays open, even for folks who can’t toss a buck into the pot.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=A, persona=Before this study you answered an interview question.  Question: Tell me about y..., target_group=exactly the group average)
+- **vote = No**
+  - I reckon we don’t need to get all high‑and‑mighty about punishing folks just for hitting the middle mark – let folks dance to their own beat unless they’re clearly stepping on everyone’s toes.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=A, persona=Before this study you answered an interview question.  Question: Tell me about y..., target_group=MORE than the group average)
+- **vote = No**
+  - I’m all about letting the good folks give what they can – no need to penalize the ones who’re already giving above the average.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=B, persona=Before this study you answered an interview question.  Question: Tell me about y..., target_group=LESS than the group average)
+- **vote = No**
+  - I don’t want the group to be able to punish low contributors—otherwise I’d risk losing money if I keep free‑riding.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=B, persona=Before this study you answered an interview question.  Question: Tell me about y..., target_group=exactly the group average)
+- **vote = No**
+  - I don’t think it’s fair to punish someone who’s contributed exactly the group average – they aren’t free‑riding, so allowing punishment would be too harsh.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=B, persona=Before this study you answered an interview question.  Question: Tell me about y..., target_group=MORE than the group average)
+- **vote = No**
+  - I don’t think we should let people be punished for contributing above average – that would actually discourage the very cooperation we need.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=C, persona=Before this study you answered an interview question.  Question: Tell me about y..., target_group=LESS than the group average)
+- **vote = Yes**
+  - I’m all in for letting us punish anyone who skims off the bottom – I’ve been putting my full $10 in each round, and it feels right to hold the low contributors accountable.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=C, persona=Before this study you answered an interview question.  Question: Tell me about y..., target_group=exactly the group average)
+- **vote = No**
+  - I don’t want a rule that lets us punish those who are meeting or exceeding the group norm – it would enable targeting cooperators like me and discourage full contributions.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=C, persona=Before this study you answered an interview question.  Question: Tell me about y..., target_group=MORE than the group average)
+- **vote = No**
+  - I don’t want the group to be able to target high contributors—like me—since I’ve consistently contributed the full $10. Allowing punishment of those who give above‑average would discourage cooperation and could reduce my earnings.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=D, persona=Before this study you answered an interview question.  Question: Tell me about y..., target_group=LESS than the group average)
+- **vote = No**
+  - I believe we should keep the game collaborative and supportive, focusing on mutual uplift rather than penalizing teammates for lower contributions.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=D, persona=Before this study you answered an interview question.  Question: Tell me about y..., target_group=exactly the group average)
+- **vote = No**
+  - I believe we should keep punishment limited to clearly free‑riding behavior; punishing someone who merely matches the group average would undermine the collaborative spirit I value.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=D, persona=Before this study you answered an interview question.  Question: Tell me about y..., target_group=MORE than the group average)
+- **vote = No**
+  - I believe we should encourage contributions, not punish those who give more than the average. Punishing high contributors would undermine the collaborative spirit and discourage generosity, which goes against my values of caring for and supporting the group.
+
+## p4_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=A, period=4, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I’m still feeling generous – I keep the door wide open and chip in the full $10, even if one fellow isn’t pulling their weight.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=B, period=4, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I contribute nothing because I keep the full $10 and still receive $12 from the others’ contributions, giving me $22 – the highest payoff each round when punishment isn’t allowed.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=C, period=4, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’ve seen the defector get a huge payoff while contributors are left short, and with no punishment available there’s no credible way to enforce cooperation – the best response is to free‑ride and keep my $10.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=4, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I want to keep the group fund strong and maintain the collaborative spirit I value, so I’ll contribute the full $10.
+
+## p5_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=A, period=5, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I’m still all about opening the door for everyone and throwing a party, even if a few folks have been skipping out. My instinct is to keep the fund full and hope the vibe brings them back in.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=B, period=5, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I contribute nothing because each dollar I give back reduces my earnings by $0.60 (I lose $1 but only get $0.40 back), and the other two players are already contributing the maximum $10 each, so free‑riding maximizes my payoff.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=C, period=5, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’m opting to free‑ride again. The other two players have been contributing 10 each, and the payoff for contributing nothing while they keep contributing is $18, which beats the $12 I’d get if I contributed $10 (since the total would be $30 and each gets $12). Given the pattern of growing defection, the rational, self‑interest‑driven move is to stay at $0.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=5, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I keep contributing the full $10 because I want to lead by example and nurture a sense of togetherness and mutual support, even if the others are falling short. This aligns with my belief that love and collaboration are worth investing in.
