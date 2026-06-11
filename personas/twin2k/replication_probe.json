@@ -1,0 +1,580 @@
+{
+ "source": "Twin-2K-500 wave_split holdout questions (Toubia et al. 2025, arXiv:2505.17479)",
+ "probe": [
+  {
+   "pid": "1",
+   "qid": "QID158",
+   "block": "Disease-loss",
+   "text": "Imagine that the U.S. is preparing for the outbreak of an unusual disease, which is expected to kill 600 people. Two alternative programs to combat the disease have been proposed. Assume that the exact scientific estimate of the consequences of the programs are as follows: If Program A is adopted, 400 people will die. If Program B is adopted, there is 1/3 probability that nobody people will die, and 2/3 probability that 600 people be die. Which of the two programs would you favor?",
+   "options": [
+    "I strongly favor program A",
+    "I favor program A",
+    "I slightly favor program A",
+    "I slightly favor program B",
+    "I favor program B",
+    "I strongly favor program B"
+   ],
+   "truth_pos": 1,
+   "retest_pos": 6
+  },
+  {
+   "pid": "1",
+   "qid": "QID161",
+   "block": "Outcome bias - success",
+   "text": "A 55-year-old man had a heart condition. He had to stop working because of chest pain. He enjoyed his work and did not want to stop. His pain also interfered with other things, such as travel and recreation. A type of bypass operation would relieve his pain and increase his life expectancy from age 65 to age 70. However, 8% of the people who have this operation die from the operation itself. His physician decided to go ahead with the operation. The operation succeeded. Evaluate the physician's decision to go ahead with the operation.",
+   "options": [
+    "Incorrect, a very bad decision",
+    "Incorrect, all things considered",
+    "Incorrect, but not unreasonable",
+    "The decision and its opposite are equally good",
+    "Correct, but the opposite would be reasonable too",
+    "Correct, all things considered",
+    "Clearly correct, an excellent decision"
+   ],
+   "truth_pos": 7,
+   "retest_pos": 6
+  },
+  {
+   "pid": "1",
+   "qid": "QID165",
+   "block": "Anchoring - African countries high",
+   "text": "Do you think there are more or fewer than 65 African countries in the United Nations?",
+   "options": [
+    "more",
+    "fewer"
+   ],
+   "truth_pos": 1,
+   "retest_pos": 2
+  },
+  {
+   "pid": "1",
+   "qid": "QID169",
+   "block": "Anchoring - redwood high",
+   "text": "Is the tallest redwood tree in the world more or less than 1000 feet tall?",
+   "options": [
+    "more",
+    "less"
+   ],
+   "truth_pos": 1,
+   "retest_pos": 2
+  },
+  {
+   "pid": "1",
+   "qid": "QID171",
+   "block": "Less is More Gamble A",
+   "text": "Please rate your level of disagreement or agreement with the following statement: \"I would find a game that had a 7/36 chance of winning $9 and a 29/36 chance of winning nothing extremely attractive.\"",
+   "options": [
+    "Disagree strongly",
+    "Disagree a little",
+    "Neither agree nor disagree",
+    "Agree a little",
+    "Agree strongly"
+   ],
+   "truth_pos": 5,
+   "retest_pos": 5
+  },
+  {
+   "pid": "1",
+   "qid": "QID174",
+   "block": "Proportion dominance 1A",
+   "text": "Imagine that highway safety experts have determined that a substantial number of people are at risk of dying in a type of automobile fire. A requirement that every car have a built-in fire extinguisher (estimated cost, $300) would save the 150 people who would otherwise die every year in this type of automobile fire. Rate the following statement about yourself: I would be supportive of this requirement.",
+   "options": [
+    "Disagree strongly",
+    "Disagree a little",
+    "Neither agree nor disagree",
+    "Agree a little",
+    "Agree strongly"
+   ],
+   "truth_pos": 5,
+   "retest_pos": 5
+  },
+  {
+   "pid": "1",
+   "qid": "QID177",
+   "block": "Proportion dominance 2A",
+   "text": "You have recently graduated from university, obtained a good job, and are buying a new car. A newly designed seatbelt has just become available that would save the lives of the 500 drivers a year who are involved in a type of head-on-collision. (Approximately half of these fatalities involve drivers who were not at fault.) The newly designed seatbelt is not yet standard on most car models. However, it is available as a $500 option for the car model that you are ordering. How likely is it that you would order your new car with this optional seatbelt?",
+   "options": [
+    "very unlikely",
+    "unlikely",
+    "somewhat unlikely",
+    "somewhat likely",
+    "likely",
+    "very likely"
+   ],
+   "truth_pos": 6,
+   "retest_pos": 6
+  },
+  {
+   "pid": "1",
+   "qid": "QID184",
+   "block": "Absolute vs. relative - jacket",
+   "text": "Imagine that you go to purchase a jacket for $250. The jacket salesperson informs you that the jacket you wish to buy is on sale for $240 at the other branch of the store which is ten minutes away by car. Would you drive to the other store?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "truth_pos": 2,
+   "retest_pos": 2
+  },
+  {
+   "pid": "2",
+   "qid": "QID158",
+   "block": "Disease-loss",
+   "text": "Imagine that the U.S. is preparing for the outbreak of an unusual disease, which is expected to kill 600 people. Two alternative programs to combat the disease have been proposed. Assume that the exact scientific estimate of the consequences of the programs are as follows: If Program A is adopted, 400 people will die. If Program B is adopted, there is 1/3 probability that nobody people will die, and 2/3 probability that 600 people be die. Which of the two programs would you favor?",
+   "options": [
+    "I strongly favor program A",
+    "I favor program A",
+    "I slightly favor program A",
+    "I slightly favor program B",
+    "I favor program B",
+    "I strongly favor program B"
+   ],
+   "truth_pos": 5,
+   "retest_pos": 3
+  },
+  {
+   "pid": "2",
+   "qid": "QID162",
+   "block": "Outcome bias - failure",
+   "text": "A 55-year-old man had a heart condition. He had to stop working because of chest pain. He enjoyed his work and did not want to stop. His pain also interfered with other things, such as travel and recreation. A type of bypass operation would relieve his pain and increase his life expectancy from age 65 to age 75. However, 2% of the people who have this operation die from the operation itself. His physician decided to go ahead with the operation. The operation did not succeed and the patient died. Evaluate the physician's decision to go ahead with the operation.",
+   "options": [
+    "Incorrect, a very bad decision",
+    "Incorrect, all things considered",
+    "Incorrect, but not unreasonable",
+    "The decision and its opposite are equally good",
+    "Correct, but the opposite would be reasonable too",
+    "Correct, all things considered",
+    "Clearly correct, an excellent decision"
+   ],
+   "truth_pos": 3,
+   "retest_pos": 6
+  },
+  {
+   "pid": "2",
+   "qid": "QID163",
+   "block": "Anchoring - African countries low",
+   "text": "Do you think there are more or fewer than 12 African countries in the United Nations?",
+   "options": [
+    "more",
+    "fewer"
+   ],
+   "truth_pos": 1,
+   "retest_pos": 2
+  },
+  {
+   "pid": "2",
+   "qid": "QID167",
+   "block": "Anchoring - redwood low",
+   "text": "Is the tallest redwood tree in the world more or less than 85 feet tall?",
+   "options": [
+    "more",
+    "less"
+   ],
+   "truth_pos": 1,
+   "retest_pos": 1
+  },
+  {
+   "pid": "2",
+   "qid": "QID171",
+   "block": "Less is More Gamble A",
+   "text": "Please rate your level of disagreement or agreement with the following statement: \"I would find a game that had a 7/36 chance of winning $9 and a 29/36 chance of winning nothing extremely attractive.\"",
+   "options": [
+    "Disagree strongly",
+    "Disagree a little",
+    "Neither agree nor disagree",
+    "Agree a little",
+    "Agree strongly"
+   ],
+   "truth_pos": 4,
+   "retest_pos": 2
+  },
+  {
+   "pid": "2",
+   "qid": "QID174",
+   "block": "Proportion dominance 1A",
+   "text": "Imagine that highway safety experts have determined that a substantial number of people are at risk of dying in a type of automobile fire. A requirement that every car have a built-in fire extinguisher (estimated cost, $300) would save the 150 people who would otherwise die every year in this type of automobile fire. Rate the following statement about yourself: I would be supportive of this requirement.",
+   "options": [
+    "Disagree strongly",
+    "Disagree a little",
+    "Neither agree nor disagree",
+    "Agree a little",
+    "Agree strongly"
+   ],
+   "truth_pos": 2,
+   "retest_pos": 2
+  },
+  {
+   "pid": "2",
+   "qid": "QID177",
+   "block": "Proportion dominance 2A",
+   "text": "You have recently graduated from university, obtained a good job, and are buying a new car. A newly designed seatbelt has just become available that would save the lives of the 500 drivers a year who are involved in a type of head-on-collision. (Approximately half of these fatalities involve drivers who were not at fault.) The newly designed seatbelt is not yet standard on most car models. However, it is available as a $500 option for the car model that you are ordering. How likely is it that you would order your new car with this optional seatbelt?",
+   "options": [
+    "very unlikely",
+    "unlikely",
+    "somewhat unlikely",
+    "somewhat likely",
+    "likely",
+    "very likely"
+   ],
+   "truth_pos": 4,
+   "retest_pos": 3
+  },
+  {
+   "pid": "2",
+   "qid": "QID184",
+   "block": "Absolute vs. relative - jacket",
+   "text": "Imagine that you go to purchase a jacket for $250. The jacket salesperson informs you that the jacket you wish to buy is on sale for $240 at the other branch of the store which is ten minutes away by car. Would you drive to the other store?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "truth_pos": 2,
+   "retest_pos": 2
+  },
+  {
+   "pid": "3",
+   "qid": "QID157",
+   "block": "Disease - gain",
+   "text": "Imagine that the U.S. is preparing for the outbreak of an unusual disease, which is expected to kill 600 people. Two alternative programs to combat the disease have been proposed. Assume that the exact scientific estimate of the consequences of the programs are as follows: If Program A is adopted, 200 people will be saved. If Program B is adopted, there is 1/3 probability that 600 people will be saved, and 2/3 probability that no people will be saved. Which of the two programs would you favor?",
+   "options": [
+    "I strongly favor program A",
+    "I favor program A",
+    "I slightly favor program A",
+    "I slightly favor program B",
+    "I favor program B",
+    "I strongly favor program B"
+   ],
+   "truth_pos": 2,
+   "retest_pos": 3
+  },
+  {
+   "pid": "3",
+   "qid": "QID161",
+   "block": "Outcome bias - success",
+   "text": "A 55-year-old man had a heart condition. He had to stop working because of chest pain. He enjoyed his work and did not want to stop. His pain also interfered with other things, such as travel and recreation. A type of bypass operation would relieve his pain and increase his life expectancy from age 65 to age 70. However, 8% of the people who have this operation die from the operation itself. His physician decided to go ahead with the operation. The operation succeeded. Evaluate the physician's decision to go ahead with the operation.",
+   "options": [
+    "Incorrect, a very bad decision",
+    "Incorrect, all things considered",
+    "Incorrect, but not unreasonable",
+    "The decision and its opposite are equally good",
+    "Correct, but the opposite would be reasonable too",
+    "Correct, all things considered",
+    "Clearly correct, an excellent decision"
+   ],
+   "truth_pos": 5,
+   "retest_pos": 6
+  },
+  {
+   "pid": "3",
+   "qid": "QID163",
+   "block": "Anchoring - African countries low",
+   "text": "Do you think there are more or fewer than 12 African countries in the United Nations?",
+   "options": [
+    "more",
+    "fewer"
+   ],
+   "truth_pos": 1,
+   "retest_pos": 1
+  },
+  {
+   "pid": "3",
+   "qid": "QID167",
+   "block": "Anchoring - redwood low",
+   "text": "Is the tallest redwood tree in the world more or less than 85 feet tall?",
+   "options": [
+    "more",
+    "less"
+   ],
+   "truth_pos": 1,
+   "retest_pos": 1
+  },
+  {
+   "pid": "3",
+   "qid": "QID172",
+   "block": "Less is More Gamble B",
+   "text": "Please rate your level of disagreement or agreement with the following statement: \"I would find a game that had a 7/36 chance of winning $9 and a 29/36 chance of losing $0.05 extremely attractive.\"",
+   "options": [
+    "Disagree strongly",
+    "Disagree a little",
+    "Neither agree nor disagree",
+    "Agree a little",
+    "Agree strongly"
+   ],
+   "truth_pos": 5,
+   "retest_pos": 2
+  },
+  {
+   "pid": "3",
+   "qid": "QID175",
+   "block": "Proportion dominance 1B",
+   "text": "Imagine that highway safety experts have determined that a substantial number of people are at risk of dying in a type of automobile fire. A requirement that every car have a built-in fire extinguisher (estimated cost, $300) would save 98% of the 150 people who would otherwise die every year in this type of automobile fire. Rate the following statement about yourself: I would be supportive of this requirement.",
+   "options": [
+    "Disagree strongly",
+    "Disagree a little",
+    "Neither agree nor disagree",
+    "Agree a little",
+    "Agree strongly"
+   ],
+   "truth_pos": 4,
+   "retest_pos": 5
+  },
+  {
+   "pid": "3",
+   "qid": "QID178",
+   "block": "Proportion dominance 2B",
+   "text": "You have recently graduated from university, obtained a good job, and are buying a new car. A newly designed seatbelt has just become available that would save the lives of 98% of the 500 drivers a year who are involved in a type of head-on-collision. (Approximately half of these fatalities involve drivers who were not at fault.) The newly designed seatbelt is not yet standard on most car models. However, it is available as a $500 option for the car model that you are ordering. How likely is it that you would order your new car with this optional seatbelt?",
+   "options": [
+    "very unlikely",
+    "unlikely",
+    "somewhat unlikely",
+    "somewhat likely",
+    "likely",
+    "very likely"
+   ],
+   "truth_pos": 6,
+   "retest_pos": 6
+  },
+  {
+   "pid": "3",
+   "qid": "QID183",
+   "block": "Absolute vs. relative - calculator",
+   "text": "Imagine that you go to purchase a calculator for $30. The calculator salesperson informs you that the calculator you wish to buy is on sale for $20 at the other branch of the store which is ten minutes away by car. Would you drive to the other store?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "truth_pos": 1,
+   "retest_pos": 1
+  },
+  {
+   "pid": "13",
+   "qid": "QID157",
+   "block": "Disease - gain",
+   "text": "Imagine that the U.S. is preparing for the outbreak of an unusual disease, which is expected to kill 600 people. Two alternative programs to combat the disease have been proposed. Assume that the exact scientific estimate of the consequences of the programs are as follows: If Program A is adopted, 200 people will be saved. If Program B is adopted, there is 1/3 probability that 600 people will be saved, and 2/3 probability that no people will be saved. Which of the two programs would you favor?",
+   "options": [
+    "I strongly favor program A",
+    "I favor program A",
+    "I slightly favor program A",
+    "I slightly favor program B",
+    "I favor program B",
+    "I strongly favor program B"
+   ],
+   "truth_pos": 1,
+   "retest_pos": 3
+  },
+  {
+   "pid": "13",
+   "qid": "QID161",
+   "block": "Outcome bias - success",
+   "text": "A 55-year-old man had a heart condition. He had to stop working because of chest pain. He enjoyed his work and did not want to stop. His pain also interfered with other things, such as travel and recreation. A type of bypass operation would relieve his pain and increase his life expectancy from age 65 to age 70. However, 8% of the people who have this operation die from the operation itself. His physician decided to go ahead with the operation. The operation succeeded. Evaluate the physician's decision to go ahead with the operation.",
+   "options": [
+    "Incorrect, a very bad decision",
+    "Incorrect, all things considered",
+    "Incorrect, but not unreasonable",
+    "The decision and its opposite are equally good",
+    "Correct, but the opposite would be reasonable too",
+    "Correct, all things considered",
+    "Clearly correct, an excellent decision"
+   ],
+   "truth_pos": 7,
+   "retest_pos": 6
+  },
+  {
+   "pid": "13",
+   "qid": "QID163",
+   "block": "Anchoring - African countries low",
+   "text": "Do you think there are more or fewer than 12 African countries in the United Nations?",
+   "options": [
+    "more",
+    "fewer"
+   ],
+   "truth_pos": 2,
+   "retest_pos": 1
+  },
+  {
+   "pid": "13",
+   "qid": "QID167",
+   "block": "Anchoring - redwood low",
+   "text": "Is the tallest redwood tree in the world more or less than 85 feet tall?",
+   "options": [
+    "more",
+    "less"
+   ],
+   "truth_pos": 1,
+   "retest_pos": 1
+  },
+  {
+   "pid": "13",
+   "qid": "QID172",
+   "block": "Less is More Gamble B",
+   "text": "Please rate your level of disagreement or agreement with the following statement: \"I would find a game that had a 7/36 chance of winning $9 and a 29/36 chance of losing $0.05 extremely attractive.\"",
+   "options": [
+    "Disagree strongly",
+    "Disagree a little",
+    "Neither agree nor disagree",
+    "Agree a little",
+    "Agree strongly"
+   ],
+   "truth_pos": 1,
+   "retest_pos": 1
+  },
+  {
+   "pid": "13",
+   "qid": "QID175",
+   "block": "Proportion dominance 1B",
+   "text": "Imagine that highway safety experts have determined that a substantial number of people are at risk of dying in a type of automobile fire. A requirement that every car have a built-in fire extinguisher (estimated cost, $300) would save 98% of the 150 people who would otherwise die every year in this type of automobile fire. Rate the following statement about yourself: I would be supportive of this requirement.",
+   "options": [
+    "Disagree strongly",
+    "Disagree a little",
+    "Neither agree nor disagree",
+    "Agree a little",
+    "Agree strongly"
+   ],
+   "truth_pos": 5,
+   "retest_pos": 5
+  },
+  {
+   "pid": "13",
+   "qid": "QID178",
+   "block": "Proportion dominance 2B",
+   "text": "You have recently graduated from university, obtained a good job, and are buying a new car. A newly designed seatbelt has just become available that would save the lives of 98% of the 500 drivers a year who are involved in a type of head-on-collision. (Approximately half of these fatalities involve drivers who were not at fault.) The newly designed seatbelt is not yet standard on most car models. However, it is available as a $500 option for the car model that you are ordering. How likely is it that you would order your new car with this optional seatbelt?",
+   "options": [
+    "very unlikely",
+    "unlikely",
+    "somewhat unlikely",
+    "somewhat likely",
+    "likely",
+    "very likely"
+   ],
+   "truth_pos": 6,
+   "retest_pos": 6
+  },
+  {
+   "pid": "13",
+   "qid": "QID183",
+   "block": "Absolute vs. relative - calculator",
+   "text": "Imagine that you go to purchase a calculator for $30. The calculator salesperson informs you that the calculator you wish to buy is on sale for $20 at the other branch of the store which is ten minutes away by car. Would you drive to the other store?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "truth_pos": 1,
+   "retest_pos": 1
+  },
+  {
+   "pid": "14",
+   "qid": "QID158",
+   "block": "Disease-loss",
+   "text": "Imagine that the U.S. is preparing for the outbreak of an unusual disease, which is expected to kill 600 people. Two alternative programs to combat the disease have been proposed. Assume that the exact scientific estimate of the consequences of the programs are as follows: If Program A is adopted, 400 people will die. If Program B is adopted, there is 1/3 probability that nobody people will die, and 2/3 probability that 600 people be die. Which of the two programs would you favor?",
+   "options": [
+    "I strongly favor program A",
+    "I favor program A",
+    "I slightly favor program A",
+    "I slightly favor program B",
+    "I favor program B",
+    "I strongly favor program B"
+   ],
+   "truth_pos": 3,
+   "retest_pos": 3
+  },
+  {
+   "pid": "14",
+   "qid": "QID161",
+   "block": "Outcome bias - success",
+   "text": "A 55-year-old man had a heart condition. He had to stop working because of chest pain. He enjoyed his work and did not want to stop. His pain also interfered with other things, such as travel and recreation. A type of bypass operation would relieve his pain and increase his life expectancy from age 65 to age 70. However, 8% of the people who have this operation die from the operation itself. His physician decided to go ahead with the operation. The operation succeeded. Evaluate the physician's decision to go ahead with the operation.",
+   "options": [
+    "Incorrect, a very bad decision",
+    "Incorrect, all things considered",
+    "Incorrect, but not unreasonable",
+    "The decision and its opposite are equally good",
+    "Correct, but the opposite would be reasonable too",
+    "Correct, all things considered",
+    "Clearly correct, an excellent decision"
+   ],
+   "truth_pos": 6,
+   "retest_pos": 6
+  },
+  {
+   "pid": "14",
+   "qid": "QID165",
+   "block": "Anchoring - African countries high",
+   "text": "Do you think there are more or fewer than 65 African countries in the United Nations?",
+   "options": [
+    "more",
+    "fewer"
+   ],
+   "truth_pos": 2,
+   "retest_pos": 2
+  },
+  {
+   "pid": "14",
+   "qid": "QID167",
+   "block": "Anchoring - redwood low",
+   "text": "Is the tallest redwood tree in the world more or less than 85 feet tall?",
+   "options": [
+    "more",
+    "less"
+   ],
+   "truth_pos": 1,
+   "retest_pos": 1
+  },
+  {
+   "pid": "14",
+   "qid": "QID171",
+   "block": "Less is More Gamble A",
+   "text": "Please rate your level of disagreement or agreement with the following statement: \"I would find a game that had a 7/36 chance of winning $9 and a 29/36 chance of winning nothing extremely attractive.\"",
+   "options": [
+    "Disagree strongly",
+    "Disagree a little",
+    "Neither agree nor disagree",
+    "Agree a little",
+    "Agree strongly"
+   ],
+   "truth_pos": 1,
+   "retest_pos": 1
+  },
+  {
+   "pid": "14",
+   "qid": "QID174",
+   "block": "Proportion dominance 1A",
+   "text": "Imagine that highway safety experts have determined that a substantial number of people are at risk of dying in a type of automobile fire. A requirement that every car have a built-in fire extinguisher (estimated cost, $300) would save the 150 people who would otherwise die every year in this type of automobile fire. Rate the following statement about yourself: I would be supportive of this requirement.",
+   "options": [
+    "Disagree strongly",
+    "Disagree a little",
+    "Neither agree nor disagree",
+    "Agree a little",
+    "Agree strongly"
+   ],
+   "truth_pos": 5,
+   "retest_pos": 5
+  },
+  {
+   "pid": "14",
+   "qid": "QID177",
+   "block": "Proportion dominance 2A",
+   "text": "You have recently graduated from university, obtained a good job, and are buying a new car. A newly designed seatbelt has just become available that would save the lives of the 500 drivers a year who are involved in a type of head-on-collision. (Approximately half of these fatalities involve drivers who were not at fault.) The newly designed seatbelt is not yet standard on most car models. However, it is available as a $500 option for the car model that you are ordering. How likely is it that you would order your new car with this optional seatbelt?",
+   "options": [
+    "very unlikely",
+    "unlikely",
+    "somewhat unlikely",
+    "somewhat likely",
+    "likely",
+    "very likely"
+   ],
+   "truth_pos": 6,
+   "retest_pos": 4
+  },
+  {
+   "pid": "14",
+   "qid": "QID184",
+   "block": "Absolute vs. relative - jacket",
+   "text": "Imagine that you go to purchase a jacket for $250. The jacket salesperson informs you that the jacket you wish to buy is on sale for $240 at the other branch of the store which is ten minutes away by car. Would you drive to the other store?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "truth_pos": 1,
+   "retest_pos": 2
+  }
+ ]
+}

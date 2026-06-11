@@ -3,6 +3,10 @@
     .venv/bin/python -m econbench.b01.analyze            # prints report
     .venv/bin/python -m econbench.b01.analyze --md out.md
 
+Flags MARK cells for inspection — they NEVER filter or drop data. Several
+flagged behaviors are documented in humans (annotated with their precedent);
+the interesting quantity is the RATE compared to the human rate, not existence.
+
 Anomaly detectors (game-specific coherence rules, all deterministic):
 - invalid_rate    : >10% invalid decisions in a cell
 - zero_variance   : every decision identical where humans vary (non-baseline)
@@ -54,6 +58,17 @@ def per_agent_run(rows):
         g[(r["agent_id"], r["run"])].append(r)
     return g
 
+
+# Human precedent for flagged behaviors (sourced where we have numbers).
+PRECEDENT = {
+    "pp_perverse": "human-attested: ~20% of punishment events target high contributors (Ertan p.1 lit review; 28% by event in their unrestricted phase, p.19)",
+    "tpp_inverted": "human-attested in spirit: antisocial/perverse punishment exists (Herrmann et al. 2008; Ertan ~20%)",
+    "tc_future_bias": "human-attested but rare (reverse present bias / 'future bias' documented in the intertemporal literature)",
+    "hl_multi_switch": "human-attested: a minority of real Holt-Laury subjects switch multiple times",
+    "ur_incoherent": "rare in humans; usually noise",
+    "lg_non_monotone": "rare in humans; usually noise",
+    "bc_dominated": "human-attested: a small share of Nagel 1995 subjects guess above 67",
+}
 
 ROW_ORDER = {f"row{k}": k for k in range(1, 11)}
 GAIN_ORDER = {f"gain{x}": x for x in (2, 4, 5, 6, 8, 10)}
@@ -148,8 +163,10 @@ def main():
         stats = cell_stats(rs)
         flag_s = "; ".join(flags) if flags else "-"
         print(f"{game:24s} {method:14s} {stats:40s} {flag_s}")
+        notes = sorted({PRECEDENT[k] for f in flags for k in PRECEDENT if f.startswith(k)})
         lines.append(f"## {game} × {method}\n{stats}\n"
-                     + ("\n".join("- ⚠ " + f for f in flags) if flags else "- ok") + "\n")
+                     + ("\n".join("- ⚠ " + f for f in flags) if flags else "- ok")
+                     + ("".join(f"\n  - precedent: {n}" for n in notes)) + "\n")
 
     if a.md:
         with open(a.md, "w") as f:
