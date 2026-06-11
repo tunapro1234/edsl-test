@@ -13,7 +13,11 @@ from edsl import Model
 
 
 def make_model():
-    return Model("openai/gpt-oss-120b", service_name="deep_infra", temperature=1)
+    # max_tokens must be generous: gpt-oss-120b spends output tokens on its
+    # reasoning chain BEFORE the answer; the default cap truncated answers to
+    # None as prompts (history/personas) grew.
+    return Model("openai/gpt-oss-120b", service_name="deep_infra",
+                 temperature=1, max_tokens=8192)
 
 
 def new_run_dir(results_root, suffix=None):
@@ -69,14 +73,21 @@ def append_reasoning(results, run_dir, tag):
 def run_and_save(job, run_dir, tag, n=1, retries=2):
     """Run a job n times, save results 3 ways (.json.gz, .csv, coop link) + reasoning."""
     results = job.run(n=n)
-    # A transient API failure leaves answer=None. Re-running is cheap: successful
+    # A failed interview leaves answer=None. Re-running is cheap: successful
     # answers come back from cache, only the failed ones are actually retried.
+    def has_none(res):
+        cols = [c for c in res.columns if c.startswith("answer.")]
+        return any(None in res.select(c).to_list() for c in cols)
+
     for _ in range(retries):
-        answer_cols = [c for c in results.columns if c.startswith("answer.")]
-        if not any(None in results.select(c).to_list() for c in answer_cols):
+        if not has_none(results):
             break
         print(f"[{tag}] got a None answer, retrying failed interviews...")
         results = job.run(n=n)
+    if has_none(results):
+        # NEVER fabricate data: a None written into game history as "$0" poisons
+        # every later decision (this corrupted several early runs).
+        raise RuntimeError(f"[{tag}] still has None answers after {retries} retries")
 
     stage_dir = os.path.join(run_dir, tag)
     os.makedirs(stage_dir, exist_ok=True)

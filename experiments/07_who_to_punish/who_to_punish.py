@@ -91,8 +91,7 @@ q_punish = QuestionNumerical(
 
 
 def clamp(x):
-    if x is None:  # interview failed even after retries; count as 0
-        return 0
+    # None never reaches here: common.run_and_save raises on missing answers
     return max(0, min(int(x), ENDOWMENT))
 
 

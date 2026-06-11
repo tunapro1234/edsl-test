@@ -250,3 +250,32 @@
 
 ### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=4, persona=People with a high extraversion score are sociable and assertive. Your extravers..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
 - **contribution = None**
+
+## p5_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=5, persona=People with a high extraversion score are sociable and assertive. Your extravers..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 0**
+  - I expect the others to keep contributing $0 after the costly punishment episodes, so matching that avoids being punished and gives the safe payoff of $10
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=5, persona=People with a high extraversion score are sociable and assertive. Your extravers..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=5, persona=People with a high extraversion score are sociable and assertive. Your extravers..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=5, persona=People with a high extraversion score are sociable and assertive. Your extravers..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+## p6_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=6, persona=People with a high extraversion score are sociable and assertive. Your extravers..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=6, persona=People with a high extraversion score are sociable and assertive. Your extravers..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=6, persona=People with a high extraversion score are sociable and assertive. Your extravers..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=6, persona=People with a high extraversion score are sociable and assertive. Your extravers..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**

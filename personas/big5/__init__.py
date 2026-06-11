@@ -1,50 +1,126 @@
 """A5 — Big Five numeric dials (Big5-Scaler, arXiv:2508.06149).
 
-Persona = short prompt stating each trait's score on a 0-10 scale (their best
-config: coarse scale, trait-level not facet-level). Scores are sampled from
-human population norms on the 1-5 BFI-2 scale and rescaled to 0-10. Trait
-glosses are the official BFI-2 facet names (research/datasets/bfi2/, complete:
-60 items + scoring key; Soto & John 2017).
+Persona = the paper's "Simple Prompt" (Cho & Cheong 2025, Figure 2): one
+sentence per trait stating what a high score means plus "Your X score is
+{s} out of 10", then the closing line — verbatim where possible. Their best
+configuration for imitating real humans was exactly this: the SIMPLE
+trait-level prompt with the smallest scale, n = 10 (Table 7: lowest RMSE
+across all models; Section 6 observations).
 
-Norms provenance: approximate Soto & John 2017 adult internet-sample
-descriptives (via replicant/src/replicant/sampling/big5.py). Domains are
-sampled INDEPENDENTLY — real BFI-2 domains correlate modestly; fine for a
-control method, fix before making population claims.
+One deliberate addition to the template: each sentence also describes the
+LOW pole neutrally ("people with low X score are ..."). Reason: the paper
+itself found Neuroticism is under-expressed because safety training
+discourages negative affect (Section 5.1), and a population sample (unlike
+their single-trait tests) draws low scores on every trait, which the
+high-pole-only template leaves undefined. Low-pole wordings paraphrase the
+BFI-2 reverse-keyed items (research/datasets/bfi2/bfi2_items.csv).
 
-Known limits: BFI factor structure is invalid in LLMs (paper 04) — this is a
-CONTROL method, expected weak; Neuroticism expression is suppressed by safety
-training (Big5-Scaler's own finding).
+Scores: sampled from published human norms — Soto & John (2017), JPSP
+113(1), Internet validation sample, N = 1,000 (median age 24; skews young
+and self-selected, the closest published general-population norm we have;
+TODO: swap in nationally representative norms if we adopt a source).
+Domains are sampled JOINTLY: a multivariate normal with the published
+domain intercorrelations (Cholesky), then truncated to the 1-5 BFI-2 scale
+and rescaled to integers 0-10 (truncation clips ~1-2% of draws per tail).
+BFI-2 "Negative Emotionality" / "Open-Mindedness" are the same constructs
+as the paper's "neuroticism" / "openness"; we keep the paper's trait names.
 """
 
 import random
 
-NORMS = {  # 1-5 scale: (mean, sd), ~Soto & John 2017 internet sample
-    "extraversion": (3.2, 0.9),
-    "agreeableness": (3.7, 0.7),
-    "conscientiousness": (3.4, 0.7),
-    "negative emotionality": (2.9, 0.8),
-    "open-mindedness": (3.7, 0.7),
+# Paper's prompt order (Figure 2): O, C, E, A, N.
+TRAITS = ["openness", "conscientiousness", "extraversion", "agreeableness",
+          "neuroticism"]
+
+# Soto & John (2017), Table 5, p.128: BFI-2 domain mean (SD) on the 1-5
+# scale, Internet sample, "Combined" column (N = 1,000).
+# PDF: https://www.colby.edu/wp-content/uploads/2013/08/Soto_John_2017.pdf
+NORMS = {
+    "openness": (3.92, 0.65),           # BFI-2 "Open-Mindedness"
+    "conscientiousness": (3.43, 0.77),
+    "extraversion": (3.23, 0.80),
+    "agreeableness": (3.68, 0.64),
+    "neuroticism": (3.07, 0.87),        # BFI-2 "Negative Emotionality"
 }
 
-GLOSS = {  # official BFI-2 facet names per domain
-    "extraversion": "high in sociability, assertiveness, and energy level",
-    "agreeableness": "high in compassion, respectfulness, and trust",
-    "conscientiousness": "high in organization, productiveness, and responsibility",
-    "negative emotionality": "high in anxiety, depression, and emotional volatility",
-    "open-mindedness": "high in intellectual curiosity, aesthetic sensitivity, and creative imagination",
+# Soto & John (2017), Table 2, p.125: domain intercorrelations, Internet
+# sample (the value left of each slash). Order matches TRAITS.
+CORR = [
+    #  O      C      E      A      N
+    [1.00, -0.02,  0.20,  0.15, -0.06],   # openness
+    [-0.02, 1.00,  0.22,  0.28, -0.30],   # conscientiousness
+    [0.20,  0.22,  1.00,  0.14, -0.34],   # extraversion
+    [0.15,  0.28,  0.14,  1.00, -0.29],   # agreeableness
+    [-0.06, -0.30, -0.34, -0.29,  1.00],  # neuroticism
+]
+
+# (high-pole text, low-pole text). High poles are VERBATIM from the paper's
+# Simple Prompt (Figure 2). Low poles are ours, paraphrasing BFI-2
+# reverse-keyed items (e.g. "Is relaxed, handles stress well", "Tends to be
+# quiet", "Prefers to have others take charge", "Has little interest in
+# abstract ideas", "Tends to be disorganized").
+GLOSS = {
+    "openness": (
+        "are imaginative, curious, and creative",
+        "are practical, conventional, and prefer familiar routines"),
+    "conscientiousness": (
+        "are disciplined and dependable",
+        "are easygoing, spontaneous, and less organized"),
+    "extraversion": (
+        "are outgoing, enthusiastic, and enjoy social interactions",
+        "are reserved, quiet, and content to let others take charge"),
+    "agreeableness": (
+        "prioritize harmony and positive relationships",
+        "are competitive, skeptical of others, and stand their ground"),
+    "neuroticism": (
+        "are more emotionally reactive and prone to mood swings",
+        "are calm, secure, and emotionally stable"),
 }
+
+
+def _cholesky(matrix):
+    """Lower-triangular L with L * L^T = matrix (must be positive definite)."""
+    n = len(matrix)
+    L = [[0.0] * n for _ in range(n)]
+    for i in range(n):
+        for j in range(i + 1):
+            s = sum(L[i][k] * L[j][k] for k in range(j))
+            if i == j:
+                L[i][j] = (matrix[i][i] - s) ** 0.5
+            else:
+                L[i][j] = (matrix[i][j] - s) / L[j][j]
+    return L
+
+
+_L = _cholesky(CORR)
+
+
+def _scores(rng):
+    """One person's five trait scores as integers 0-10, jointly sampled."""
+    z = [rng.gauss(0, 1) for _ in TRAITS]  # independent standard normals
+    scores = {}
+    for i, trait in enumerate(TRAITS):
+        mean, sd = NORMS[trait]
+        corr_z = sum(_L[i][k] * z[k] for k in range(i + 1))  # correlated normal
+        x = min(5.0, max(1.0, mean + sd * corr_z))           # truncate to 1-5
+        scores[trait] = round((x - 1) / 4 * 10)              # 1-5 -> 0-10
+    return scores
 
 
 def _one(rng):
+    scores = _scores(rng)
     lines = []
-    for trait, (mean, sd) in NORMS.items():
-        score = min(5.0, max(1.0, rng.gauss(mean, sd)))
-        score10 = round((score - 1) / 4 * 10)  # 1-5 -> 0-10
+    for trait in TRAITS:
+        high, low = GLOSS[trait]
         lines.append(
-            f"People with a high {trait} score are {GLOSS[trait]}. "
-            f"Your {trait} score is {score10} out of 10."
-        )  # one line per domain, Big5-Scaler "simple prompt" format
-    lines.append("You are a person with this personality, and you respond based on it.")
+            f"People with high {trait} score {high}; "
+            f"people with low {trait} score {low}. "
+            f"Your {trait} score is {scores[trait]} out of 10."
+        )
+    lines.append(  # closing line verbatim from the paper's Simple Prompt
+        "From now on, you are an agent with this personality, "
+        "and you should respond based on this personality."
+    )
     return " ".join(lines)
 
 

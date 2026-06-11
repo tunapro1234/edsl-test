@@ -191,3 +191,69 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=high, me=D, persona=Your risk taking (willingness to take risks) is 5 out of 10. Your patience (will..., target_group=MORE than the group average)
 - **vote = No**
   - I prefer to keep the incentive for high contributions intact; allowing punishment of those who give above average would discourage cooperation and could be used against me, which doesn’t align with my relatively high patience and positive reciprocity.
+
+## p4_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=4, persona=Your risk taking (willingness to take risks) is 8 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=4, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=4, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I keep contributing the full $10 because I trust the others to cooperate, want to maintain
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=4, persona=Your risk taking (willingness to take risks) is 5 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+## p4_punish
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, my_contribution=0, persona=Your risk taking (willingness to take risks) is 8 out of 10. Your patience (will..., target=B, target_contribution=0)
+- **punish = 2.5**
+  - I chose a moderate punishment. My negative reciprocity is middling (5/10), so I’m willing to incur some cost to penalize the low contributor, but my low prosociality and altruism mean I won’t go to extremes. A $2.50 reduction costs me $0.625
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, my_contribution=0, persona=Your risk taking (willingness to take risks) is 8 out of 10. Your patience (will..., target=D, target_contribution=0)
+- **punish = 0**
+  - I chose not to punish because I’m also contributing nothing, so I don’t see a clear unfair advantage to penalize, and my low prosociality and trust make me reluctant to spend money on punishment.
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, my_contribution=0, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., target=A, target_contribution=0)
+- **punish = 2**
+  - I chose a modest punishment because my low risk tolerance and moderate negative reciprocity make me willing to penalize unfair free‑riding, but not enough to incur a large cost that could hurt my own earnings.
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, my_contribution=0, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., target=D, target_contribution=0)
+- **punish = 1**
+  - I chose a small punishment because my low risk tolerance makes me wary of incurring costs, but my moderate negative reciprocity still pushes me to penalize the clear free‑rider a bit. A $1 reduction balances those preferences.
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, my_contribution=10, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., target=A, target_contribution=0)
+- **punish = 2**
+  - I chose a modest punishment of $2 (costing me $0.50) because my moderate altruism and prosociality make me want to discourage free‑riding, but my low risk tolerance and only moderate negative reciprocity lead me to keep the cost limited.
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, my_contribution=10, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., target=B, target_contribution=0)
+- **punish = None**
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, my_contribution=10, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., target=D, target_contribution=0)
+- **punish = 1**
+  - I chose a modest punishment because I’m somewhat averse to taking on costs (low risk‑taking) but still care about fairness and free‑riders (moderate negative reciprocity, altruism, and prosociality). A small $1 reduction (costing $0.25) balances my desire to punish unfair low contributions with my reluctance to lose too much of my own earnings.
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, my_contribution=0, persona=Your risk taking (willingness to take risks) is 5 out of 10. Your patience (will..., target=A, target_contribution=0)
+- **punish = 1**
+  - I chose a modest punishment because I’m somewhat willing to penalize under‑average contributions (negative reciprocity 6), but I also contributed the same amount and have low altruism, so I’m not inclined to spend a lot of resources on a fellow low contributor. A small $1 penalty (costing $0.25) signals disapproval without excessive cost.
+
+### player  (rep 0, avg=2.5, contributions=[10, 0, 0, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, my_contribution=0, persona=Your risk taking (willingness to take risks) is 5 out of 10. Your patience (will..., target=B, target_contribution=0)
+- **punish = 0**
+  - I didn’t punish B because he didn’t treat me unfairly—he contributed the same as I did—so with modest altruism and only moderate negative‑reciprocity, the cost of punishment isn’t worth it.
+
+## p5_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=5, persona=Your risk taking (willingness to take risks) is 8 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=5, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=5, persona=Your risk taking (willingness to take risks) is 2 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=5, persona=Your risk taking (willingness to take risks) is 5 out of 10. Your patience (will..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = None**
