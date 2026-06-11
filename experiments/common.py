@@ -63,9 +63,17 @@ def append_reasoning(results, run_dir, tag):
         f.write("\n".join(lines))
 
 
-def run_and_save(job, run_dir, tag, n=1):
+def run_and_save(job, run_dir, tag, n=1, retries=2):
     """Run a job n times, save results 3 ways (.json.gz, .csv, coop link) + reasoning."""
     results = job.run(n=n)
+    # A transient API failure leaves answer=None. Re-running is cheap: successful
+    # answers come back from cache, only the failed ones are actually retried.
+    for _ in range(retries):
+        answer_cols = [c for c in results.columns if c.startswith("answer.")]
+        if not any(None in results.select(c).to_list() for c in answer_cols):
+            break
+        print(f"[{tag}] got a None answer, retrying failed interviews...")
+        results = job.run(n=n)
 
     stage_dir = os.path.join(run_dir, tag)
     os.makedirs(stage_dir, exist_ok=True)

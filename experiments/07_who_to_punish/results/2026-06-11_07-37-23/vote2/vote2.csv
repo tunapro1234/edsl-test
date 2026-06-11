@@ -1,0 +1,375 @@
+agent.agent_index,agent.agent_instruction,agent.agent_name,answer.vote,cache_keys.vote_cache_key,cache_used.vote_cache_used,comment.vote_comment,generated_tokens.vote_generated_tokens,iteration.iteration,model.frequency_penalty,model.inference_service,model.logprobs,model.max_tokens,model.model,model.model_index,model.presence_penalty,model.reasoning_effort,model.temperature,model.top_logprobs,model.top_p,prompt.vote_system_prompt,prompt.vote_user_prompt,question_options.vote_question_options,question_text.vote_question_text,question_type.vote_question_type,raw_model_response.vote_cost,raw_model_response.vote_input_price_per_million_tokens,raw_model_response.vote_input_tokens,raw_model_response.vote_one_usd_buys,raw_model_response.vote_output_price_per_million_tokens,raw_model_response.vote_output_tokens,raw_model_response.vote_raw_model_response,raw_model_response.vote_thinking_tokens,reasoning_summary.vote_reasoning_summary,scenario.history,scenario.item,scenario.me,scenario.scenario_index,scenario.target_group,validated.vote_validated
+0,You are answering questions as if you were a human. Do not break character.,player,No,7d1168b2c6ac8e917425380ed719cee7,True,I want to keep the rule that disallows punishing low contributors so that I can continue free‑riding without risk of being punished for contributing less than the average.,,0,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player A in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $10, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $4.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed LESS than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,0.00017133800000000002,0.039,452,5836.416906932495,0.19,809,,,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $10, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $4.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.",low,A,0,LESS than the group average,True
+0,You are answering questions as if you were a human. Do not break character.,player,No,09ef6ee3f579e62fc3f05054ef5c0b14,False,"I don’t want to be vulnerable to punishment when I contribute the group average (e.g., 0 when everyone else also contributes 0). Keeping the rule that disallows punishing exact‑average contributions protects me from being targeted in such situations.","No
+
+I don’t want to be vulnerable to punishment when I contribute the group average (e.g., 0 when everyone else also contributes 0). Keeping the rule that disallows punishing exact‑average contributions protects me from being targeted in such situations.",0,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player A in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $10, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $4.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed exactly the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,0.000108219,0.039,451,9240.521535035437,0.19,477,"{'id': 'chatcmpl-RLthh8Fk3UPnisb8oa3IEjHV', 'choices': [{'finish_reason': 'stop', 'index': 0, 'logprobs': None, 'message': {'content': 'No\n\nI don’t want to be vulnerable to punishment when I contribute the group average (e.g., 0 when everyone else also contributes 0). Keeping the rule that disallows punishing exact‑average contributions protects me from being targeted in such situations.', 'refusal': None, 'role': 'assistant', 'annotations': None, 'audio': None, 'function_call': None, 'tool_calls': [], 'reasoning_content': ""We need to decide vote. The question: Should it be ALLOWED to punish a player who contributed exactly the group average? Options: Yes, No, No preference.\n\nWe need to consider strategic incentives. The current rule: may be punished for contributing less than group average: YES; exactly group average: NO; more than group average: NO. So currently you can punish those who under-contribute relative to average (i.e., free riders). The group average is the mean of contributions. The rule disallows punishing those at exactly average.\n\nNow we must vote for next 3 periods. We need to think about best choice for Player A.\n\nObservations: Since contributions may be 0 for all, average is 0. Then all players contributed exactly average (0). Under current rule, cannot punish anyone (since rule only allows punishment for less than average). But if we allow punishing exactly average, then in the scenario where everyone contributes 0 (average 0), any player could be punished for contributing exactly average (0). So that would open up punishment for everyone even when all are cooperating at zero.\n\nStrategically, perhaps we want to keep the rule that disallows punishing exactly average, to avoid being punished when we contribute average. In our situation: In period 1 we contributed 10, above average, can't be punished anyway. In periods 2-3 we contributed 0 equal to average 0, can't be punished under current rule. If we change rule to allow punishing exactly average, then others could punish us for contributing 0 (since that's exactly average) – would be costly for us if they choose to.\n\nThus we prefer to keep the rule disallowing punishment at exact average (i.e., vote No). That aligns with self-interest.\n\nAlternatively, perhaps we want to allow punishing exactly average to create broader threat to encourage contributions, but this could also expose us to punishment if others choose to punish. Unclear.\n\nGiven self-interest, we should vote No.\n\nThus answer: No.\n\nProvide comment accordingly."", 'name': None}}], 'created': 1781153443, 'model': 'openai/gpt-oss-120b', 'object': 'chat.completion', 'service_tier': 'default', 'system_fingerprint': None, 'usage': {'completion_tokens': 477, 'prompt_tokens': 451, 'total_tokens': 928, 'completion_tokens_details': None, 'prompt_tokens_details': None, 'estimated_cost': 0.00010821899999999999}}",,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $10, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $4.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.",avg,A,1,exactly the group average,True
+0,You are answering questions as if you were a human. Do not break character.,player,No,817d17662d6b111d079b2acbfb3e0f15,True,"I want to keep punishment limited to low contributors only, as allowing punishment of high contributors would discourage any cooperative effort and reduce overall earnings.",,0,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player A in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $10, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $4.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed MORE than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,0.000163738,0.039,452,6107.31778817379,0.19,769,,,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $10, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $4.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.",high,A,2,MORE than the group average,True
+0,You are answering questions as if you were a human. Do not break character.,player,No,31c822b5477a34fbb4082fbd6de464d9,True,"I want to avoid being punished for under‑contributing if others decide to contribute, so I vote against allowing punishment of players who contribute less than the group average.",,0,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player B in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed LESS than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,0.000156518,0.039,452,6389.041515991771,0.19,731,,,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.",low,B,3,LESS than the group average,True
+0,You are answering questions as if you were a human. Do not break character.,player,No,7686ee5fd77f17fea0fd756f807c5b5c,True,"I don’t want the rule to change because allowing punishment of those who match the average would let others punish me (and each other) even when everyone contributes the same amount (e.g., all 0), leading to unnecessary losses. Keeping it disallowed protects me from being targeted in such situations.",,0,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player B in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed exactly the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,0.00016198900000000002,0.039,451,6173.258678058386,0.19,760,,,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.",avg,B,4,exactly the group average,True
+0,You are answering questions as if you were a human. Do not break character.,player,No,c3a81e3df1c8944cd5aa40abcf2a3d64,True,"I don’t want to discourage higher contributions, since they increase the public‑goods payoff for everyone (including me) while costing the contributor less than the total benefit generated. Allowing punishment of over‑average contributors would reduce incentives to contribute and hurt my own potential earnings.",,0,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player B in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed MORE than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,0.000140748,0.039,452,7104.896694802058,0.19,648,,,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.",high,B,5,MORE than the group average,True
+0,You are answering questions as if you were a human. Do not break character.,player,No,78f5ddcf4341dac075145b0799ccc141,True,I prefer to disallow punishment for contributing less than average because it protects me from being punished if others start contributing more while I continue free‑riding. This maximizes my expected earnings under the current pattern of low contributions.,,0,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player C in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed LESS than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,0.000176278,0.039,452,5672.857645310249,0.19,835,,,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.",low,C,6,LESS than the group average,True
+0,You are answering questions as if you were a human. Do not break character.,player,No,67acf8812829ecb58f6ff171b50f8fb1,True,,,0,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player C in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed exactly the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,0.00019067900000000002,0.039,451,5244.416008055422,0.19,911,,,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.",avg,C,7,exactly the group average,True
+0,You are answering questions as if you were a human. Do not break character.,player,Yes,fbf62c784a319be33ffd0a452809d5ae,True,I want to keep contributions low so I can free‑ride. Allowing punishment of,,0,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player C in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed MORE than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,0.000207628,0.039,452,4816.30608588437,0.19,1000,,,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.",high,C,8,MORE than the group average,True
+0,You are answering questions as if you were a human. Do not break character.,player,No,0e6eb19417aa8b88da3fcc938996fd5c,True,"I don’t want to be punishable for free‑riding, so I vote to disallow punishment of players who contribute less than the group average. This protects me from costly penalties while I continue to contribute nothing.",,0,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player D in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed LESS than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,0.000140178,0.039,452,7133.787042189217,0.19,645,,,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.",low,D,9,LESS than the group average,True
+0,You are answering questions as if you were a human. Do not break character.,player,No,2de4e6a47bfde28a1ce299306ffc453a,True,I don’t want to open up a new way for others to punish players who are exactly at the group average—especially since I’ve been contributing nothing and would be punishable under that rule. Keeping it disallowed protects me from being targeted.,,0,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player D in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed exactly the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,0.000121519,0.039,451,8229.165809461894,0.19,547,,,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.",avg,D,10,exactly the group average,True
+0,You are answering questions as if you were a human. Do not break character.,player,No,6da348e414d67fe67a8d016bc55fd9db,True,"I want to keep high contributors safe from punishment so they’ll keep contributing, which boosts the public good and maximizes my free‑rider earnings. Allowing punishment of those who contribute more would risk reducing overall contributions.",,0,0,deep_infra,False,1000,openai/gpt-oss-120b,0,0,,1,3,1,,"
+You are Player D in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed MORE than the group average?
+
+    
+Yes
+    
+No
+    
+No preference
+    
+
+Only 1 option may be selected.
+
+Respond only with a string corresponding to one of the options.
+
+
+After the answer, you can put a comment explaining why you chose that option on the next line.","['Yes', 'No', 'No preference']","You are Player {{ scenario.me }} in a fixed group of 4 playing a repeated public goods game. Each period every player receives $10 and privately decides how much to put into a group fund. Every dollar in the fund pays $0.40 to EACH of the 4 players. You keep whatever you do not contribute. After contributions are revealed, punishment may happen: paying $0.25 reduces another player's earnings by $1.00 — but only players of the kinds your group voted punishable may be punished.
+{{ scenario.history }}
+Your group now votes (majority rule) on the punishment rules for the next 3 periods.
+Ballot item: should it be ALLOWED to punish a player who contributed {{ scenario.target_group }}?",multiple_choice,0.000166018,0.039,452,6023.443241094339,0.19,781,,,,"History so far:
+Vote 1 outcome: Voted rules — may a player be punished for contributing... LESS than the group average: YES; exactly the group average: NO; MORE than the group average: NO
+Period 1: you contributed $0, all contributions were [10, 0, 0, 0] (avg 2.5); you spent $0.00 on punishing and received $0 of punishment; you earned $14.00.
+Period 2: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.
+Period 3: you contributed $0, all contributions were [0, 0, 0, 0] (avg 0.0); you spent $0.00 on punishing and received $0 of punishment; you earned $10.00.",high,D,11,MORE than the group average,True
