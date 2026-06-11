@@ -1,0 +1,25 @@
+{
+  "weights": {
+    "self-direction-thought": 0.0622,
+    "self-direction-action": 0.1165,
+    "stimulation": 0.0483,
+    "hedonism": 0.087,
+    "achievement": 0.0727,
+    "power-resources": 0.0108,
+    "power-dominance": 0.0005,
+    "face": 0.0029,
+    "security-personal": 0.0597,
+    "security-societal": 0.0527,
+    "tradition": 0.0111,
+    "conformity-rules": 0.0053,
+    "conformity-interpersonal": 0.0041,
+    "humility": 0.0057,
+    "benevolence-dependability": 0.1652,
+    "benevolence-caring": 0.1463,
+    "universalism-concern": 0.0661,
+    "universalism-nature": 0.0285,
+    "universalism-tolerance": 0.0543
+  },
+  "draws": 1000000,
+  "source": "Lee et al. 2019, Table 2, Study 2 (N=439)"
+}

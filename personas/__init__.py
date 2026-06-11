@@ -19,7 +19,7 @@ METHODS = [
     "homo_silicus",  # A8/A9: one-sentence preference types, Horton mixture
     "big5",          # A5: numeric Big Five dials from population norms
     "value_anchor",  # A7: Schwartz value anchor
-    "gps",           # A6: Falk economic preferences + SVO dials
+    "gps",           # A6: the GPS instrument itself, correlated joint sampling
     "construction",  # A10: GSA-style behavioral trait dials
     "demographic",   # A1/A2: Argyle template from GSS microdata rows
     "anthology",     # A3: narrative backstories
