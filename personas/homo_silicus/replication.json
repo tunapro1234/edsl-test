@@ -1,0 +1,94 @@
+{
+  "method": "homo_silicus",
+  "model": "openai/gpt-4o",
+  "experiment": "Horton Fig. 3: 3 theory personas x 6 Charness-Rabin unilateral dictator menus, P(Left) per persona per game",
+  "paper_targets": {
+    "efficient": {
+      "Barc2": 0.0,
+      "Barc8": 0.0,
+      "Berk15": 0.0,
+      "Berk23": 1.0,
+      "Berk26": null,
+      "Berk29": 0.0
+    },
+    "inequity_averse": {
+      "Barc2": 1.0,
+      "Barc8": 0.0,
+      "Berk15": 0.0,
+      "Berk23": 0.0,
+      "Berk26": 0.0,
+      "Berk29": 1.0
+    },
+    "self_interested": {
+      "Barc2": 1.0,
+      "Barc8": 1.0,
+      "Berk15": 1.0,
+      "Berk23": 1.0,
+      "Berk26": 1.0,
+      "Berk29": null
+    }
+  },
+  "results": {
+    "p_left": {
+      "efficient": {
+        "Berk29": 0.0,
+        "Barc2": 0.0,
+        "Berk23": 1.0,
+        "Barc8": 0.0,
+        "Berk15": 0.0,
+        "Berk26": 0.0
+      },
+      "inequity_averse": {
+        "Berk29": 0.9,
+        "Barc2": 1.0,
+        "Berk23": 0.0,
+        "Barc8": 0.0,
+        "Berk15": 0.0,
+        "Berk26": 0.0
+      },
+      "self_interested": {
+        "Berk29": 0.0,
+        "Barc2": 0.5,
+        "Berk23": 1.0,
+        "Barc8": 1.0,
+        "Berk15": 1.0,
+        "Berk26": 1.0
+      }
+    },
+    "mad": {
+      "efficient": 0.0,
+      "inequity_averse": 0.0167,
+      "self_interested": 0.1
+    },
+    "worst_cell": {
+      "efficient": 0.0,
+      "inequity_averse": 0.1,
+      "self_interested": 0.5
+    },
+    "n_eff": {
+      "efficient/Berk29": 10,
+      "efficient/Barc2": 10,
+      "efficient/Berk23": 10,
+      "efficient/Barc8": 10,
+      "efficient/Berk15": 10,
+      "efficient/Berk26": 10,
+      "inequity_averse/Berk29": 10,
+      "inequity_averse/Barc2": 10,
+      "inequity_averse/Berk23": 10,
+      "inequity_averse/Barc8": 10,
+      "inequity_averse/Berk15": 10,
+      "inequity_averse/Berk26": 10,
+      "self_interested/Berk29": 10,
+      "self_interested/Barc2": 10,
+      "self_interested/Berk23": 10,
+      "self_interested/Barc8": 10,
+      "self_interested/Berk15": 10,
+      "self_interested/Berk26": 10
+    }
+  },
+  "pass": true,
+  "criteria": "each persona's P(Left) vector is within mean-absolute-deviation <= 0.2 of its Fig. 3 'Expected' pattern AND no scored cell deviates from its target by >= 0.5; ambiguous cells excluded",
+  "n_calls": 180,
+  "cost_estimate_usd": 0.33,
+  "timestamp": "2026-06-11T23:16:10"
+}

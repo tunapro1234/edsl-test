@@ -1,0 +1,52 @@
+{
+  "method": "construction",
+  "model": "openai/gpt-4o",
+  "experiment": "GSA App. A: phi* dial mixture vs bare GPT-4o on the six Charness-Rabin single-stage dictator menus (MAE vs humans)",
+  "paper_targets": {
+    "mae_phi_star": 0.2,
+    "mae_baseline": 0.42
+  },
+  "results": {
+    "mae_phi_star": 0.3472,
+    "mae_baseline": 0.3983,
+    "p_left": {
+      "7-10-10": {
+        "Barc2": 1.0,
+        "Barc8": 0.0,
+        "Berk15": 0.0,
+        "Berk23": 0.2,
+        "Berk26": 0.0,
+        "Berk29": 1.0
+      },
+      "3-1-3": {
+        "Barc2": 1.0,
+        "Barc8": 0.0,
+        "Berk15": 0.0,
+        "Berk23": 1.0,
+        "Berk26": 0.0,
+        "Berk29": 1.0
+      },
+      "1-10-2": {
+        "Barc2": 0.7,
+        "Barc8": 0.9,
+        "Berk15": 1.0,
+        "Berk23": 1.0,
+        "Berk26": 1.0,
+        "Berk29": 0.6
+      },
+      "baseline": {
+        "Barc2": 1.0,
+        "Barc8": 0.3,
+        "Berk15": 0.2,
+        "Berk23": 1.0,
+        "Berk26": 0.0,
+        "Berk29": 1.0
+      }
+    }
+  },
+  "pass": true,
+  "criteria": "MAE(phi* mixture) < MAE(baseline) and |MAE(phi* mixture) - 0.2| <= 0.15",
+  "n_calls": 240,
+  "cost_estimate_usd": 0.44,
+  "timestamp": "2026-06-11T23:09:29"
+}

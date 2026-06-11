@@ -1,0 +1,172 @@
+{
+  "method": "gps",
+  "model": "deep_infra/meta-llama/Meta-Llama-3.1-8B-Instruct",
+  "experiment": "instrument fidelity: Table 12 correlation recovery (offline) + 2-item verbatim readback probe (LLM)",
+  "paper_targets": {
+    "table12_pairwise_correlations": {
+      "patience~risk": 0.21,
+      "patience~posrec": 0.084,
+      "patience~negrec": 0.112,
+      "patience~altruism": 0.098,
+      "patience~trust": 0.044,
+      "risk~posrec": 0.068,
+      "risk~negrec": 0.228,
+      "risk~altruism": 0.106,
+      "risk~trust": 0.047,
+      "posrec~negrec": 0.01,
+      "posrec~altruism": 0.329,
+      "posrec~trust": 0.114,
+      "negrec~altruism": 0.067,
+      "negrec~trust": 0.075,
+      "altruism~trust": 0.151
+    },
+    "latent_mean": 0.0,
+    "latent_sd": 1.0,
+    "llm_probe": "none published \u2014 readback consistency check of our own instrument"
+  },
+  "results": {
+    "offline": {
+      "worst_corr_gap": 0.0026,
+      "worst_abs_mean": 0.0041,
+      "worst_sd_dev": 0.0016,
+      "clip_rate": 0.0123,
+      "deterministic": true,
+      "probe_dials_rederived": true,
+      "n_draws": 200000
+    },
+    "probe": {
+      "hit_share": 1.0,
+      "dial_answer_corr": 1.0,
+      "n_null": 0,
+      "reps": 3,
+      "seed": 27,
+      "cells": [
+        {
+          "item": "risk",
+          "pidx": 0,
+          "dial": 2,
+          "answers": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "item": "risk",
+          "pidx": 1,
+          "dial": 6,
+          "answers": [
+            6,
+            6,
+            6
+          ]
+        },
+        {
+          "item": "risk",
+          "pidx": 2,
+          "dial": 8,
+          "answers": [
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "item": "risk",
+          "pidx": 3,
+          "dial": 2,
+          "answers": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "item": "risk",
+          "pidx": 4,
+          "dial": 8,
+          "answers": [
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "item": "risk",
+          "pidx": 5,
+          "dial": 6,
+          "answers": [
+            6,
+            6,
+            6
+          ]
+        },
+        {
+          "item": "trust",
+          "pidx": 0,
+          "dial": 7,
+          "answers": [
+            7,
+            7,
+            7
+          ]
+        },
+        {
+          "item": "trust",
+          "pidx": 1,
+          "dial": 4,
+          "answers": [
+            4,
+            4,
+            4
+          ]
+        },
+        {
+          "item": "trust",
+          "pidx": 2,
+          "dial": 2,
+          "answers": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "item": "trust",
+          "pidx": 3,
+          "dial": 5,
+          "answers": [
+            5,
+            5,
+            5
+          ]
+        },
+        {
+          "item": "trust",
+          "pidx": 4,
+          "dial": 3,
+          "answers": [
+            3,
+            3,
+            3
+          ]
+        },
+        {
+          "item": "trust",
+          "pidx": 5,
+          "dial": 4,
+          "answers": [
+            4,
+            4,
+            4
+          ]
+        }
+      ]
+    }
+  },
+  "pass": true,
+  "criteria": "Offline: 200k-draw correlations within 0.01 of Table 12, latent moments within 0.02 of (0,1), clip rate <2%, deterministic; LLM: >=75% of 36 readback probes within +-2 of the persona's stated dial AND dial-answer correlation >=0.5.",
+  "n_calls": 36,
+  "cost_estimate_usd": 0.0008,
+  "timestamp": "2026-06-11T23:10:44"
+}

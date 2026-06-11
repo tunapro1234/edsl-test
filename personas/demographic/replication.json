@@ -1,0 +1,49 @@
+{
+  "method": "demographic",
+  "model": "deep_infra/meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+  "experiment": "Argyle Study 2 mini: 12+12 strong-partisan GSS-2024 backstories (own _render) asked their 2020 presidential vote (Biden/Trump), 1 rep, temperature 0",
+  "paper_targets": {
+    "tetrachoric_all_2012": 0.9,
+    "tetrachoric_all_2016": 0.92,
+    "tetrachoric_all_2020": 0.94,
+    "tetrachoric_strong_partisans_2020": 1.0,
+    "prop_agree_strong_partisans_2020": 0.97
+  },
+  "results": {
+    "own_party_aligned_share": 1.0,
+    "aligned": 24,
+    "n_valid": 24,
+    "n_asked": 24,
+    "votes": {
+      "2": "Joe Biden",
+      "3": "Joe Biden",
+      "7": "Joe Biden",
+      "11": "Joe Biden",
+      "16": "Joe Biden",
+      "22": "Joe Biden",
+      "27": "Joe Biden",
+      "28": "Joe Biden",
+      "51": "Joe Biden",
+      "54": "Joe Biden",
+      "58": "Joe Biden",
+      "61": "Joe Biden",
+      "19": "Donald Trump",
+      "24": "Donald Trump",
+      "29": "Donald Trump",
+      "39": "Donald Trump",
+      "47": "Donald Trump",
+      "52": "Donald Trump",
+      "64": "Donald Trump",
+      "81": "Donald Trump",
+      "82": "Donald Trump",
+      "98": "Donald Trump",
+      "106": "Donald Trump",
+      "122": "Donald Trump"
+    }
+  },
+  "pass": true,
+  "criteria": "own-party-aligned 2020 vote share >= 0.8 among >= 20 valid answers (paper strong-partisan agreement 0.97)",
+  "n_calls": 24,
+  "cost_estimate_usd": 0.0039,
+  "timestamp": "2026-06-11T23:09:28"
+}

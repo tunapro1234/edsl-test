@@ -1,0 +1,56 @@
+{
+  "method": "big5",
+  "model": "deep_infra/microsoft/phi-4",
+  "experiment": "Big5-Scaler single-trait expression (Sec. 4.1, Table 1): each trait dialed to 10/10 (others 5) vs all-5 neutral persona, scored on the 12 BFI-2 domain items (1-5)",
+  "paper_targets": {
+    "table1_simple": {
+      "openness": 4.26,
+      "conscientiousness": 4.19,
+      "extraversion": 4.37,
+      "agreeableness": 4.03,
+      "neuroticism": 2.73
+    },
+    "table1_neutral": {
+      "openness": 3.97,
+      "conscientiousness": 3.61,
+      "extraversion": 3.89,
+      "agreeableness": 3.56,
+      "neuroticism": 3.01
+    }
+  },
+  "results": {
+    "dialed": {
+      "openness": 4.758,
+      "conscientiousness": 4.55,
+      "extraversion": 4.358,
+      "agreeableness": 4.5,
+      "neuroticism": 4.817
+    },
+    "neutral": {
+      "openness": 3.867,
+      "conscientiousness": 3.267,
+      "extraversion": 3.05,
+      "agreeableness": 3.808,
+      "neuroticism": 2.842
+    },
+    "wins": 5,
+    "highs": 5,
+    "n_eff": {
+      "openness/dialed": 120,
+      "openness/neutral": 120,
+      "conscientiousness/dialed": 120,
+      "conscientiousness/neutral": 120,
+      "extraversion/dialed": 120,
+      "extraversion/neutral": 120,
+      "agreeableness/dialed": 120,
+      "agreeableness/neutral": 120,
+      "neuroticism/dialed": 120,
+      "neuroticism/neutral": 120
+    }
+  },
+  "pass": true,
+  "criteria": "dialed domain mean > neutral domain mean on >= 4/5 traits AND dialed mean >= 3.5/5 on >= 4/5 traits (the allowed miss is neuroticism, the paper's own safety-suppression exception, Sec. 5.1)",
+  "n_calls": 1200,
+  "cost_estimate_usd": 0.05,
+  "timestamp": "2026-06-11T23:11:13"
+}

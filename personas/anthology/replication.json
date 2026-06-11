@@ -1,0 +1,33 @@
+{
+  "method": "anthology",
+  "model": "deep_infra/meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+  "experiment": "implementation-fidelity: paper App. F (Fig. 17) age-locating survey on 24 stratified pool backstories vs the brackets prep.py's regex assigned (the human-ATP WD comparison is not locally reproducible)",
+  "paper_targets": {
+    "wd_w34_llama3_70b_base_anthology_greedy": 0.227,
+    "wd_w34_llama3_70b_instruct_anthology_greedy": 0.413,
+    "min_bracket_agreement": 0.8
+  },
+  "results": {
+    "bracket_agreement": 0.9583,
+    "n_matched": 23,
+    "n_scored": 24,
+    "per_bracket": {
+      "18-29": "5/6",
+      "30-49": "6/6",
+      "50-64": "6/6",
+      "65+": "6/6"
+    },
+    "mismatches": [
+      {
+        "sid": 18,
+        "expected": "18-29",
+        "got": "30-49"
+      }
+    ]
+  },
+  "pass": true,
+  "criteria": "implementation-fidelity: the paper's App. F Fig. 17 age-locating prompt at T=0 returns the same age bracket prep.py's regex assigned for >= 80% of 24 stratified pool backstories ('Was not mentioned' or a blank answer counts as a miss)",
+  "n_calls": 24,
+  "cost_estimate_usd": 0.008,
+  "timestamp": "2026-06-11T23:09:28"
+}

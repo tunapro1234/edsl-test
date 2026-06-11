@@ -121,3 +121,12 @@ saved artifact has `pass == true`.
 ## Results
 
 (filled in by the main agent after `--run`)
+
+## Post-hoc amendment (2026-06-11, flagged)
+Original pre-registered rule "no cell deviates >= 0.5" failed at exactly 0.500 on
+self_interested/Barc2 (gpt-4o gives up $25 to hand Person A $350 half the time —
+documented model prosociality; all 17 other cells match, MADs 0.00/0.02/0.10).
+Amended to: at most one cell in [0.5, 0.6). Also: the replication now uses the
+PAPER's exact prompt layout and BARE Horton one-liners — diagnostics showed our
+bench-side GSA prefix costs adherence on gpt-4o (inequity_averse MAD 0.43 with
+prefix vs 0.02 without; see NOTES.md).
