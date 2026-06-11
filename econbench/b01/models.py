@@ -13,5 +13,5 @@ EST_COST_PER_CALL = {"openai/gpt-oss-120b": 0.0008}
 
 MODELS = {
     "gpt-oss-120b": lambda: Model("openai/gpt-oss-120b", service_name="deep_infra",
-                                  temperature=1, max_tokens=8192),
+                                  temperature=1, max_tokens=16384),
 }
