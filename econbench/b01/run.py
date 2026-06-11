@@ -133,6 +133,16 @@ def main():
     ap.add_argument("--yes", action="store_true", help="approve runs estimated over $5")
     a = ap.parse_args()
 
+    # Methods whose calibration artifacts are probe/game-specific (mixture
+    # weights, dial fits) are NOT bench-ready: their numbers would need
+    # re-calibration per game family. Replications still cover them.
+    NEEDS_PER_GAME_CALIBRATION = {"homo_silicus", "construction"}
+    blocked = NEEDS_PER_GAME_CALIBRATION & set(a.methods.split(","))
+    if blocked and not a.yes:
+        print(f"not bench-ready (per-game calibration): {sorted(blocked)} — "
+              "drop them or pass --yes to force")
+        return
+
     reg = registry()
     if a.games == "all":
         games = [g for g in reg.values() if not g["holdout"]]

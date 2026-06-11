@@ -1,7 +1,7 @@
-# B1 — Benchmark v1 görev tanımı (worker agent için)
+# B01 — Benchmark v01 görev tanımı (worker agent için)
 
 Amaç: persona yöntemlerini test edeceğimiz davranışsal benchmark katmanını kur. `experiments/`
-olduğu gibi kalıyor (ad-hoc denemeler orada); benchmark `benchmark/b1/` altında yaşayacak.
+olduğu gibi kalıyor (ad-hoc denemeler orada); benchmark `benchmark/b01/` altında yaşayacak.
 Odak: olabildiğince çok oyun × persona-yöntemi × model kombinasyonunu TEK komutla
 koşturabilmek. Skorlama katmanı sonraki iş — şimdilik temiz veri üretimi.
 
@@ -20,7 +20,7 @@ Kalibrasyon (10): ölçtüğü parametre parantezde.
 9. time-choices (sabır + present bias): "bugün $A vs 30 gün sonra $B" + "30 gün vs 60 gün" çiftleri
 10. eleven-twenty (level-k): 11-20 arası para iste; rakipten tam 1 az istersen +$20 bonus
 
-Holdout (4) — AYRI klasör `b1/holdout/`, persona tuning'i bunlara ASLA bakmaz:
+Holdout (4) — AYRI klasör `b01/holdout/`, persona tuning'i bunlara ASLA bakmaz:
 11. pg-punishment (Fehr-Gächter tek-seferlik versiyonu: katkı sonrası ceza aşaması)
 12. who-to-punish (Ertan-Page-Putterman: ceza kuralını oylama — tasarımı PDF'ten doğrula)
 13. third-party-punishment (dictator + seyirci cezalandırabilir)
@@ -46,7 +46,7 @@ Ajan kimliği persona-harness'tekiyle AYNI agent_id — aynı sanal kişi tüm o
 - Persona katmanı: mevcut 9-yöntem harness'ine tak (senin kurduğun yapı); yöntem seçimi flag'le.
 - Modeller: experiments/lineup.py MODELS; koşudan önce price_audit.py; maliyet tahminini
   koşu BAŞINDA yazdır, $5/koşu üstünü onaysız başlatma.
-- Tek giriş noktası: `python -m b1.run --games all --methods gps,twin2k --models lineup --n 50`
+- Tek giriş noktası: `python -m b01.run --games all --methods gps,twin2k --models lineup --n 50`
   gibi; kaldığı yerden devam edebilmeli (resume), yarım koşu veri kaybetmesin.
-- Her oyunun insan referans değerleri (Mei/literatür stylized facts) `b1/references.yaml`'a
+- Her oyunun insan referans değerleri (Mei/literatür stylized facts) `b01/references.yaml`'a
   şimdiden not düşülsün — skorlama sonra bunu okuyacak.
