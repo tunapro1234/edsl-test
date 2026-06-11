@@ -1,0 +1,74 @@
+{
+ "_source": "Ertan, Page & Putterman 2005 WP (EER 2009) \u2014 agent-extracted 2026-06-11, adversarially verified (2 cite fixes applied: lit-20% quote is printed p.1; P1 lower bound 0.69)",
+ "_scorer_params": {
+  "period1_band": [
+   0.69,
+   0.77
+  ],
+  "treatment_full_credit": 2.0,
+  "usage_ratio_full_band": [
+   0.5,
+   1.5
+  ],
+  "heterogeneity_full_credit": 3.0
+ },
+ "machine_readable": {
+  "final_vote_punish_low_share": 0.875,
+  "final_vote_no_punish_share": 0.125,
+  "first_vote_no_punish_share": 0.575,
+  "first_vote_punish_low_share": 0.4,
+  "first_vote_punish_avg_only_share": 0.025,
+  "group_vote_punish_high_share": 0,
+  "group_votes_total": 160,
+  "group_vote_no_punish_share": 0.35,
+  "group_vote_punish_low_only_share": 0.6125,
+  "group_vote_low_or_equal_share": 0.025,
+  "group_vote_equal_only_share": 0.0125,
+  "indiv_vote_yes_punish_low_share": 0.641,
+  "indiv_vote_yes_punish_avg_share": 0.072,
+  "indiv_vote_yes_punish_high_share": 0.173,
+  "period1_contrib_frac_low": 0.69,
+  "period1_contrib_frac_high": 0.77,
+  "contrib_frac_punishlow_steady": 0.95,
+  "contrib_frac_punishlow_period30": 0.82,
+  "contrib_frac_nopunish_3vote_period30": 0.12,
+  "contrib_frac_unrestricted_periods4to6": 0.75,
+  "perverse_punish_share_max": 0.28,
+  "perverse_punish_share_lit": 0.2,
+  "perverse_punish_highest_contributor_share": 0.19,
+  "perverse_punish_full_endowment_share": 0.11,
+  "punish_received_per_dollar_below_avg_unrestricted": 0.888,
+  "punish_received_per_dollar_below_avg_punishlow_min": 0.967,
+  "punish_received_per_dollar_below_avg_punishlow_max": 1.217,
+  "punish_received_per_dollar_above_avg_unrestricted": 0.377,
+  "net_gain_contribute_1_less_low_unrestricted": -0.29,
+  "net_gain_contribute_1_less_low_punishlow_min": -0.62,
+  "net_gain_contribute_1_less_low_punishlow_max": -0.37,
+  "net_gain_contribute_1_less_high_unrestricted": 0.98,
+  "net_gain_contribute_1_less_high_punishlow": 0.6,
+  "freeride_freq_no_punish": 1,
+  "freeride_freq_unrestricted": 0.72,
+  "freeride_freq_punishlow": 0.35,
+  "efficiency_punishlow_typical": 0.94,
+  "efficiency_no_punish_typical": 0.8,
+  "efficiency_unrestricted_typical": 0.8,
+  "sources_note": "All from Ertan, Page & Putterman working paper at /home/shared/projects/omega/edsl/experiments/07_who_to_punish/ertan_page_putterman_2005_wp.pdf (page numbers = printed page numbers, PDF page = printed+1). EXACT numbers: group-vote shares from counts on p. 10 (56/98/4/2 of 160) and Result 1; individual-vote shares from Table 2, p. 10 (410/46/111 Yes of 640 each, '17%' confirmed p. 22); free-riding frequencies from Fig 5 + text p. 15 (148/205=72%, 35% of 103); perverse-punishment 28%/19%/11% of 129 events from p. 19; literature ~20% perverse share from p. 2 (citing Fehr&Gachter 2000 p.990, Ostrom et al. 1992, Saijo&Nakamura 1995) and p. 22; Table 4 regression coefficients p. 17; Table 5 net gains p. 18; Table 6 logit coefficients p. 21; significance orderings from Table 3 p. 14 and footnote 16 (14-2-1 split, p=0.001). FIGURE READINGS (estimates, validated where possible): first/final vote shares derived from Figure 2 bars p. 11 (readings sum exactly to the p. 10 group-vote totals of 56 no-punishment, 102 low-but-not-high, 2 equal-only, so confident to +/-1 group of 40 => +/-0.025 share); period-1 contribution fractions 0.69 (3-Vote) and 0.75-0.77 (5-Vote) from Figure 3 p. 12; punish-low steady-state ~9.3-9.8/10 and period-30 ~8.2-8.3/10 from Figure 3; unrestricted periods 4-6 ~7.5/10 from Figure 3A; efficiency typical levels ~0.90-0.98 (punish-low) vs ~0.75-0.85 (no punishment/unrestricted) from Figure 4 p. 13, ordering exact per Result 3. Design constants for the scorer: 4-person groups, $10 endowment, MPCR 0.4, punish cost 0.25:1 (eq. 2, p. 7), majority rule with No-preference excluded and ties failing (footnote 9, p. 8), 160 subjects / 40 groups (Table 1, p. 9)."
+ },
+ "narrative": {
+  "voting": {
+   "never_punish_high": "Result 1 (printed p. 10, PDF p. 11): 'No group ever voted to allow punishment of higher-than-average contributors, so perverse punishment was ruled out from the first opportunity to vote.' Out of 160 group votes (60 in 3-Vote + 100 in 5-Vote designs, Table 1, printed p. 9), 0 allowed punishment of high contributors and 0 allowed unrestricted punishment. Only 4 of 8 possible rule combinations were ever chosen (printed p. 10): no punishment 56 votes; punish lower-than-average only 98 votes; punish low-or-equal-to-average only 4 votes; punish equal-to-average only 2 votes. Footnote 23 (printed p. 21): in 12 of 20 groups (3-Vote) and 10 of 20 groups (5-Vote), EVERY subject voted against allowing punishment of high contributors in every included vote.",
+   "first_vote_pattern": "Result 2 + Figure 2 (printed p. 11): in both designs a PLURALITY of groups' first vote prohibited all punishment, with a substantial minority allowing punish low-but-not-high. My reading of Figure 2 bars (each design has 20 groups; readings reconcile exactly with the text totals of 56 no-punishment / 102 low-but-not-high / 2 equal-only group votes): 3-Vote 1st vote = 10 prohibit-all, 9 punish-low-but-not-high, 1 punish-equal-to-average; 5-Vote 1st vote = 13 prohibit-all, 7 punish-low-but-not-high. Pooled first vote: 23/40 (57.5%) no punishment, 16/40 (40%) punish-low, 1/40 (2.5%) equal-only. Individual-level votes pooled over all votes (Table 2, printed p. 10, 640 individual votes per item): punish-low Yes 410 / No 211 / NoPref 19 (64% Yes); punish-average Yes 46 / No 577 / NoPref 17 (7% Yes); punish-high Yes 111 / No 493 / NoPref 36 (17% Yes \u2014 explicitly '111 votes, or 17%' on printed p. 22).",
+   "final_vote_pattern": "Result 2 (printed p. 11): 'in the final vote, nearly all groups voted to allow punishment of low-but-not-high contributors, with only a few remaining groups voting to prohibit all punishment.' Figure 2 reading: 3-Vote 3rd (final) vote = 17/20 punish-low-but-not-high, 3/20 prohibit-all; 5-Vote 5th (final) vote = 18/20 punish-low-but-not-high, 2/20 prohibit-all. Pooled final vote: 35/40 (87.5%) punish-low-but-not-high, 5/40 (12.5%) no punishment, 0 punish-high. Intermediate votes show monotone drift (Fig 2): 3-Vote 2nd = 15 low / 5 none; 5-Vote 2nd = 9 low / 11 none, 3rd = 13 low / 6 none / 1 equal-only, 4th = 14 low / 6 none. Result 5 (Table 6, printed p. 21): higher relative contributors were more likely to vote to allow punishing low contributors (logit coef 0.42, p=0.011 3-Vote; 1.15, p=0.003 5-Vote) and less likely to vote to allow punishing high contributors (-0.68, p=0.084 3-Vote; -0.13, n.s. 5-Vote)."
+  },
+  "contributions": {
+   "by_regime": "Result 3 / Table 3 (printed pp. 13-14), Wilcoxon matched-pair tests: contributions ordering punish-low-but-not-high > unrestricted punishment > no punishment (transitive). Test 1: punish-low > unrestricted, p=0.001 (n=17 matched groups; 14 higher under punish-low, 2 under unrestricted, 1 tie \u2014 footnote 16). Tests 2,3: unrestricted > no punishment at 5%. Tests 4,5: punish-low > no punishment at 1%/0.1%. Mann-Whitney on all voted-rule periods (printed p. 11): punish-low groups had higher contributions than no-punishment groups, p<0.001 in both designs. Figure 3 levels (my reading, printed p. 12): 3-Vote \u2014 exogenous no-punishment periods 1-3 fall from ~6.9 to ~5.8; exogenous unrestricted periods 4-6 flat ~7.5; punish-low groups jump to ~8.8 at period 7, then ~9.3-9.8 through period 29, endgame drop to ~8.2 at period 30; endogenous no-punishment groups ~6 at period 7 decaying/fluctuating to ~3.5-5.5 with a restart spike ~7 near period 24, ending ~1.2 at period 30. 5-Vote \u2014 punish-low ~7.7-9.3 early rising to ~9.5-10 in periods 13-24, ending ~8.3; no-punishment ~7.5 early, fluctuating ~5-8 (slight mid-period rise, footnote 14), ending ~5.6.",
+   "period1_level": "Not reported numerically in text; from Figure 3 (printed p. 12): 3-Vote design period 1 (all groups, no punishment, no voting yet) ~6.9/10 = ~0.69 of endowment; 5-Vote design period 1 ~7.5-7.7/10 = ~0.75-0.77 of endowment (punish-low-destined groups ~7.7, no-punishment-destined ~7.5). So period-1 contributions ~65-77% of the $10 endowment (figure reading, Figure 3A/3B).",
+   "trend_under_punish_low": "Rising then high-and-stable with an endgame drop: 'contributions in groups that permitted punishment of low-but-not-high contributors tended to increase over time until the end-game fall off' (printed p. 11, Section 3.2; visible in Figure 3A: ~8.8 at period 7 rising toward ~9.8 by periods 23-29, dropping to ~8.2 in period 30; Figure 3B similar, peaking ~10 around periods 18-24, ending ~8.3). By contrast, no-punishment groups had falling contributions over time (3-Vote), 'replicating earlier results on basic VCMs without punishment' (printed pp. 11-12), with a slight increasing mid-period trend in the 5-Vote design (footnote 14 notes endogenous-choice/restart effects make the no-punishment decline slower than typical)."
+  },
+  "punishment": {
+   "targeting": "This paper, unrestricted-punishment phase (periods 4-6 of 3-Vote design, printed p. 19, Section 3.3 end): of 129 punishment EVENTS, 28% were aimed at higher-than-average contributors, 19% at the period's highest contributor, and 11% at individuals who contributed their full $10 endowment (footnote 22: counted by event not dollars; 'may be atypically high due to the short duration'). Prior-literature number (printed p. 2, Introduction): 'In reviewing our own and others' experiments on VCMs with punishment, we found about 20% or more of punishments were targeted at higher-than-average contributors' \u2014 citing Fehr & Gachter 2000 (p. 990), Ostrom, Gardiner & Walker 1992, Saijo & Nakamura 1995; footnote 22 adds Cinyabuguma/Page/Putterman 2004, Anderson & Putterman, Gachter & Hermann, Ones & Putterman. Discussion (printed p. 22) restates: 'about 20% of punishment directed at high contributors,' and notes the 17% individual Yes-vote share on punishing high contributors (111/640) roughly matches this 'demography' of roughly one in five.",
+   "usage": "Yes \u2014 punishment is actually used under punish-low rules, and it tracks shortfall nearly 1:1. Table 4 (printed p. 17), OLS, dep. var. = experimental dollars of punishment received: coefficient on Absolute Negative Deviation (each $1 below others' average) = 0.888*** under unrestricted punishment (col 1, periods 4-6, N=240, R^2=0.54); under punish-low-but-not-high: 1.217*** (3-Vote first 3 rule periods, N=82, R^2=0.91), 1.039*** (5-Vote first 3, N=92), 1.054*** (3-Vote all periods, N=241), 0.967*** (5-Vote all periods, N=176). Positive Deviation drew 0.377** dollars of punishment per $1 above average under unrestricted punishment (col 1) \u2014 n.a. under punish-low. Table 5 (printed p. 18): net gain from contributing $1 less, for below-average contributors: -$0.29 (unrestricted) vs -$0.62/-$0.44/-$0.45/-$0.37 (punish-low cols 2-5) \u2014 i.e., the free-riding incentive is reversed and more strongly so under punish-low; for above-average contributors net gain of contributing $1 less is +$0.98 under unrestricted (includes avoiding $0.38 perverse punishment) vs +$0.60 under punish-low."
+  },
+  "efficiency": "Result 3 / Table 3 (printed pp. 13-14): efficiency ordering is punish-low-but-not-high > NO punishment > unrestricted punishment (note this differs from the contributions ordering, where unrestricted beats no-punishment \u2014 the gap is 'likely due to the cost of punishment,' printed p. 14). Significance: punish-low > unrestricted at 1% (Test 1); punish-low > no punishment at 1% (Test 4, 3-Vote) and 5% (Test 5, 5-Vote); no punishment > unrestricted at 10% (Test 2), insignificant in Test 3. Mann-Whitney over voted-rule periods (printed p. 12): punish-low efficiency > no-punishment efficiency at 0.1% (3-Vote) and 1% (5-Vote). Figure 4 levels (my reading, printed p. 13, efficiency = observed/max possible earnings): punish-low groups ~0.90-0.98 per period; no-punishment groups ~0.75-0.85 (ending ~0.66 in 3-Vote period 30); exogenous unrestricted periods 4-6 ~0.80; exogenous no-punishment periods 1-3 ~0.80-0.88. Related Result 4 / Figure 5 (printed p. 15), free-riding frequency among unequal-contribution pairs: 100% under no punishment (229 obs, by construction), 72% under unrestricted punishment (148/205), 35% under punish-low-but-not-high (103 obs); Fisher exact p<0.0001."
+ }
+}

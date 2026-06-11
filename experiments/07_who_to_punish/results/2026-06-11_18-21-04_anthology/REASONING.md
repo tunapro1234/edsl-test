@@ -170,3 +170,39 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=4, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
 - **contribution = 10**
   - I’ll stick with the full contribution. Everyone’s been cooperating, and I value fairness and teamwork—plus dropping below the average would open me up to punishment under the rules.
+
+## p5_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=5, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I’ve consistently contributed the full $10 and, given my community‑focused, collaborative mindset, I’ll keep doing so rather than risk triggering punishments by under‑contributing.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=5, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I’ve kept contributing the full $10 each round, and everyone’s been consistent. Sticking with the cooperative strategy maintains trust and avoids any punishment, which aligns with my values of fairness and teamwork.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=5, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I keep contributing the full $10 because I want to stay consistent, avoid any chance of being punished, and it feels safer given my anxiety about conflict.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=5, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I keep contributing fully because I've always cooperated, value fairness, and the group expects full contributions; deviating risks punishment and undermines the trust built over many periods.
+
+## p6_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=6, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I keep contributing the full $10 because the group has consistently cooperated, yielding everyone $16. Staying fully cooperative aligns with my values of community involvement and fairness, and there’s no incentive to deviate when others are also contributing fully.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=6, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I’m a collaborative, fairness‑driven person who values group harmony and has consistently contributed fully in past rounds. Sticking with a $10 contribution keeps the cooperation stable and avoids triggering punishments, aligning with my mentoring and teamwork ethos.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=6, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I’ve kept contributing the full $10 every round, and I’m proud of sticking with what I started—especially since dropping below the average would make me punishable, so I’ll stay at $10.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=6, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 10**
+  - I keep contributing the full $10 because everyone else has been doing so, the voting rules only allow punishment of lower contributors, and maintaining cooperation gives me the highest payoff without risk of being penalized.

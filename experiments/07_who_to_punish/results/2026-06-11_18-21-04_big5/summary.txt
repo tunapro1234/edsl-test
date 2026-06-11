@@ -1,0 +1,10 @@
+Who to punish? — 2 votes x 3 periods — personas: big5 (seed 2)
+
+Vote 1: punish low=True  avg=False  high=False
+  Period 1: contrib {'A': 5, 'B': 5, 'C': 5, 'D': 5}  punishment received {'A': 0, 'B': 0, 'C': 0, 'D': 0}  earnings {'A': 13.0, 'B': 13.0, 'C': 13.0, 'D': 13.0}
+  Period 2: contrib {'A': 5, 'B': 5, 'C': 5, 'D': 5}  punishment received {'A': 0, 'B': 0, 'C': 0, 'D': 0}  earnings {'A': 13.0, 'B': 13.0, 'C': 13.0, 'D': 13.0}
+  Period 3: contrib {'A': 5, 'B': 5, 'C': 5, 'D': 5}  punishment received {'A': 0, 'B': 0, 'C': 0, 'D': 0}  earnings {'A': 13.0, 'B': 13.0, 'C': 13.0, 'D': 13.0}
+Vote 2: punish low=True  avg=False  high=False
+  Period 4: contrib {'A': 5, 'B': 5, 'C': 5, 'D': 5}  punishment received {'A': 0, 'B': 0, 'C': 0, 'D': 0}  earnings {'A': 13.0, 'B': 13.0, 'C': 13.0, 'D': 13.0}
+  Period 5: contrib {'A': 5, 'B': 5, 'C': 5, 'D': 5}  punishment received {'A': 0, 'B': 0, 'C': 0, 'D': 0}  earnings {'A': 13.0, 'B': 13.0, 'C': 13.0, 'D': 13.0}
+  Period 6: contrib {'A': 5, 'B': 5, 'C': 5, 'D': 5}  punishment received {'A': 0, 'B': 0, 'C': 0, 'D': 0}  earnings {'A': 13.0, 'B': 13.0, 'C': 13.0, 'D': 13.0}

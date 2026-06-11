@@ -152,3 +152,57 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=D, persona=People with high openness score are imaginative, curious, and creative; people w..., target_group=MORE than the group average)
 - **vote = Yes**
   - I want to be able to hit back at the higher contributors and keep my advantage, even if it means spending a little on punishment.
+
+## p4_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=A, period=4, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I’m keeping my usual high contribution because I value cooperation and consistency – my strong agreeableness and conscientiousness drive me to support the group even when others contribute less.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=B, period=4, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 5**
+  - I’m sticking with the $5 contribution I’ve made each round. My high conscientiousness and agreeableness push me toward consistency and maintaining group harmony, even though free‑riding would give a higher short‑term payoff.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=C, period=4, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I chose to free‑ride again because there’s no punishment mechanism, and the other players (especially the consistent $10 contributor) will keep the public good funded enough that I maximize my own payoff by keeping all $10 for myself. This follows the dominant strategy in a punishment‑free repeated public‑goods game.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=4, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I keep free‑riding because there’s no punishment, others still contribute enough to give me a high payoff, and my low agreeableness and conscientiousness make me indifferent to fairness or long‑term cooperation.
+
+## p5_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=A, period=5, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I keep contributing the full $10 because I’m highly agreeable and conscientious—I want to sustain cooperation and stick to a consistent, cooperative strategy even though others are free‑riding.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=B, period=5, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 5**
+  - I’m sticking with the $5 contribution I’ve been making each round. My high conscientiousness makes me keep to the plan I set, and my agreeableness and extraversion lead me to favor group harmony over a short‑term payoff boost from free‑riding.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=C, period=5, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I stick with free‑riding because without punishment the other players’ contributions are fixed (10, 5, 0), so contributing any amount only reduces my own payoff (16 – 0.6·c). The best personal payoff is achieved by contributing $0.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=5, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’ve been free‑riding so far and earning the highest possible payoff given the others’ contributions. With no punishment allowed and the other players showing no sign of changing, my selfish, low‑agreeableness, high‑neuroticism outlook leads me to stick with a zero contribution.
+
+## p6_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=A, period=6, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 5**
+  - I kept contributing the full $10 even though others free‑rode, but my high openness makes me curious to try a different approach, and my strong agreeableness and conscientiousness push me to stay cooperative yet not self‑sabotage. Dropping to $5 still shows willingness to share while improving my own payoff and possibly encouraging the other player who’s contributing $5 to keep it up.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=B, period=6, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 5**
+  - I’ve kept contributing $5 each round, and with no punishment possible it’s the most consistent, fair‑going choice for me. My high conscientiousness and agreeableness lead me to stick with this balanced contribution rather than free‑riding.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=C, period=6, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 2**
+  - I chose a modest contribution. My high openness makes me want to experiment beyond pure free‑riding, and my moderate agreeableness and extraversion lead me to care a bit about appearing cooperative, but I still keep enough contribution to stay near the payoff‑maximizing strategy (0 would be best financially). A small amount like $2 lets me test the waters without losing much earnings.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=6, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I keep free‑riding because contributing costs me net 0.6 per dollar, there’s no punishment risk, and the other two players consistently contribute enough to give me a decent payoff. My low agreeableness and low conscientiousness make me prioritize my own earnings over cooperation.

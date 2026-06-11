@@ -84,3 +84,124 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=2, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
 - **contribution = 0**
   - I’m not willing to give up current earnings for future benefits and I don’t trust the others to cooperate, so I free‑ride and keep my whole $10.
+
+## p3_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=A, period=3, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’ll stick with free‑riding again. With the others still contributing nothing, any contribution only costs me $0.60 per dollar and there’s no way to enforce reciprocity, so the safest payoff is to keep the whole $10.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=B, period=3, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 5**
+  - I’m willing to sacrifice a noticeable amount now to signal cooperation and encourage future contributions, balancing my strong future‑oriented and altruistic preferences with the risk that others may still free‑ride.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=C, period=3, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’m not inclined to give up my own $10 for a public good that costs me more than I get back, especially since others have been contributing less each round and I don’t trust they’ll reciprocate. With low altruism, low risk‑taking, and only moderate patience, the safest choice is to free‑ride again.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=3, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’m not inclined to sacrifice my own earnings for uncertain future returns or to trust others will also contribute. With no punishment option and the others’ contributions dropping, the selfish payoff is highest by contributing nothing.
+
+## vote2
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=A, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=LESS than the group average)
+- **vote = Yes**
+  - I’m inclined to allow punishment because I’m especially keen on penalizing unfair free‑riding, and I’m comfortable taking the risk that I might be punished myself if I fall below the average.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=A, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=exactly the group average)
+- **vote = Yes**
+  - I want the ability to punish players who only meet the group average, since I’m inclined toward enforcing fairness even at some cost.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=A, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=MORE than the group average)
+- **vote = No**
+  - I don’t want to allow punishment of high contributors, since that would discourage cooperation and reduce the group’s overall earnings—something a primarily self‑interested, low‑reciprocity player would oppose.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=B, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=LESS than the group average)
+- **vote = Yes**
+  - I want to deter free‑riders and punish those who under‑contribute relative to the group average, which fits my high willingness to punish unfair behavior.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=B, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=exactly the group average)
+- **vote = No**
+  - I’d rather not allow punishment of players who simply match the group average – that seems unfair and could discourage cooperation.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=B, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=MORE than the group average)
+- **vote = No**
+  - I’d rather not allow punishment of players who are actually contributing more than the average, as that would discourage generosity and seems unfair.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=C, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=LESS than the group average)
+- **vote = No**
+  - I prefer not to allow punishment because it would let others target free‑riders like me, and I have little willingness to spend resources on punishing or being punished.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=C, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=exactly the group average)
+- **vote = Yes**
+  - I’d rather allow punishing those who contribute exactly the average because it discourages moderate contributors and helps protect my own free‑riding earnings.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=C, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=MORE than the group average)
+- **vote = Yes**
+  - I want to keep the ability to punish high contributors, which helps me benefit from others' generosity without having to contribute myself.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=D, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=LESS than the group average)
+- **vote = No**
+  - I’m not keen on giving the group the power to punish low contributors like me—especially since I’ve been free‑riding and don’t want to risk being penalised.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=D, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=exactly the group average)
+- **vote = No**
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=D, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=MORE than the group average)
+- **vote = Yes**
+  - I want to keep others from contributing so I can free‑ride and earn more, and allowing punishment of higher contributors makes that possible.
+
+## p4_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=A, period=4, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’m likely to free‑ride: I’m not very altruistic or reciprocal, I’ve seen others not respond to my contributions, and with punishment impossible there’s little incentive to cooperate.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=B, period=4, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’ve seen that the others never contribute, so any money I put in just reduces my own payoff with no chance of reciprocal help or punishment. Given the lack of enforcement and the history of free‑riding, the best move for me is to keep the $10.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=C, period=4, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I keep contributing nothing—free‑riding gives me the highest personal payoff, and my low altruism and distrust make me unwilling to sacrifice for the group.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=4, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I keep my $10 because I’m not inclined to sacrifice present payoff for uncertain future benefits, I don’t trust that others will contribute more, and there’s no punishment mechanism to enforce cooperation.
+
+## p5_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=A, period=5, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’m unlikely to contribute because I’m not very reciprocal, punishment isn’t allowed, and the others have mostly free‑ridden so far; contributing only reduces my own payoff.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=B, period=5, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’ve contributed before but the others never do, and without any punishment mechanism I can’t enforce cooperation. My strong future‑orientation and altruism are outweighed by feeling treated unfairly, so I stop contributing this round.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=C, period=5, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’m not inclined to give to the group when there’s no punishment and others have already stopped contributing, so I’ll free‑ride and keep the whole $10.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=5, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’m not inclined to delay my own payoff, I don’t trust others to reciprocate, and the game offers no punishment to enforce cooperation—so I’ll keep the entire $10.
+
+## p6_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=A, period=6, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’ve seen no cooperation from the others despite trying a contribution once, and my low reciprocity and low willingness to give without return make it unlikely I’ll contribute again. With punishment unavailable, the safest payoff is to keep the $10.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=B, period=6, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’m not contributing anything this round because the other three players have consistently free‑ridden, and without any punishment option there’s no incentive left for me to try to spark cooperation again.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=C, period=6, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I keep contributing nothing because I’m fairly selfish, low‑trust, and the group has shown no willingness to cooperate—there’s little incentive or expectation that my contribution will yield future benefits.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=6, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I keep free‑riding because I’m not willing to sacrifice my own payoff for uncertain future benefits, I don’t trust others to contribute, and the group has already settled at zero contributions.

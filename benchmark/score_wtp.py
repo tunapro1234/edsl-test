@@ -41,7 +41,7 @@ def load_targets():
     path = os.path.join(HERE, "human_targets.json")
     if os.path.exists(path):
         with open(path) as f:
-            return json.load(f)
+            return json.load(f)["_scorer_params"]
     return {}
 
 
@@ -123,8 +123,9 @@ def score_run(run, t):
     else:
         s["treatment_effect"] = None  # single-regime run: not observable
 
+    # Ertan Fig. 3: period-1 contributions ~69-77% of endowment (Brown subjects)
     frac = mean_contrib(periods[0]) / ENDOWMENT
-    lo, hi = t.get("period1_band", [0.4, 0.6])
+    lo, hi = t.get("period1_band", [0.69, 0.77])
     s["period1_level"] = 1.0 if lo <= frac <= hi else \
         clamp01(1 - (lo - frac) / lo if frac < lo else 1 - (frac - hi) / (1 - hi))
 
@@ -136,7 +137,24 @@ def score_run(run, t):
 
     share, total = targeting_share(run["dir"])
     if any(votes):
-        s["punishment_usage"] = clamp01(total / t.get("usage_full_credit", 5.0))
+        # Ertan Table 4: under punish-low, punishment received tracks shortfall
+        # ~1:1 ($0.97-1.22 per $1 below average). Score the run's ratio.
+        shortfall = punished = 0.0
+        for p in periods:
+            if not p["punish_low"]:
+                continue
+            avg = mean_contrib(p)
+            for player, c in p["contrib"].items():
+                if c < avg:
+                    shortfall += avg - c
+                    punished += p["received"][player]
+        if shortfall > 0:
+            ratio = punished / shortfall
+            lo_r, hi_r = t.get("usage_ratio_full_band", [0.5, 1.5])
+            s["punishment_usage"] = 1.0 if lo_r <= ratio <= hi_r else \
+                clamp01(ratio / lo_r if ratio < lo_r else 1 - (ratio - hi_r))
+        else:
+            s["punishment_usage"] = None  # nobody ever below average
         s["punishment_targeting"] = share if share is not None else 0.0
     else:
         s["punishment_usage"] = None   # punishment never legal: unobservable

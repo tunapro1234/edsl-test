@@ -152,3 +152,57 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., item=high, me=D, persona=People with high openness score are imaginative, curious, and creative; people w..., target_group=MORE than the group average)
 - **vote = No**
   - I think punishing players who gave above‑average contributions would be unfair and could discourage cooperation, so I vote against allowing it.
+
+## p4_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=4, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 5**
+  - I keep contributing $5 to stay in line with the other players, avoid being punished for under‑contributing, and maintain the cooperative equilibrium that’s worked for everyone so far.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=4, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 5**
+  - I keep contributing the same $5 as before because the current rules only allow punishment for under‑contributors, and none of the other players have punished anyone yet. Given my moderate conscientiousness and neuroticism, I’m wary of risking a punishment that would cost me $1, and my slightly lower agreeableness doesn’t outweigh the potential loss. Sticking with $5 maintains the stable payoff and avoids any chance of being penalized.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=4, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 5**
+  - I stick with the consistent $5 contribution because the group has been stable, I value cooperation, and I don’t want to risk triggering punishment or upsetting the group dynamics.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=4, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 5**
+  - I stick with the $5 contribution that the group has been using, keeping everything stable and avoiding any risk of punishment.
+
+## p5_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=5, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 5**
+  - I stick with the $5 contribution because it’s the safe, cooperative level that has worked for everyone so far. Any lower contribution risks punishment (and could end up lowering my payoff), while contributing more would just reduce my own earnings without gaining anything extra.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=5, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 5**
+  - I keep the same contribution as before because deviating below the average could trigger punishments, and raising it would be costly without clear benefit given my low agreeableness and modest risk‑aversion.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=5, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 5**
+  - I keep contributing $5 because everyone has been cooperating at that level, and my high agreeableness makes me want to preserve group harmony. Deviating lower could trigger punishment, and contributing more would lower my own payoff, so sticking with the established average is the safest choice.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=5, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 5**
+  - I keep contributing $5 because it matches the group average, avoids the risk of punishment (which I’m anxious about), and follows the consistent, practical pattern I’ve established.
+
+## p6_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, period=6, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 5**
+  - I keep contributing $5, matching the group average, because dropping below it risks punishment that would erase any gain, while contributing more would lower my payoff. Maintaining the status quo gives me the steady $13 I’ve earned each period.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, period=6, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 5**
+  - I keep contributing $5 because deviating lower risks punishment that would erase any gain, and contributing more just reduces my payoff. Staying at the established equal level is the safest choice.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, period=6, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 5**
+  - I keep contributing $5 to match the others and stay at the group average, avoiding any risk of being punished and maintaining a cooperative, harmonious environment.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=6, persona=People with high openness score are imaginative, curious, and creative; people w..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
+- **contribution = 5**
+  - I’m sticking with the established pattern – contributing $5 each round. With low openness and high conscientiousness, I prefer the familiar, reliable strategy and avoid the risk of being punished for contributing less.
