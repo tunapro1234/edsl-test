@@ -20,3 +20,4 @@ edsl_cache/
 # os
 .DS_Store
 personas/anthology/_raw_backstories.json
+benchmark/cpc/
