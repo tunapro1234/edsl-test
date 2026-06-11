@@ -188,3 +188,21 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=5, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
 - **contribution = 10**
   - I’m aiming to maximize the total earnings of the group. Since each contributed dollar adds $0.6 to the total payoff (40 + 0.6·total contributions), the best choice for the group’s welfare is to contribute the maximum $10.
+
+## p6_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=A, period=6, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I keep free‑riding because my payoff is highest when I contribute nothing while the others continue to put in $10, giving me $10 + 0.40·(total contributions) = $18 each period. With no punishment possible, there’s no incentive for me to start contributing.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=B, period=6, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I keep contributing nothing since the others regularly contribute enough that I earn $18 by free‑riding, which is far higher than the $8 I’d get by contributing $10. No punishment is possible, so the best payoff is $0 contribution.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=C, period=6, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I contribute the full $10 because each dollar added raises the group's total payoff (by $0.60 net), and with no punishment or future retaliation the socially optimal choice is to maximize contributions.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=6, persona=You are a human being with all the cognitive biases and heuristics that come wit..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I keep contributing the full $10 because total welfare rises with every $ contributed, and given the history I’ve always contributed fully and there’s no punishment to change that.

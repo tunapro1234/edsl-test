@@ -141,3 +141,25 @@ fidelity claim reproduces on gpt-oss-120b. The failures live entirely in the
   are self-interested but fair."), selection method + train/validate logic.
 - `replicant/replication/homo_silicus/charness_rabin.py` — Horton's exact
   scenario payoffs and allocation prompt layout.
+
+## v2 results (2026-06-11)
+
+Calibration (420 interviews, REPS=10): all 6 types DISTINCT on the CR menus
+(identification fixed — no duplicate warning). Fitted: self .36 / efficient .50 /
+selfish_but_fair .14; inequity_averse, competitive, reciprocal = 0.
+Train SSE 0.089; **held-out dictator validation POOR (RMSE 0.315)** — mixture gives
+mean 6.7% vs human 28.35%, P(0) .86 vs .36. reciprocal's zero weight is structural:
+unilateral menus contain no prior unfair behavior, so reciprocity is unidentified
+(the verifier predicted exactly this).
+
+WTP v2 run (`results/2026-06-11_15-32-53`, clean): quota group = 1 self + 2 eff +
+1 selfish_but_fair. BOTH votes banned all punishment (efficient: welfare logic;
+self: self-protection) → frozen exploitation 0/0/10/10 all six periods, $18 vs $8.
+
+**Final verdict for the bake-off**: GSA selection over this 6-type library FAILS the
+who-to-punish test honestly — no punisher type survives calibration because the
+calibration probes cannot identify one. The GSA loop's next iteration needs probes
+WITH prior unfair behavior (ultimatum responder, PG punishment stage) so reciprocal
+can earn weight. Persona adherence itself remains excellent (types play exactly as
+written) — the failure is in the library/probe design, which is the method-level
+finding.

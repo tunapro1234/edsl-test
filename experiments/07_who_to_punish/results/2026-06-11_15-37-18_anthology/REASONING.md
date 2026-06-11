@@ -188,3 +188,21 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=5, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
 - **contribution = 10**
   - I keep contributing the full $10 because I want to lead by example and nurture a sense of togetherness and mutual support, even if the others are falling short. This aligns with my belief that love and collaboration are worth investing in.
+
+## p6_contrib
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=A, period=6, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 10**
+  - I’m still putting in the full $10—I’m the kind of guy who keeps the door unlocked and throws parties for everyone, even when the vibe’s gone low. I hope my steady generosity will eventually bring the others back around.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=B, period=6, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’m continuing to free‑ride. With two others still contributing $10 each, the group fund will be $20 no matter what I give, so I keep the full $10 and still get $0.40 × 20 = $8 back – the highest payoff since any contribution costs me $0.60 per dollar. No punishment means there’s no incentive to cooperate.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=C, period=6, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’ll keep contributing nothing. The two other players are still putting in $10 each, so I earn $18 by free‑riding. Since there’s no punishment and I value self‑sufficiency, it’s best for me to keep the $10.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=6, persona=Before this study you answered an interview question.  Question: Tell me about y..., rule=The group voted to allow NO punishment at all.)
+- **contribution = 0**
+  - I’m choosing to free‑ride this round. With no punishment possible and the others consistently contributing very little, keeping the full $10 maximises my payoff (I’d earn $8 from the public good plus my $10, totalling $18) while any contribution only reduces my earnings without improving the group’s behaviour.

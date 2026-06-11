@@ -110,3 +110,17 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=D, period=2, persona=Answer as a person that is taking advantage of every opportunity to enjoy life's..., rule=Voted rules — may a player be punished for contributing... LESS than the group a...)
 - **contribution = 0**
   - I’ll keep my $10 and let the others’ contributions boost the public good. Even if they punish me a bit, the payoff stays higher than contributing anything substantial.
+
+## p2_punish
+
+### player  (rep 0, avg=7.5, contributions=[10, 10, 10, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=A, my_contribution=10, persona=Answer as a person that is being free to act independently., target=D, target_contribution=0)
+- **punish = 0**
+  - I chose not to punish because each dollar reduced costs me $0.25, lowering my own payoff without any direct benefit, so the optimal self‑interest decision is to spend nothing on punishment.
+
+### player  (rep 0, avg=7.5, contributions=[10, 10, 10, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=B, my_contribution=10, persona=Answer as a person that is helping and caring for the wellbeing of those who are..., target=D, target_contribution=0)
+- **punish = 1**
+  - I chose a modest $1 reduction – it’s enough to signal that free‑riding isn’t acceptable while only costing me $0.25, balancing concern for group fairness with keeping my own payoff reasonable.
+
+### player  (rep 0, avg=7.5, contributions=[10, 10, 10, 0], history=History so far: Vote 1 outcome: Voted rules — may a player be punished for contr..., me=C, my_contribution=10, persona=Answer as a person that is helping and caring for the wellbeing of those who are..., target=D, target_contribution=0)
+- **punish = 5**
+  - I chose to punish the free‑rider a moderate amount. Reducing Player D’s earnings by $5 signals that contributing nothing isn’t acceptable, helping to keep the group’s cooperation on track, while still limiting the cost to my own payoff (the $0.25 × 5 = $1.25 cost). This balances caring for the group’s wellbeing with not over‑paying myself.

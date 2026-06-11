@@ -102,3 +102,53 @@
 ### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., me=D, period=3, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., rule=The group voted to allow NO punishment at all.)
 - **contribution = 5**
   - I’m still fairly generous but after being exploited twice I’ll scale back; a moderate contribution balances my willingness to give to the group with the need to protect my own earnings.
+
+## vote2
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=A, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=LESS than the group average)
+- **vote = Yes**
+  - I want a rule that can deter free‑riding, since it improves the group’s future returns and protects my own payoff even if I might have to punish occasionally.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=A, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=exactly the group average)
+- **vote = Yes**
+  - I’m inclined to support allowing punishment because it could encourage higher future contributions and benefit the group in the long run, which aligns with my willingness to wait for bigger future gains.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=A, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=MORE than the group average)
+- **vote = Yes**
+  - I want to keep other players from contributing more than the average, which will push overall contributions down and boost my own earnings as a relatively low‑contributor. My modest willingness to punish and high risk tolerance make me comfortable supporting a rule that can be used to pressure others into free‑riding.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=B, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=LESS than the group average)
+- **vote = No**
+  - I want to keep punishment disabled because I’m risk‑averse, not keen on punishing or being punished, and I’m already benefiting from free‑riding on the others’ contributions.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=B, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=exactly the group average)
+- **vote = No**
+  - I prefer not to allow punishment of players who contributed exactly the group average because it seems unfair and could encourage unnecessary costly conflicts, which I’m reluctant to engage in.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=B, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=MORE than the group average)
+- **vote = No**
+  - I prefer not to allow punishment of higher contributors because I’m not keen on spending money to punish others, especially given my low risk tolerance and limited willingness to punish.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=C, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=LESS than the group average)
+- **vote = Yes**
+  - I want the ability to punish free‑riders, since I’m moderately willing to punish unfairness and believe that allowing punishment can encourage more cooperative behavior in the group.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=C, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=exactly the group average)
+- **vote = No**
+  - I don’t think it’s fair to punish someone who contributed exactly the average amount; they haven’t been below the group norm, and given my view that people generally have good intentions, I’d rather keep punishment limited to clear free‑riders.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=C, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=MORE than the group average)
+- **vote = No**
+  - I trust that others are generally well‑intentioned and see punishing players who contribute above the average as unfair; I’m not inclined to support rules that would punish cooperators.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=low, me=D, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=LESS than the group average)
+- **vote = Yes**
+  - I’m moderately willing to punish unfair behavior and want to discourage free‑riders, so I’d support allowing punishment of those who contribute below the average.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=avg, me=D, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=exactly the group average)
+- **vote = No**
+  - I believe punishing someone just for matching the group average is unnecessary and unfair; punishment should target clear free‑riders rather than those contributing at the norm.
+
+### player  (rep 0, history=History so far: Vote 1 outcome: The group voted to allow NO punishment at all. P..., item=high, me=D, persona=You answered the Global Preferences Survey (the standard worldwide survey of eco..., target_group=MORE than the group average)
+- **vote = No**
+  - I don’t think it’s fair to punish players who contribute above average; doing so would discourage cooperation and hurt the group’s overall earnings.
