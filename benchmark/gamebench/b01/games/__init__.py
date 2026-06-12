@@ -18,6 +18,6 @@ def _collect(folder, pkg):
 
 
 def registry():
-    games = _collect(HERE, "benchmark.personabench.b01.games")
-    games.update(_collect(HOLDOUT, "benchmark.personabench.b01.holdout"))
+    games = _collect(HERE, "benchmark.gamebench.b01.games")
+    games.update(_collect(HOLDOUT, "benchmark.gamebench.b01.holdout"))
     return games
