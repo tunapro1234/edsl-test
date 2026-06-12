@@ -21,7 +21,7 @@ n= 30 mean=  29.76 sd=  8.86
 - ok
 
 ## beauty_contest × twin2k
-n= 30 mean=  20.47 sd= 14.95
+n= 30 mean=  22.38 sd= 12.66
 - ok
 
 ## beauty_contest × value_anchor
@@ -49,7 +49,7 @@ n= 30 mean=  26.10 sd= 21.23
 - ok
 
 ## dictator × twin2k
-n= 30 mean=  37.50 sd= 10.39
+n= 30 mean=  31.17 sd= 17.50
 - ok
 
 ## dictator × value_anchor
@@ -61,8 +61,8 @@ n= 30 mean=  18.73 sd=  2.62
 - ok
 
 ## eleven_twenty × baseline
-n= 30 mean=  19.38 sd=  1.60
-- ⚠ invalid_rate 13%
+n= 30 mean=  19.47 sd=  1.50
+- ok
 
 ## eleven_twenty × big5
 n= 30 mean=  18.23 sd=  2.86
@@ -77,7 +77,7 @@ n= 30 mean=  19.50 sd=  0.50
 - ok
 
 ## eleven_twenty × twin2k
-n= 30 mean=  18.67 sd=  2.09
+n= 30 mean=  18.37 sd=  2.32
 - ok
 
 ## eleven_twenty × value_anchor
@@ -85,7 +85,7 @@ n= 30 mean=  18.70 sd=  2.85
 - ok
 
 ## holt_laury × anthology
-n=300 modal='Option A' (164/298)
+n=300 modal='Option A' (166/300)
 - ⚠ hl_multi_switch anthology-000/r2 (3 switches)
 - ⚠ hl_multi_switch anthology-001/r0 (3 switches)
 - ⚠ hl_multi_switch anthology-001/r1 (3 switches)
@@ -100,11 +100,11 @@ n=300 modal='Option A' (164/298)
   - precedent: human-attested: a minority of real Holt-Laury subjects switch multiple times
 
 ## holt_laury × baseline
-n=300 modal='Option B' (179/299)
+n=300 modal='Option B' (180/300)
 - ok
 
 ## holt_laury × big5
-n=300 modal='Option B' (171/299)
+n=300 modal='Option B' (172/300)
 - ⚠ hl_multi_switch big5-003/r0 (3 switches)
 - ⚠ hl_multi_switch big5-003/r1 (3 switches)
 - ⚠ hl_multi_switch big5-003/r2 (3 switches)
@@ -119,7 +119,7 @@ n=300 modal='Option B' (171/299)
   - precedent: human-attested: a minority of real Holt-Laury subjects switch multiple times
 
 ## holt_laury × demographic
-n=300 modal='Option A' (244/297)
+n=300 modal='Option A' (247/300)
 - ⚠ hl_multi_switch demographic-000/r0 (3 switches)
 - ⚠ hl_multi_switch demographic-000/r1 (3 switches)
 - ⚠ hl_multi_switch demographic-002/r2 (3 switches)
@@ -131,7 +131,7 @@ n=300 modal='Option A' (244/297)
   - precedent: human-attested: a minority of real Holt-Laury subjects switch multiple times
 
 ## holt_laury × gps
-n=300 modal='Option A' (151/296)
+n=300 modal='Option A' (151/300)
 - ⚠ hl_multi_switch gps-001/r0 (3 switches)
 - ⚠ hl_multi_switch gps-002/r2 (3 switches)
 - ⚠ hl_multi_switch gps-003/r1 (3 switches)
@@ -148,113 +148,146 @@ n=300 modal='Option A' (151/296)
   - precedent: human-attested: a minority of real Holt-Laury subjects switch multiple times
 
 ## holt_laury × twin2k
-n=300 modal='Option A' (154/299)
+n=300 modal='Option A' (188/300)
+- ⚠ hl_multi_switch twin2k-000/r1 (3 switches)
 - ⚠ hl_multi_switch twin2k-003/r0 (3 switches)
-- ⚠ hl_multi_switch twin2k-005/r2 (3 switches)
-- ⚠ hl_multi_switch twin2k-006/r2 (3 switches)
-- ⚠ hl_multi_switch twin2k-008/r0 (3 switches)
+- ⚠ hl_multi_switch twin2k-003/r1 (3 switches)
+- ⚠ hl_multi_switch twin2k-004/r2 (3 switches)
+- ⚠ hl_multi_switch twin2k-005/r0 (4 switches)
+- ⚠ hl_multi_switch twin2k-005/r2 (2 switches)
+- ⚠ hl_multi_switch twin2k-006/r0 (3 switches)
+- ⚠ hl_multi_switch twin2k-006/r1 (3 switches)
+- ⚠ hl_multi_switch twin2k-007/r0 (3 switches)
+- ⚠ hl_multi_switch twin2k-008/r0 (4 switches)
+- ⚠ hl_multi_switch twin2k-008/r1 (3 switches)
+- ⚠ hl_multi_switch twin2k-009/r1 (3 switches)
   - precedent: human-attested: a minority of real Holt-Laury subjects switch multiple times
 
 ## holt_laury × value_anchor
-n=300 modal='Option B' (177/297)
+n=300 modal='Option B' (180/300)
 - ok
 
 ## loss_gambles × anthology
-n=180 modal='Reject' (94/180)
+n=270 modal='Accept' (169/270)
 - ⚠ lg_non_monotone anthology-000/r2
+- ⚠ lg_non_monotone anthology-001/r0
 - ⚠ lg_non_monotone anthology-001/r1
+- ⚠ lg_non_monotone anthology-006/r0
 - ⚠ lg_non_monotone anthology-006/r2
+- ⚠ lg_non_monotone anthology-007/r0
+- ⚠ lg_non_monotone anthology-007/r1
 - ⚠ lg_non_monotone anthology-007/r2
   - precedent: rare in humans; usually noise
 
 ## loss_gambles × baseline
-n=180 modal='Accept' (116/180)
+n=270 modal='Accept' (206/270)
 - ok
 
 ## loss_gambles × big5
-n=180 modal='Accept' (111/180)
+n=270 modal='Accept' (201/270)
 - ⚠ lg_non_monotone big5-007/r1
   - precedent: rare in humans; usually noise
 
 ## loss_gambles × demographic
-n=180 modal='Reject' (119/180)
+n=270 modal='Accept' (137/270)
+- ⚠ lg_non_monotone demographic-001/r0
+- ⚠ lg_non_monotone demographic-001/r1
 - ⚠ lg_non_monotone demographic-004/r2
+- ⚠ lg_non_monotone demographic-005/r0
 - ⚠ lg_non_monotone demographic-007/r2
 - ⚠ lg_non_monotone demographic-008/r0
+- ⚠ lg_non_monotone demographic-008/r1
+- ⚠ lg_non_monotone demographic-008/r2
   - precedent: rare in humans; usually noise
 
 ## loss_gambles × gps
-n=180 modal='Accept' (96/180)
+n=270 modal='Accept' (171/270)
+- ⚠ lg_non_monotone gps-002/r0
 - ⚠ lg_non_monotone gps-007/r0
   - precedent: rare in humans; usually noise
 
 ## loss_gambles × twin2k
-n=180 modal='Reject' (90/180)
+n=270 modal='Accept' (138/270)
+- ⚠ lg_non_monotone twin2k-002/r2
 - ⚠ lg_non_monotone twin2k-003/r1
 - ⚠ lg_non_monotone twin2k-003/r2
+- ⚠ lg_non_monotone twin2k-005/r1
 - ⚠ lg_non_monotone twin2k-006/r0
-- ⚠ lg_non_monotone twin2k-006/r1
+- ⚠ lg_non_monotone twin2k-006/r2
+- ⚠ lg_non_monotone twin2k-007/r0
+- ⚠ lg_non_monotone twin2k-007/r1
+- ⚠ lg_non_monotone twin2k-007/r2
+- ⚠ lg_non_monotone twin2k-008/r0
+- ⚠ lg_non_monotone twin2k-009/r2
   - precedent: rare in humans; usually noise
 
 ## loss_gambles × value_anchor
-n=180 modal='Accept' (111/180)
+n=270 modal='Accept' (201/270)
 - ok
 
 ## pg_punishment × anthology
-n= 90 mean=   6.53 sd=  7.79
+n= 90 mean=   4.71 sd=  5.33
 - ok
 
 ## pg_punishment × baseline
-n= 90 mean=   0.86 sd=  3.37
+n= 90 mean=   0.33 sd=  1.80
 - ok
 
 ## pg_punishment × big5
-n= 90 mean=   5.78 sd=  6.51
+n= 90 mean=   5.63 sd=  6.53
 - ok
 
 ## pg_punishment × demographic
-n= 90 mean=   4.28 sd=  5.68
+n= 90 mean=   3.21 sd=  4.11
 - ok
 
 ## pg_punishment × gps
-n= 90 mean=   4.32 sd=  6.08
+n= 90 mean=   3.41 sd=  4.75
 - ok
 
 ## pg_punishment × twin2k
-n= 90 mean=   5.05 sd=  5.70
-- ⚠ pp_perverse twin2k-007/r2 (coop 10.0 > freerider 8.0)
+n= 90 mean=   5.39 sd=  3.44
+- ⚠ invalid_rate 23%
+- ⚠ pp_perverse twin2k-001/r0 (coop 4.0 > freerider 2.0)
+- ⚠ pp_perverse twin2k-005/r1 (coop 5.0 > freerider 3.0)
+- ⚠ pp_perverse twin2k-005/r2 (coop 4.0 > freerider 3.0)
+- ⚠ pp_perverse twin2k-008/r0 (coop 4.0 > freerider 3.0)
+- ⚠ pp_perverse twin2k-008/r1 (coop 4.0 > freerider 3.0)
+- ⚠ pp_perverse twin2k-009/r0 (coop 10.0 > freerider 7.0)
   - precedent: human-attested: ~20% of punishment events target high contributors (Ertan p.1 lit review; 28% by event in their unrestricted phase, p.19)
 
 ## pg_punishment × value_anchor
-n= 90 mean=   2.29 sd=  5.87
-- ok
+n= 90 mean=   2.33 sd=  5.62
+- ⚠ pp_perverse value_anchor-003/r1 (coop 10.0 > freerider 0.0)
+- ⚠ pp_perverse value_anchor-009/r1 (coop 10.0 > freerider 0.0)
+  - precedent: human-attested: ~20% of punishment events target high contributors (Ertan p.1 lit review; 28% by event in their unrestricted phase, p.19)
 
 ## public_goods_strategy × anthology
-n=180 mean=   4.59 sd=  7.05
-- ⚠ invalid_rate 11%
+n=180 mean=   4.74 sd=  6.49
+- ok
 
 ## public_goods_strategy × baseline
 n=180 mean=   0.00 sd=  0.00
 - ok
 
 ## public_goods_strategy × big5
-n=180 mean=   5.02 sd=  5.34
+n=180 mean=   3.22 sd=  4.63
 - ok
 
 ## public_goods_strategy × demographic
-n=180 mean=   1.04 sd=  2.62
+n=180 mean=   0.56 sd=  1.94
 - ok
 
 ## public_goods_strategy × gps
-n=180 mean=   5.11 sd=  5.56
+n=180 mean=   4.19 sd=  5.23
 - ok
 
 ## public_goods_strategy × twin2k
-n=180 mean=   5.73 sd=  4.37
+n=180 mean=   5.88 sd=  3.66
 - ok
 
 ## public_goods_strategy × value_anchor
-n=180 mean=   0.47 sd=  2.78
+n=180 mean=   1.11 sd=  4.40
 - ok
 
 ## third_party_punishment × anthology
@@ -286,9 +319,8 @@ n=120 mean=   8.16 sd= 10.65
 - ok
 
 ## third_party_punishment × twin2k
-n=120 mean=  15.11 sd= 15.17
-- ⚠ tpp_inverted twin2k-001/r1 (fair 16.67 > unfair 15.0)
-  - precedent: human-attested in spirit: antisocial/perverse punishment exists (Herrmann et al. 2008; Ertan ~20%)
+n=120 mean=  11.17 sd= 15.09
+- ok
 
 ## third_party_punishment × value_anchor
 n=120 mean=  13.35 sd= 15.65
@@ -304,7 +336,7 @@ n=120 mean=  13.35 sd= 15.65
   - precedent: human-attested in spirit: antisocial/perverse punishment exists (Herrmann et al. 2008; Ertan ~20%)
 
 ## time_choices × anthology
-n=180 modal='Later payment' (151/179)
+n=180 modal='Later payment' (152/180)
 - ⚠ tc_future_bias anthology-000/r1 (@110)
 - ⚠ tc_future_bias anthology-001/r0 (@103)
 - ⚠ tc_future_bias anthology-001/r1 (@103)
@@ -400,13 +432,25 @@ n=180 modal='Sooner payment' (103/180)
   - precedent: human-attested but rare (reverse present bias / 'future bias' documented in the intertemporal literature)
 
 ## time_choices × twin2k
-n=180 modal='Later payment' (92/180)
-- ⚠ tc_future_bias twin2k-003/r1 (@103)
-- ⚠ tc_future_bias twin2k-003/r2 (@110)
-- ⚠ tc_future_bias twin2k-004/r2 (@110)
-- ⚠ tc_future_bias twin2k-005/r0 (@103)
-- ⚠ tc_future_bias twin2k-005/r2 (@110)
-- ⚠ tc_future_bias twin2k-005/r2 (@125)
+n=180 modal='Sooner payment' (97/180)
+- ⚠ tc_future_bias twin2k-000/r0 (@125)
+- ⚠ tc_future_bias twin2k-000/r1 (@110)
+- ⚠ tc_future_bias twin2k-002/r0 (@125)
+- ⚠ tc_future_bias twin2k-002/r1 (@125)
+- ⚠ tc_future_bias twin2k-003/r1 (@125)
+- ⚠ tc_future_bias twin2k-006/r0 (@125)
+- ⚠ tc_future_bias twin2k-006/r2 (@125)
+- ⚠ tc_future_bias twin2k-007/r0 (@110)
+- ⚠ tc_future_bias twin2k-007/r0 (@125)
+- ⚠ tc_future_bias twin2k-007/r1 (@103)
+- ⚠ tc_future_bias twin2k-007/r2 (@103)
+- ⚠ tc_future_bias twin2k-007/r2 (@125)
+- ⚠ tc_future_bias twin2k-008/r0 (@103)
+- ⚠ tc_future_bias twin2k-008/r0 (@110)
+- ⚠ tc_future_bias twin2k-008/r1 (@103)
+- ⚠ tc_future_bias twin2k-008/r1 (@125)
+- ⚠ tc_future_bias twin2k-008/r2 (@103)
+- ⚠ tc_future_bias twin2k-008/r2 (@125)
   - precedent: human-attested but rare (reverse present bias / 'future bias' documented in the intertemporal literature)
 
 ## time_choices × value_anchor
@@ -440,7 +484,7 @@ n= 90 mean=  21.72 sd= 23.37
 - ok
 
 ## trust_returner × twin2k
-n= 90 mean=  33.92 sd= 23.86
+n= 90 mean=  29.45 sd= 30.07
 - ok
 
 ## trust_returner × value_anchor
@@ -448,7 +492,7 @@ n= 90 mean=  30.00 sd= 45.66
 - ok
 
 ## trust_sender × anthology
-n= 30 mean=  23.00 sd= 39.32
+n= 30 mean=  23.97 sd= 36.99
 - ok
 
 ## trust_sender × baseline
@@ -456,20 +500,20 @@ n= 30 mean=   0.00 sd=  0.00
 - ok
 
 ## trust_sender × big5
-n= 30 mean=  22.33 sd= 34.99
+n= 30 mean=  50.83 sd= 36.20
 - ok
 
 ## trust_sender × demographic
-n= 30 mean=   0.83 sd=  3.18
+n= 30 mean=   0.33 sd=  1.80
 - ok
 
 ## trust_sender × gps
-n= 30 mean=  15.92 sd= 22.95
+n= 30 mean=  18.50 sd= 24.26
 - ok
 
 ## trust_sender × twin2k
-n= 30 mean=  38.00 sd= 18.87
-- ok
+n= 30 mean=  42.83 sd= 38.96
+- ⚠ invalid_rate 23%
 
 ## trust_sender × value_anchor
 n= 30 mean=   0.00 sd=  0.00
@@ -496,7 +540,7 @@ n= 30 mean=  25.63 sd= 14.40
 - ok
 
 ## ultimatum_proposer × twin2k
-n= 30 mean=  45.00 sd=  8.47
+n= 30 mean=  36.50 sd= 24.23
 - ok
 
 ## ultimatum_proposer × value_anchor
@@ -526,10 +570,8 @@ n= 90 modal='Accept' (71/90)
   - precedent: rare in humans; usually noise
 
 ## ultimatum_responder × twin2k
-n= 90 modal='Accept' (62/90)
-- ⚠ ur_incoherent twin2k-009/r0
-- ⚠ ur_incoherent twin2k-009/r2
-  - precedent: rare in humans; usually noise
+n= 90 modal='Accept' (71/90)
+- ok
 
 ## ultimatum_responder × value_anchor
 n= 90 modal='Accept' (90/90)
@@ -556,7 +598,7 @@ n= 90 modal='No' (67/90)
 - ok
 
 ## who_to_punish × twin2k
-n= 90 modal='No' (53/90)
+n= 90 modal='No' (45/90)
 - ok
 
 ## who_to_punish × value_anchor
