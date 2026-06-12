@@ -1,9 +1,9 @@
 """b.01 plots — decision histograms per game × persona method.
 
 Run with SYSTEM python3 (the .venv has no matplotlib):
-    python3 -m benchmark.gamebench.b01.plots          # or: python3 benchmark/gamebench/b01/plots.py
+    python3 -m benchmark.ecexbench.b01.plots          # or: python3 benchmark/ecexbench/b01/plots.py
 
-Reads results.csv, writes benchmark/gamebench/b01/plots/<game>.png: one histogram panel
+Reads results.csv, writes benchmark/ecexbench/b01/plots/<game>.png: one histogram panel
 per persona method (shared bins), human reference lines where references give
 a number. Only valid rows are plotted; invalid counts shown in the title.
 """

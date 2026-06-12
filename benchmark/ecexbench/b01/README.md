@@ -4,9 +4,9 @@
 NEVER used for persona tuning) × persona methods × models → one tidy CSV.
 
 ## Run
-    .venv/bin/python -m benchmark.gamebench.b01.run --games all --methods baseline,gps,twin2k --n 10 --runs 3
-    .venv/bin/python -m benchmark.gamebench.b01.run --games holdout --methods ... [--dry] [--yes]
-    python3 -m benchmark.gamebench.b01.plots          # histograms (system python3 has matplotlib)
+    .venv/bin/python -m benchmark.ecexbench.b01.run --games all --methods baseline,gps,twin2k --n 10 --runs 3
+    .venv/bin/python -m benchmark.ecexbench.b01.run --games holdout --methods ... [--dry] [--yes]
+    python3 -m benchmark.ecexbench.b01.plots          # histograms (system python3 has matplotlib)
 
 - Cost estimate prints first; estimates over $5 refuse to start without `--yes`.
 - Resume is free: re-running re-submits whole jobs, Expected Parrot's cache returns
