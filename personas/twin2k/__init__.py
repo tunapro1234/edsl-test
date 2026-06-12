@@ -51,9 +51,11 @@ def _load():
 
 def sample(n, seed=None):
     rng = random.Random(seed)
-    pool = _load()
-    if n <= len(pool):
-        picks = rng.sample(pool, n)  # n distinct real people
-    else:
-        picks = rng.choices(pool, k=n)
+    pool = list(_load())
+    # PREFIX-STABLE BY CONTRACT: shuffle the whole pool once, take the first n.
+    # sample(k)[:j] == sample(j) for any j <= k <= pool size, by construction —
+    # not by a CPython random.sample implementation detail (reviewer finding #1).
+    rng.shuffle(pool)
+    picks = pool[:n] if n <= len(pool) else \
+        pool + rng.choices(pool, k=n - len(pool))  # >pool: repeat with replacement
     return [HEADER + p["summary"].strip() + FOOTER for p in picks]

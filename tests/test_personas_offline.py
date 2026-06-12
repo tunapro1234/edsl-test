@@ -91,3 +91,27 @@ def test_agent_banks_stable():
             bank = json.load(f)
         regen = sample_personas(m, len(bank), seed=1000)
         assert list(bank.values()) == regen, f"{m}: bank drifted from sampler"
+
+
+def test_twin2k_prefix_stable_by_contract():
+    # reviewer finding #1: stability must hold by construction, not by a
+    # CPython random.sample implementation detail
+    a = sample_personas("twin2k", 10, seed=1000)
+    b = sample_personas("twin2k", 50, seed=1000)
+    assert b[:10] == a
+
+
+def test_bank_append_only():
+    # growing a bank must NEVER re-bind existing agent_ids
+    import tempfile
+    from benchmark.beebench.b01 import agents as ag
+    with tempfile.TemporaryDirectory() as tmp:
+        old = ag.BANK_DIR
+        ag.BANK_DIR = tmp
+        try:
+            small = ag.bank("gps", 5)
+            grown = ag.bank("gps", 9)
+            assert {k: grown[k] for k in small} == small  # prefix untouched
+            assert len(grown) == 9
+        finally:
+            ag.BANK_DIR = old

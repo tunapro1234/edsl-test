@@ -48,17 +48,30 @@ def build_questions(g):
     if g.get("belief"):
         qb = QuestionNumerical(question_name="belief",
                                question_text="{{ scenario.persona }}\n{{ scenario.btext }}")
-        return Survey([qb, q])  # belief asked BEFORE the decision
+        survey = Survey([qb, q])  # belief asked BEFORE the decision...
+        # ...and the decision SEES the stated belief (reviewer finding #5):
+        # in human protocols (Gächter belief elicitation) subjects obviously
+        # remember what they just stated; EDSL questions are otherwise
+        # independent, so we wire targeted memory explicitly.
+        survey = survey.add_targeted_memory("decision", "belief")
+        return survey
     return q
 
 
-def is_valid(g, decision):
+def is_valid(g, decision, condition=None):
     if decision is None:
         return 0
     if g["question_type"] == "mc":
         return int(decision in g["options"])
+    # per-condition bound override (reviewer finding #4): a condition may carry
+    # its own "max"/"min" (e.g. trust_returner caps 30/90/150; pg_punishment
+    # punish stages cap at 10 while contribute caps at 20)
+    lo, hi = g["min"], g["max"]
+    if condition:
+        cond = next((c for c in g["conditions"] if c["id"] == condition), {})
+        lo, hi = cond.get("min", lo), cond.get("max", hi)
     try:
-        return int(g["min"] <= float(decision) <= g["max"])
+        return int(lo <= float(decision) <= hi)
     except (TypeError, ValueError):
         return 0
 
@@ -83,7 +96,15 @@ def run_game(g, model_name, methods, n_agents, runs, dry, done):
     job = build_questions(g)
     if not isinstance(job, Survey):
         job = Survey([job])
-    res = job.by(ScenarioList(scenarios)).by(Agent(name="player")).by(MODELS[model_name]()).run(n=runs)
+    wired = job.by(ScenarioList(scenarios)).by(Agent(name="player")).by(MODELS[model_name]())
+    res = wired.run(n=runs)
+    # retry persistent None decisions (reviewer finding #3): re-running is cheap —
+    # answered interviews return from the EP cache, only failures re-execute
+    for _ in range(2):
+        if None not in res.select("answer.decision").to_list():
+            break
+        print(f"  [{g['game']}] None decisions present — retrying failed interviews")
+        res = wired.run(n=runs)
     res.save(os.path.join(HERE, "raw", f"{g['game']}_{model_name}"))
 
     cols = res.columns
@@ -105,7 +126,7 @@ def run_game(g, model_name, methods, n_agents, runs, dry, done):
             "agent_id": r["agent_id"], "game": g["game"], "role": g["role"],
             "condition": r["condition"], "wording_id": 0, "run": r["iteration"],
             "decision": r["decision"], "belief": r.get("belief", ""),
-            "valid": is_valid(g, r["decision"]),
+            "valid": is_valid(g, r["decision"], r["condition"]),
             "raw_len": len(str(r.get("decision_generated_tokens", ""))),
             "timestamp": now,
             "cost_usd": round(cost, 6) if isinstance(cost, (int, float)) else "",

@@ -71,7 +71,7 @@ PRECEDENT = {
 }
 
 ROW_ORDER = {f"row{k}": k for k in range(1, 11)}
-GAIN_ORDER = {f"gain{x}": x for x in (2, 4, 5, 6, 8, 10)}
+GAIN_ORDER = {f"gain{x}": x for x in (2, 4, 5, 6, 8, 10, 12, 16, 20)}
 
 
 def detect(game, method, rows):

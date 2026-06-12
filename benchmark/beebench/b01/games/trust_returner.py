@@ -12,9 +12,9 @@ GAME = {
     "holdout": False,
     "measures": "positive_reciprocity",
     "conditions": [
-        {"id": "low", "endow": 50, "sent": 10, "received": 30},
-        {"id": "mid", "endow": 50, "sent": 30, "received": 90},
-        {"id": "high", "endow": 50, "sent": 50, "received": 150},
+        {"id": "low", "endow": 50, "sent": 10, "received": 30, "max": 30},   # per-condition bound (reviewer #4)
+        {"id": "mid", "endow": 50, "sent": 30, "received": 90, "max": 90},
+        {"id": "high", "endow": 50, "sent": 50, "received": 150, "max": 150},
     ],
     "text": (
         "A stranger was given ${endow} and chose to send you ${sent} of it. "

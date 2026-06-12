@@ -50,10 +50,11 @@ GAME = {
     "conditions": [
         {"id": "contribute", **_BASE,
          "stage": _ASK_CONTRIBUTE.format(**_BASE)},
-        {"id": "punish_freerider", **_BASE,
+        {"id": "punish_freerider", "max": 10,  # per-condition bound (reviewer #4)
+         **_BASE,
          "stage": _ASK_PUNISH.format(own=15, c1=2, c2=18, c3=15,
                                      target=2, pmax=_PMAX)},
-        {"id": "punish_cooperator", **_BASE,
+        {"id": "punish_cooperator", "max": 10, **_BASE,
          "stage": _ASK_PUNISH.format(own=15, c1=18, c2=15, c3=15,
                                      target=18, pmax=_PMAX)},
     ],

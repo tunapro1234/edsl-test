@@ -12,6 +12,15 @@ GAME = {
         {"id": "gain6", "gain": 6, "loss": 5},
         {"id": "gain8", "gain": 8, "loss": 5},
         {"id": "gain10", "gain": 10, "loss": 5},
+        # Ladder extension (reviewer finding #2): the original B1-BRIEF ladder
+        # topped out at gain/loss = 2.0, RIGHT-CENSORING any agent with human
+        # median lambda ~2.25 (indifference at $11.25). Ratios up to 4 follow
+        # Tom, Fox, Trepel & Poldrack 2007 (Science 315:515-518: gains $10-40
+        # vs losses $5-20, i.e. gain/loss spanning 0.5-8, switch points
+        # straddled). gain12/16/20 = ratios 2.4 / 3.2 / 4.0.
+        {"id": "gain12", "gain": 12, "loss": 5},
+        {"id": "gain16", "gain": 16, "loss": 5},
+        {"id": "gain20", "gain": 20, "loss": 5},
     ],
     "text": (
         "You are offered the following one-time gamble. A fair coin is flipped "
