@@ -81,8 +81,8 @@ def test_value_anchor_opposites_pinned():
 
 
 def test_agent_banks_stable():
-    # frozen ecexbench banks must match what sample_personas regenerates today
-    bank_dir = os.path.join(REPO, "benchmark", "ecexbench", "b01", "agents_bank")
+    # frozen econgamebench banks must match what sample_personas regenerates today
+    bank_dir = os.path.join(REPO, "benchmark", "econgamebench", "b01", "agents_bank")
     for m in METHODS:
         path = os.path.join(bank_dir, f"{m}.json")
         if not os.path.exists(path):

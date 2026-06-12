@@ -1,6 +1,6 @@
 """b.01 runner — one command, one tidy CSV.
 
-    .venv/bin/python -m benchmark.ecexbench.b01.run --games all --methods baseline,gps \\
+    .venv/bin/python -m benchmark.econgamebench.b01.run --games all --methods baseline,gps \\
         --models gpt-oss-120b --n 10 --runs 3 [--holdout] [--dry] [--yes]
 
 Resume comes for free: jobs are re-submitted whole and Expected Parrot's cache

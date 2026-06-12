@@ -31,8 +31,8 @@ Conventions (zero-error rules):
 - Decisions are validated against min/max or options at parse time; out-of-range
   rows are kept but flagged in the `valid` column, never silently dropped.
 
-Output: benchmark/ecexbench/b01/results.csv —
+Output: benchmark/econgamebench/b01/results.csv —
 model, persona_method, agent_id, game, role, condition, wording_id, run,
 decision, belief, valid, raw_len, timestamp, cost_usd
-(raw responses live in benchmark/ecexbench/b01/raw/<jobhash>.json.gz via EDSL save).
+(raw responses live in benchmark/econgamebench/b01/raw/<jobhash>.json.gz via EDSL save).
 """
