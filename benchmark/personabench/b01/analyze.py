@@ -1,7 +1,7 @@
 """b.01 results analyzer — descriptive stats + anomaly flags per game × method.
 
-    .venv/bin/python -m econbench.b01.analyze            # prints report
-    .venv/bin/python -m econbench.b01.analyze --md out.md
+    .venv/bin/python -m benchmark.personabench.b01.analyze            # prints report
+    .venv/bin/python -m benchmark.personabench.b01.analyze --md out.md
 
 Flags MARK cells for inspection — they NEVER filter or drop data. Several
 flagged behaviors are documented in humans (annotated with their precedent);
